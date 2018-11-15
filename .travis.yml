@@ -1,5 +1,17 @@
-language: node__js
-node__js: stable
-script: npm run test
+language: node_js
+node_js: stable
+os: linux
+cache:
+  yarn: true
+branches:
+  only:
+  - master
+  - dev
+install:
+- |
+    yarn install
+script:
+- |
+    npm run test
 notifications:
   email: false
