@@ -1,0 +1,5 @@
+language: node__js
+node__js: stable
+script: npm run test
+notifications:
+  email: false

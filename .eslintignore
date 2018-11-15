@@ -1,0 +1,7 @@
+/build/
+/dist/
+/*.js
+node_modules
+/dev/
+/public/
+RESTFULLURL.js
