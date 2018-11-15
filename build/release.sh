@@ -36,7 +36,6 @@ then
   git rebase master
   git push origin dev
 
-  npm publish
 fi
   # build
   npm version $VERSION --no-git-tag-version
@@ -53,5 +52,4 @@ fi
   git rebase master
   git push origin dev
 
-  npm publish
 fi
