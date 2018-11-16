@@ -74,7 +74,7 @@ yarn run deploy
 # --svgo svg精简压缩
 yarn run svgo
 
-# --analyz 基于 webpack-bundle-analyzer 插件分析打包的文件构成及大小(vue ui 界面上的分析不习惯 :stuck_out_tongue_winking_eye:)
+# --analyz 基于 webpack-bundle-analyzer 插件分析打包的文件构成及大小(vue ui 界面上的分析不习惯)
 yarn run analyz
 
 # --report 生成静态报告文件
