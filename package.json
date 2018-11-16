@@ -12,7 +12,8 @@
     "report": "npm_config_generate_report=true npm run build",
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
     "test": "",
-    "deploy": "npm run build && node build/zip.js"
+    "deploy": "npm run build && node build/zip.js",
+    "release": "sh build/release.sh"
   },
   "husky": {
     "hooks": {

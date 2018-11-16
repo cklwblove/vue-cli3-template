@@ -14,7 +14,7 @@
 
 - SVG 雪碧图：采用 `webpack` 插件 `svg-sprite-loader`,及 `svg` 精简压缩工具 `svgo`
 
-- 移动 web 的适配方案：引入了 `postcsspostcss-pxtorem` 及 `lib-flexible`，可以自由地用 px 去开发
+- 移动 web 的适配方案：引入了 `postcss-pxtorem` 及 `lib-flexible`，可以自由地用 px 去开发
 
 - 常用的 js 工具类： [cloud-utils](https://cloud-templates.github.io/cloud-utils/)
 
@@ -67,7 +67,7 @@ yarn run deploy
 
 ```
 
-浏览器访问 http://localhost:3000
+浏览器访问 http://localhost:3001
 
 ## 其他
 ```
