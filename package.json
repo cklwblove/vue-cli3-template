@@ -27,8 +27,8 @@
     ]
   },
   "dependencies": {
+    "@liwb/cloud-utils": "latest",
     "axios": "^0.18.0",
-    "cloud-utils": "latest",
     "lib-flexible": "^0.3.2",
     "magicless": "latest",
     "normalize.css": "^7.0.0",

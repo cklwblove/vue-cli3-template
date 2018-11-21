@@ -51,7 +51,7 @@ module.exports = {
         // 文件别名
         'services': resolve('src/services'),
         'variable': resolve('src/assets/less/variable.less'),
-        'utils': resolve('node_modules/cloud-utils/dist/cloud-utils.esm'),
+        'utils': resolve('node_modules/@liwb/cloud-utils/dist/cloud-utils.esm'),
         'mixins': resolve('node_modules/magicless/magicless.less')
       }
     },
