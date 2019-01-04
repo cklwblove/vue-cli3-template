@@ -1,6 +1,6 @@
 {
   "name": "vuep-template-cli3",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A front-end template built on vue-cli3",
   "author": "liwb <liwb@gmail.com>",
   "private": true,
