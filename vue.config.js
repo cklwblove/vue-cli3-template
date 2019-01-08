@@ -134,6 +134,14 @@ module.exports = {
         config => config.devtool('cheap-source-map')
       )
 
+    // runtime.js 内联的形式嵌入
+    config
+      .plugin('preload')
+      .tap(args => {
+        args[0].fileBlacklist.push(/runtime\./);
+        return args;
+      })
+
     // plugin
     // webpack-html-plugin
     config
@@ -163,7 +171,7 @@ module.exports = {
             .plugin('ScriptExtHtmlWebpackPlugin')
             .use('script-ext-html-webpack-plugin', [{
               // `runtime` must same as runtimeChunk name. default is `runtime`
-              inline: /runtime\..*\.js$/
+              inline: /runtime\..*\.js$/,
             }])
           config
             .optimization
