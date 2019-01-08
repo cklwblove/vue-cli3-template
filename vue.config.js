@@ -155,6 +155,7 @@ module.exports = {
       })
 
     // optimization
+    // https://imweb.io/topic/5b66dd601402769b60847149
     config
       .when(process.env.NODE_ENV === 'production',
         config => {
@@ -165,24 +166,25 @@ module.exports = {
               inline: /runtime\..*\.js$/
             }])
           config
-            .optimization.splitChunks({
-            chunks: 'all',
-            cacheGroups: {
-              libs: {
-                name: 'chunk-libs',
-                test: /[\\/]node_modules[\\/]/,
-                priority: 10,
-                chunks: 'initial' // 只打包初始时依赖的第三方
-              },
-              commons: {
-                name: 'chunk-commons',
-                test: resolve('src/components'), // 可自定义拓展你的规则
-                minChunks: 3, // 最小公用次数
-                priority: 5,
-                reuseExistingChunk: true
+            .optimization
+            .splitChunks({
+              chunks: 'all',
+              cacheGroups: {
+                vendors: {
+                  name: 'chunk-vendors',
+                  test: /[\\/]node_modules[\\/]/,
+                  priority: 10,
+                  chunks: 'initial' // 只打包初始时依赖的第三方
+                },
+                commons: {
+                  name: 'chunk-commons',
+                  test: resolve('src/components'), // 可自定义拓展你的规则
+                  minChunks: 3, // 最小公用次数
+                  priority: 5,
+                  reuseExistingChunk: true
+                }
               }
-            }
-          })
+            })
           config.optimization.runtimeChunk('single')
         }
       )
