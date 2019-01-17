@@ -53,7 +53,7 @@ module.exports = {
    * for example GitHub pages. If you plan to deploy your site to https://foo.github.io/bar/,
    * then assetsPublicPath should be set to "/bar/".
    * In most cases please use '/' !!!
-   * Detail https://cli.vuejs.org/config/#baseurl
+   * Detail https://cli.vuejs.org/config/#publicPath
    */
   publicPath: './',
   assetsDir: 'static',
