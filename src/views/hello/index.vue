@@ -68,15 +68,13 @@
       return {
         msg: 'Welcome to Your Vue.js App',
         message: '现在时间是：' + formatDate(Date.now())
-      }
+      };
     },
 
     created() {
       this.movieComingSoon();
     },
 
-
-    
     methods: {
       movieComingSoon() {
         const data = {};
@@ -90,7 +88,7 @@
         });
       }
     }
-  }
+  };
 </script>
 
 <style lang="less" rel="stylesheet/less">
