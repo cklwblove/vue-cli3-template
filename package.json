@@ -12,6 +12,7 @@
     "report": "npm_config_generate_report=true npm run build",
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
     "test": "",
+    "precommit": "lint-staged",
     "deploy": "npm run build && node build/zip.js",
     "release": "sh build/release.sh"
   },
@@ -27,8 +28,8 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,vue}": [
-      "eslint --fix",
+    "*.{js,vue}": [
+      "eslint",
       "git add"
     ]
   },

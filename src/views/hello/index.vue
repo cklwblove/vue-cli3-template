@@ -75,6 +75,8 @@
       this.movieComingSoon();
     },
 
+
+    
     methods: {
       movieComingSoon() {
         const data = {};

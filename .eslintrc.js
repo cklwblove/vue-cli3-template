@@ -30,7 +30,7 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     // 禁用 console
-    'no-console': 2,
+    'no-console': 0,
     // 禁用 alert、confirm 和 prompt
     'no-alert': 0,
 
