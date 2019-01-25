@@ -1,17 +1,18 @@
-'use strict'
+'use strict';
 
-const path = require('path')
-const CompressionWebpackPlugin = require('compression-webpack-plugin')
+const path = require('path');
+const pkg = require('./package');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const resolve = (dir) => {
-  return path.join(__dirname, './', dir)
-}
+  return path.join(__dirname, './', dir);
+};
 
 const isProd = () => {
-  return process.env.NODE_ENV === 'production'
-}
+  return process.env.NODE_ENV === 'production';
+};
 
 const genPlugins = () => {
   const plugins = [];
@@ -24,13 +25,13 @@ const genPlugins = () => {
         test: new RegExp(
           '\\.(' +
           ['js', 'css'].join('|') +
-          ')$',
+          ')$'
         ),
         threshold: 10240,
         minRatio: 0.8,
         cache: true
       })
-    )
+    );
   }
 
   // HtmlWebpackIncludeAssetsPlugin
@@ -41,10 +42,10 @@ const genPlugins = () => {
       append: false,
       hash: true
     })
-  )
+  );
 
   return plugins;
-}
+};
 
 module.exports = {
   /**
@@ -83,7 +84,7 @@ module.exports = {
     modules: false
   },
   configureWebpack: () => ({
-    name: 'vue-cli3-template',
+    name: `${pkg.name}`,
     resolve: {
       alias: {
         '@': resolve('src'),
@@ -114,7 +115,7 @@ module.exports = {
       .module
       .rule('svg')
       .exclude.add(resolve('src/icons'))
-      .end()
+      .end();
 
     config
       .module
@@ -127,26 +128,26 @@ module.exports = {
       .options({
         symbolId: 'icon-[name]'
       })
-      .end()
+      .end();
 
     config
       .when(process.env.NODE_ENV === 'development',
-        config => config.devtool('cheap-source-map')
-      )
+        (config) => config.devtool('cheap-source-map')
+      );
 
     // runtime.js 内联的形式嵌入
     config
       .plugin('preload')
-      .tap(args => {
+      .tap((args) => {
         args[0].fileBlacklist.push(/runtime\./);
         return args;
-      })
+      });
 
     // plugin
     // webpack-html-plugin
     config
       .plugin('html')
-      .tap(args => {
+      .tap((args) => {
         args[0].minify = {
           removeComments: true,
           collapseWhitespace: true,
@@ -158,21 +159,21 @@ module.exports = {
           minifyJS: true,
           minifyCSS: true,
           minifyURLs: true
-        }
-        return args
-      })
+        };
+        return args;
+      });
 
     // optimization
     // https://imweb.io/topic/5b66dd601402769b60847149
     config
       .when(process.env.NODE_ENV === 'production',
-        config => {
+        (config) => {
           config
             .plugin('ScriptExtHtmlWebpackPlugin')
             .use('script-ext-html-webpack-plugin', [{
               // `runtime` must same as runtimeChunk name. default is `runtime`
-              inline: /runtime\..*\.js$/,
-            }])
+              inline: /runtime\..*\.js$/
+            }]);
           config
             .optimization
             .splitChunks({
@@ -192,34 +193,34 @@ module.exports = {
                   reuseExistingChunk: true
                 }
               }
-            })
-          config.optimization.runtimeChunk('single')
+            });
+          config.optimization.runtimeChunk('single');
         }
-      )
+      );
 
     // Run the build command with an extra argument to
     // View the bundle analyzer report after build finishes:
     // `npm run analyz`
     config
       .when(process.env.IS_ANALYZ,
-        config => config
+        (config) => config
           .plugin('webpack-bundle-analyzer')
           .use(BundleAnalyzerPlugin, [{
             analyzerPort: 8888,
             generateStatsFile: false
           }])
-      )
+      );
 
     // `npm run build --generate_report`
     config
       .when(process.env.npm_config_generate_report,
-        config => config
+        (config) => config
           .plugin('webpack-bundle-analyzer-report')
           .use(BundleAnalyzerPlugin, [{
             analyzerMode: 'static',
             reportFilename: 'bundle-report.html',
             openAnalyzer: false
           }])
-      )
+      );
   }
 };
