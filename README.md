@@ -6,7 +6,7 @@
 
 基于 vue-cli3 搭建的前端模板，fork 或 clone 本仓库，即可搭建完成一个新项目的基础模板
 
-**🚀 结合 vue-cli3 的 preset 搭建基于 git repo 的前端项目模板，可以移步 [vue-preset](https://github.com/cloud-templates/vue-preset)**
+**🚀 结合 vue-cli3 的 preset 搭建基于 git repo 的前端项目模板，可以移步 [vue-preset](https://github.com/cklwblove/vue-preset)**
 
 ## 特性
 
