@@ -13,7 +13,7 @@ import autoMatchBaseUrl from './autoMatchBaseUrl';
 import {TIMEOUT, HOME_PREFIX} from '../constant';
 
 // 添加一个请求拦截器 （于transformRequest之前处理）
-axios.interceptors.request.use(function (config) {
+axios.interceptors.request.use((config) => {
   // 以下代码，鉴权token,可根据具体业务增删。
   // demo示例:
   if (~config['url'].indexOf('operatorQry')) {
@@ -27,9 +27,13 @@ axios.interceptors.request.use(function (config) {
 
 // 添加一个返回拦截器 （于transformResponse之后处理）
 // 返回的数据类型默认是json，若是其他类型（text）就会出现问题，因此用try,catch捕获异常
-axios.interceptors.response.use(function (response) {
+axios.interceptors.response.use((response) => {
   return checkStatus(response);
 }, function (error) {
+  // 接口请求超时统一处理
+  if (error.code === 'ECONNABORTED') {
+    // Timeout error
+  }
   // 对返回的错误进行一些处理
   return Promise.reject(checkStatus(error));
 });

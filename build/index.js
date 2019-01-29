@@ -1,3 +1,5 @@
+'use strict';
+
 const { run } = require('runjs')
 const chalk = require('chalk')
 const rawArgv = process.argv.slice(2)
@@ -16,5 +18,5 @@ run(`vue-cli-service build ${args}`, {
   console.error(chalk.magenta('具体错误信息如下 \n'))
   console.error(chalk.red(`${err}.\n`))
   console.log(chalk.red('  Build failed with errors.\n'))
-  process.exit(1) 
+  process.exit(1)
 })

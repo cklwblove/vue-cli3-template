@@ -1,8 +1,9 @@
 'use strict';
+
 const path = require('path');
 const fs = require('fs');
 const archiver = require('archiver');
-const {formatDate} = require('cloud-utils');
+const {formatDate} = require('@liwb/cloud-utils');
 
 // create a file to stream archive data to.
 var output = fs.createWriteStream(`${path.resolve(__dirname, '../')}/dist_${formatDate(new Date(), 'yyyy-MM-dd_HH:mm:ss')}.zip`);
