@@ -65,10 +65,10 @@ function checkStatus(response) {
           errorInfo = '404：资源不存在';
           break;
         case 405:
-          errorInfo = '405: 请求方法未允许'
+          errorInfo = '405: 请求方法未允许';
           break;
         case 408:
-          errorInfo = '408: 请求超时'
+          errorInfo = '408: 请求超时';
           break;
         case 500:
           errorInfo = '500：访问服务失败';
@@ -80,15 +80,15 @@ function checkStatus(response) {
           errorInfo = '502：无效网关';
           break;
         case 503:
-          errorInfo = '503: 服务不可用'
+          errorInfo = '503: 服务不可用';
           break;
         default:
-          errorInfo = `连接错误${status}`
+          errorInfo = `连接错误${status}`;
       }
       return {
         status,
         msg: errorInfo
-      }
+      };
     }
   }
   // 异常状态下，把错误信息返回去
@@ -162,3 +162,12 @@ export default function request(url, {
 
   return axios(defaultConfig);
 }
+
+// 上传文件封装
+export const uploadFile = (url, formData) => {
+  return request(url, {
+    method: 'post',
+    data: formData,
+    headers: {'Content-Type': 'multipart/form-data'}
+  });
+};
