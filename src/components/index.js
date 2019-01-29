@@ -1,5 +1,6 @@
-import SvgIcon from './SvgIcon';
+// tree shaking
+import SendCode from './SendCode';
 
 export {
-  SvgIcon
-}
+  SendCode
+};

@@ -2,6 +2,7 @@ import 'lib-flexible';
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
+import './components/global';
 import './icons';
 import './router/router.interceptor';
 import './filters';

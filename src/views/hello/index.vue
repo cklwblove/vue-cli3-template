@@ -5,6 +5,8 @@
       <img src="~@assets/img/logo.png">
       <h1 v-text="msg"></h1>
       <h2 v-text="message"></h2>
+      <svg-icon icon-class="cat"></svg-icon>
+      <send-code class="btn btn-default" v-model="start" @click.native="sendCode"></send-code>
       <div class="demo">
         <h3>方法示例</h3>
         <pre>
@@ -62,11 +64,17 @@
    */
   // 工具类
   import {formatDate} from 'utils';
+  import {SendCode} from '@components';
 
   export default {
+    components: {
+      SendCode
+    },
+
     data() {
       return {
         msg: 'Welcome to Your Vue.js App',
+        start: false,
         message: '现在时间是：' + formatDate(Date.now())
       };
     },
@@ -86,6 +94,11 @@
         }).catch((err) => {
           console.log('接口请求异常：' + err);
         });
+      },
+      sendCode() {
+        setTimeout(() => {
+          this.start = true;
+        }, 1000);
       }
     }
   };
