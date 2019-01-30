@@ -12,6 +12,8 @@
     "report": "npm_config_generate_report=true npm run build",
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
     "test": "",
+    "gen:comp": "node ./scripts/generateComponent",
+    "gen:view": "node ./scripts/generateView",
     "deploy": "npm run build && node build/zip.js",
     "release": "sh build/release.sh"
   },
@@ -47,7 +49,7 @@
     "@vue/cli-service": "^3.0.4",
     "archiver": "^2.1.1",
     "babel-eslint": "^10.0.1",
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "compression-webpack-plugin": "^2.0.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
