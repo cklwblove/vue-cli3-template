@@ -3,6 +3,8 @@
 const path = require('path');
 const pkg = require('./package');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const chalk = require('chalk');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -15,7 +17,12 @@ const isProd = () => {
 };
 
 const genPlugins = () => {
-  const plugins = [];
+  const plugins = [
+    new ProgressBarPlugin({
+      format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
+      clear: false
+    })
+  ];
 
   if (isProd()) {
     plugins.push(
