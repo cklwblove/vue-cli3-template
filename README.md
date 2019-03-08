@@ -14,11 +14,13 @@
 
 - Ajax: [axios](https://github.com/axios/axios)，做了一定的封装，详见 `src/services/request.js`
 
-- SVG 雪碧图：采用 `webpack` 插件 `svg-sprite-loader`,及 `svg` 精简压缩工具 `svgo`
+- SVG 雪碧图：[vue-svgicon](https://github.com/MMF-FE/vue-svgicon)
 
 - 移动 web 的适配方案：引入了 `postcss-pxtorem` 及 `lib-flexible`，可以自由地用 px 去开发
 
 - 常用的 js 工具类： [cloud-utils](https://cklwblove.github.io/cloud-utils/)
+
+- 引用 `style-resources-loader`：全局注入相关的`less`文件，如通用的 `variable`及 `mixins`等
 
 - 常用的 Less 的 mixins 集合：[magicless](https://github.com/cklwblove/magicless)
 

@@ -6,9 +6,11 @@
  */
 // https://stylelint.docschina.org/user-guide/rules/
 module.exports = {
+  root: true,
   processors: [],
   plugins: ['stylelint-order'],
   extends: 'stylelint-config-standard',
+
   rules: {
     // 允许嵌套的深度最多 3 层
     'max-nesting-depth': 3,
