@@ -106,4 +106,8 @@
 
 <style lang="less" rel="stylesheet/less">
   @import "./style.less";
+
+  h3 {
+    background-color: @colorBlueMain;
+  }
 </style>

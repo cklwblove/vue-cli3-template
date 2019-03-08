@@ -118,6 +118,17 @@ module.exports = {
   chainWebpack: (config) => {
     // module
 
+    /* config.module.rule('less').oneOf('vue').use('style-resources-loader') */
+    config.module
+      .rule('less')
+      .oneOf('vue')
+      .use('style-resources-loader')
+      .loader('style-resources-loader')
+      .options({
+        patterns: [path.resolve(__dirname, 'src/assets/less/variable.less'), path.resolve(__dirname, 'node_modules/magicless/magicless.less')],
+        injector: 'prepend'
+      }).end();
+
     config
       .when(process.env.NODE_ENV === 'development',
         (config) => config.devtool('cheap-source-map')
