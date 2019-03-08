@@ -64,9 +64,11 @@ module.exports = {
    * Detail https://cli.vuejs.org/config/#publicPath
    */
   publicPath: './',
+
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV !== 'production',
   productionSourceMap: false,
+
   // webpack-dev-server 相关配置
   devServer: {
     open: process.platform === 'darwin',
@@ -79,6 +81,7 @@ module.exports = {
       errors: true
     }
   },
+
   // css相关配置
   css: {
     // 是否使用css分离插件 ExtractTextPlugin
@@ -90,6 +93,7 @@ module.exports = {
     // 启用 CSS modules for all css / pre-processor files.
     modules: false
   },
+
   configureWebpack: () => ({
     name: `${pkg.name}`,
     resolve: {
@@ -113,6 +117,7 @@ module.exports = {
     },
     plugins: genPlugins()
   }),
+
   // webpack配置
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   chainWebpack: (config) => {
@@ -142,7 +147,6 @@ module.exports = {
         return args;
       });
 
-    // plugin
     // webpack-html-plugin
     config
       .plugin('html')
@@ -221,5 +225,10 @@ module.exports = {
             openAnalyzer: false
           }])
       );
+  },
+
+  pluginOptions: {
+    lintStyleOnBuild: true,
+    stylelint: {}
   }
 };

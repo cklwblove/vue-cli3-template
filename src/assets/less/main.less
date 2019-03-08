@@ -1,40 +1,39 @@
 .iconfont {
-  vertical-align: middle;
   position: relative;
   display: inline-block;
+  vertical-align: middle;
 }
 
 .no-data {
   padding: 10px 0;
   font-size: 16px;
-  text-align: center;
   color: #999;
+  text-align: center;
 }
 
 .pages {
+  position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: relative;
 }
 
 .page {
-  box-sizing: border-box;
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  box-sizing: border-box;
 }
 
 .page-content {
   position: relative;
-  height: 100%;
-  box-sizing: border-box;
-  background-color: @colorWhite;
   z-index: 1;
+  height: 100%;
+  background-color: @colorWhite;
+  box-sizing: border-box;
   .scrollable();
 }
-
