@@ -117,25 +117,6 @@ module.exports = {
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   chainWebpack: (config) => {
     // module
-    // svg
-    config
-      .module
-      .rule('svg')
-      .exclude.add(resolve('src/icons'))
-      .end();
-
-    config
-      .module
-      .rule('icons')
-      .test(/\.svg$/)
-      .include.add(resolve('src/icons'))
-      .end()
-      .use('svg-sprite-loader')
-      .loader('svg-sprite-loader')
-      .options({
-        symbolId: 'icon-[name]'
-      })
-      .end();
 
     config
       .when(process.env.NODE_ENV === 'development',

@@ -5,7 +5,7 @@
       <img src="~@assets/img/logo.png">
       <h1 v-text="msg"></h1>
       <h2 v-text="message"></h2>
-      <svg-icon icon-class="cat"></svg-icon>
+      <svg-icon name="cat"></svg-icon>
       <send-code class="btn btn-default" v-model="start" @click.native="sendCode"></send-code>
       <div class="demo">
         <h3>方法示例</h3>
