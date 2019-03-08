@@ -1,5 +1,5 @@
 {
-  "name": "vuep-template-cli3",
+  "name": "vue-cli3-template",
   "version": "0.1.15",
   "description": "A front-end template built on vue-cli3",
   "author": "liwb <liwb@gmail.com>",
@@ -16,6 +16,7 @@
     "test": "",
     "gen:comp": "node ./scripts/generateComponent",
     "gen:view": "node ./scripts/generateView",
+    "inspect": "vue inspect > output.js --verbose",
     "deploy": "npm run build && node build/zip.js",
     "release": "sh build/release.sh"
   },
@@ -23,7 +24,10 @@
     "serve": "运行开发服务器",
     "build": "生产环境执行构建",
     "analyz": "生产环境执行构建打包分析",
-    "deploy": "生产环境执行构建并压缩zip包"
+    "deploy": "生产环境执行构建并压缩zip包",
+    "svgo": "基于 svgo，构建 svg 雪碧图",
+    "gen:comp": "自动生成组件相关文件（.vue,.less）",
+    "gen:view": "自动生成视图相关文件（.vue,.less）"
   },
   "husky": {
     "hooks": {
