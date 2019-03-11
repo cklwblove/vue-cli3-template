@@ -11,13 +11,14 @@
     "lint": "vue-cli-service lint",
     "deploy": "npm run build && node build/zip.js",
     "analyz": "vue-cli-service build --mode analyz",
-    "gen:comp": "node ./scripts/generateComponent",
-    "gen:view": "node ./scripts/generateView",
+    "gen:comp": "node scripts/generateComponent",
+    "gen:view": "node scripts/generateView",
     "inspect": "vue inspect > output.js --verbose",
     "lint:style": "vue-cli-service lint:style",
     "release": "sh build/release.sh",
     "report": "npm_config_generate_report=true npm run build",
-    "svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext js --es6"
+    "svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext js --es6",
+    "compress": "node build/tinypng.js"
   },
   "dependencies": {
     "@liwb/cloud-utils": "latest",
@@ -42,6 +43,8 @@
     "eslint-plugin-vue": "^5.0.0",
     "html-webpack-include-assets-plugin": "^1.0.6",
     "husky": "^1.1.4",
+    "imagemin": "^6.1.0",
+    "imagemin-webp": "^5.0.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "lint-staged": "^8.0.4",
@@ -53,6 +56,7 @@
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-order": "^2.1.0",
+    "tinify": "^1.6.0-beta.2",
     "vue-template-compiler": "^2.5.17",
     "webpack-bundle-analyzer": "^3.0.3",
     "webstorm-disable-index": "^1.2.0"
@@ -88,6 +92,8 @@
     "deploy": "生产环境执行构建并压缩zip包",
     "svg": "基于 vue-svgicon，构建 svg 雪碧图",
     "gen:comp": "自动生成组件相关文件（.vue,.less）",
-    "gen:view": "自动生成视图相关文件（.vue,.less）"
-  }
+    "gen:view": "自动生成视图相关文件（.vue,.less）",
+    "compress": ".jpg或.png格式图片压缩并且转换Webp格式文件"
+  },
+  "tinypngkey": "GRbtc5JbDBMyRfjKdKHjPtgcHz7q3cmw"
 }

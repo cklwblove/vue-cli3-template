@@ -26,6 +26,8 @@
 
 - 支持根据 `npm scripts`，自动生成 `component` 和 `view` 功能
 
+- 支持采用`TinyPNG node.js API` 进行在线压缩`.jpg`或`.png`格式图片，并且转换`Webp`格式文件
+
 
 ## 目录介绍
 
