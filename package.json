@@ -18,7 +18,8 @@
     "release": "sh build/release.sh",
     "report": "npm_config_generate_report=true npm run build",
     "svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext js --es6",
-    "compress": "node build/tinypng.js"
+    "compress": "node build/tinypng.js",
+    "towebp": "node build/towebp.js"
   },
   "dependencies": {
     "@liwb/cloud-utils": "latest",
@@ -45,6 +46,7 @@
     "husky": "^1.1.4",
     "imagemin": "^6.1.0",
     "imagemin-webp": "^5.0.0",
+    "imagemin-webp-webpack-plugin": "^3.1.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "lint-staged": "^8.0.4",
