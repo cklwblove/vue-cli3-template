@@ -1,12 +1,34 @@
 <template>
   <div id="app">
     <div class="pages">
+      <!--断网处理-->
+      <NoNet v-if="netStatus"/>
       <transition name="fade" mode="out-in">
         <router-view></router-view>
       </transition>
     </div>
   </div>
 </template>
+
+<script>
+  import {NoNet} from '@/components';
+
+  export default {
+    components: {
+      NoNet
+    },
+    data() {
+      return {
+        netStatus: false
+      };
+    },
+    mounted() {
+      window.EventBus.$on('isBrokenNetwork', (status) => {
+        this.netStatus = status;
+      });
+    }
+  };
+</script>
 
 <style lang="less" rel="stylesheet/less">
   @import "~@/assets/less/app.less";

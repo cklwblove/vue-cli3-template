@@ -11,6 +11,7 @@ const Bus = {
     const EventBus = new Vue({});
     Vue.prototype.$bus = EventBus;
     Vue.EventBus = EventBus;
+    window.EventBus = EventBus;
   }
 };
 
