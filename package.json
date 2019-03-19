@@ -22,10 +22,10 @@
     "towebp": "node build/towebp.js"
   },
   "dependencies": {
-    "@liwb/cloud-utils": "latest",
+    "@liwb/cloud-utils": "*",
     "axios": "^0.18.0",
     "lib-flexible": "^0.3.2",
-    "magicless": "latest",
+    "magicless": "*",
     "normalize.css": "^7.0.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
