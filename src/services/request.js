@@ -30,12 +30,23 @@ axios.interceptors.request.use((config) => {
 axios.interceptors.response.use((response) => {
   return checkStatus(response);
 }, function (error) {
-  // 接口请求超时统一处理
-  if (error.code === 'ECONNABORTED') {
+  const {response, code} = error;
+  // 接口请求异常统一处理
+  if (code === 'ECONNABORTED') {
     // Timeout error
+    console.log('Timeout error', code);
   }
-  // 对返回的错误进行一些处理
-  return Promise.reject(checkStatus(error));
+  if (response) {
+    // 请求已发出，但是不在2xx的范围
+    // 对返回的错误进行一些处理
+    return Promise.reject(checkStatus(error));
+  } else {
+    // 处理断网的情况
+    // eg:请求超时或断网时，更新state的network状态
+    // network状态在app.vue中控制着一个全局的断网提示组件的显示隐藏
+    // 关于断网组件中的刷新重新获取数据，会在断网组件中说明
+    // store.commit('changeNetwork', false);
+  }
 });
 
 function checkStatus(response) {
