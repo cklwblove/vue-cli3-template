@@ -6,7 +6,8 @@ import './components/global';
 import './icons';
 import './router/router.interceptor';
 import './filters';
-import './services'
+import './bus';
+import './services';
 
 /* eslint-disable */
 Vue.config.productionTip = process.env.NODE_ENV === 'production';
