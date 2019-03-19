@@ -3,6 +3,7 @@
 [![license](https://img.shields.io/badge/vue-2.5.17-brightgreen.svg)](https://github.com/vuejs/vue)
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/cklwblove/vue-cli3-template/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/cklwblove/vue-cli3-template.svg?branch=master)](https://travis-ci.org/cklwblove/vue-cli3-template)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcklwblove%2Fvue-cli3-template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcklwblove%2Fvue-cli3-template?ref=badge_shield)
 
 基于 vue-cli3 搭建的前端模板，fork 或 clone 本仓库，即可搭建完成一个新项目的基础模板
 
@@ -109,3 +110,6 @@ yarn run report
 ## License
 
 [MIT](https://github.com/cklwblove/vue-cli3-template/blob/master/LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcklwblove%2Fvue-cli3-template.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcklwblove%2Fvue-cli3-template?ref=badge_large)
