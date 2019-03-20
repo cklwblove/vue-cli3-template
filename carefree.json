@@ -1,0 +1,8 @@
+{
+  "host": "your host address",
+  "port": "your host address port",
+  "source": "your upload directory",
+  "username": "your server username",
+  "password": "your server password",
+  "target": "your upload the server directory"
+}

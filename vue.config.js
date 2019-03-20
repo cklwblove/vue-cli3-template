@@ -6,6 +6,8 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const chalk = require('chalk');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+const Carefree = require('@liwb/carefree-webpack-plugin');
+const {host, port, source, username, password, target} = require('./carefree');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const resolve = (dir) => {
@@ -14,6 +16,10 @@ const resolve = (dir) => {
 
 const isProd = () => {
   return process.env.NODE_ENV === 'production';
+};
+
+const isCarefree = () => {
+  return process.env.NODE_ENV === 'carefree';
 };
 
 const genPlugins = () => {
@@ -37,6 +43,23 @@ const genPlugins = () => {
         threshold: 10240,
         minRatio: 0.8,
         cache: true
+      })
+    );
+  }
+
+  if (isCarefree()) {
+    plugins.push(
+      new Carefree({
+        qrcodeUrl: `http://www.example.com/${pkg.name}/index.html`,
+        devtool: 'true',
+        ssh: {
+          host,
+          port,
+          source,
+          username,
+          password,
+          target: `${target}${pkg.name}`
+        }
       })
     );
   }
@@ -65,7 +88,7 @@ module.exports = {
    */
   publicPath: './',
 
-  assetsDir: 'static',
+  assetsDir: isCarefree() ? './' : 'static',
   lintOnSave: process.env.NODE_ENV !== 'production',
   productionSourceMap: false,
 
