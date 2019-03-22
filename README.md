@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/cklwblove/vue-cli3-template.svg?branch=master)](https://travis-ci.org/cklwblove/vue-cli3-template)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcklwblove%2Fvue-cli3-template.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcklwblove%2Fvue-cli3-template?ref=badge_shield)
 
-基于 vue-cli3 搭建的前端模板，fork 或 clone 本仓库，即可搭建完成一个新项目的基础模板
+基于 vue-cli3 搭建的前端模板，fork 或 clone 本仓库，即可搭建完成一个新项目的基础模板(持续更新中...)
 
 **🚀 结合 vue-cli3 的 preset 搭建基于 git repo 的前端项目模板，可以移步 [vue-preset](https://github.com/cklwblove/vue-preset)**
 
@@ -37,6 +37,8 @@
   - 监听文件，一旦保存修改，增量编译 *（解决全量编译速度慢的问题）*
   - 将编译后且有变化的文件增量上传到内网服务器 *（解决全量上传速度慢的问题）*
   - 在手机上刷新页面或重新扫码即可看到变化
+
+- 支持 `skeleton` ** （骨架屏注入）**
 
 
 ## 目录介绍
@@ -91,6 +93,18 @@ yarn run gen:comp
 
 # 自动生成 view
 yarn run gen:view
+
+# 压缩图片
+yarn run compress
+
+# 生成 webp
+yarn run webp
+
+# css,less 文件代码检测
+yarn run lint:style
+
+# 骨架屏注入
+yarn run skeleton
 
 ```
 
