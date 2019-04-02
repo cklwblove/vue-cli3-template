@@ -40,6 +40,8 @@
 
 - 支持 `skeleton`，**骨架屏注入**
 
+- 支持**开发模式**下，终端打印入口页面地址及生成二维码，**依赖Wifi热点，手机设备和PC必须处在同一局域网**([vue-cli-plugin-qrcode](https://github.com/cklwblove/vue-cli-plugin-qrcode))
+
 
 ## 目录介绍
 
