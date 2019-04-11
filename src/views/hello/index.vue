@@ -64,7 +64,7 @@
    */
   // 工具类
   import {formatDate} from 'utils';
-  import {SendCode} from '@components';
+  import {SendCode} from '@/components';
 
   export default {
     components: {
