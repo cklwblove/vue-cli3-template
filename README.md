@@ -42,6 +42,8 @@
 
 - 支持**开发模式**下，终端打印入口页面地址及生成二维码，**依赖Wifi热点，手机设备和PC必须处在同一局域网**([vue-cli-plugin-qrcode](https://github.com/cklwblove/vue-cli-plugin-qrcode))
 
+- 引入 [plop](https://plopjs.com/),执行脚本 `npm run new` 自动生成 `view` 或者 `component` 模板文件(**灵感来源：[New](https://panjiachen.github.io/vue-element-admin-site/zh/feature/script/new.html)**)。
+
 
 ## 目录介绍
 
@@ -90,11 +92,8 @@ yarn run build
 # 压缩 dist 文件夹，生成 zip 包
 yarn run deploy
 
-# 自动生成 component
-yarn run gen:comp
-
-# 自动生成 view
-yarn run gen:view
+# 自动生成 view or component
+yarn run new
 
 # 压缩图片
 yarn run compress

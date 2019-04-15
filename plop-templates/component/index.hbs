@@ -1,0 +1,46 @@
+{{#if template}}
+<template>
+  <div class="comp-{{ kebabCase name }}">
+    {{ kebabCase name }} 组件
+  </div>
+</template>
+{{/if}}
+
+{{#if script}}
+<script>
+  export default {
+    name: '{{ properCase name }}',
+
+    props: {},
+
+    mixins: [],
+
+    components: {},
+
+    data() {
+      return {};
+    },
+
+    computed: {},
+
+    watch: {},
+
+    created() {
+    },
+
+    mounted() {
+    },
+
+    destroyed() {
+    },
+
+    methods: {}
+  };
+</script>
+{{/if}}
+
+{{#if style}}
+<style lang="less" rel="stylesheet/less" scoped>
+  @import "./style.less";
+</style>
+{{/if}}

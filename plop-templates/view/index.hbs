@@ -1,0 +1,44 @@
+{{#if template}}
+<template>
+  <div class="page-{{ kebabCase name }}">
+    {{ kebabCase name }} 视图
+  </div>
+</template>
+{{/if}}
+
+{{#if script}}
+<script>
+export default {
+  name: '{{ camelCase name }}',
+
+  mixins: [],
+
+  components: {},
+
+  data() {
+    return {};
+  },
+
+  computed: {},
+
+  watch: {},
+
+  created() {
+  },
+
+  mounted() {
+  },
+
+  destroyed() {
+  },
+
+  methods: {}
+}
+</script>
+{{/if}}
+
+{{#if style}}
+<style lang="less" rel="stylesheet/less" scoped>
+  @import "./style.less";
+</style>
+{{/if}}
