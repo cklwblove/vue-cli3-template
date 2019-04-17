@@ -19,11 +19,6 @@ const routes = [
     component: loadView('hello')
   },
   {
-    path: '/home',
-    name: 'home',
-    component: loadView('home')
-  },
-  {
     path: '*', redirect: '/'
   }
 ];
