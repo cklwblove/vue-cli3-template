@@ -44,6 +44,7 @@
 
 - 引入 [plop](https://plopjs.com/),执行脚本 `npm run new` 自动生成 `view` 或者 `component` 模板文件(**灵感来源：[New](https://panjiachen.github.io/vue-element-admin-site/zh/feature/script/new.html)**)。
 
+- 支持根据 `views` 路径自动生成 `vue-router` 的路由（src/router/.invoke/router.js），且支持**热更新**。(**灵感来源**：[vue-router-invoke-webpack-plugin](https://github.com/cklwblove/vue-router-invoke-webpack-plugin))
 
 ## 目录介绍
 
