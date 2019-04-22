@@ -36,6 +36,7 @@ yarn-error.log*
 .happypack
 .history
 yarn.lock
+.invoke
 
 # inspect
 output.js
