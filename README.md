@@ -48,6 +48,8 @@
 
 - 支持根据 `views` 路径自动生成 `vue-router` 的路由（src/router/.invoke/router.js），且支持**热更新**。(**灵感来源**：[vue-router-invoke-webpack-plugin](https://github.com/cklwblove/vue-router-invoke-webpack-plugin))
 
+- 支持 `PWA`
+
 ## 目录介绍
 
 ```

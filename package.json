@@ -23,7 +23,8 @@
     "skeleton-html": "node ./src/skeleton/skeleton.js",
     "skeleton-json": "node ./build/skeleton.js",
     "svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext js --es6",
-    "towebp": "node build/towebp.js"
+    "towebp": "node build/towebp.js",
+    "changlog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "@liwb/cloud-utils": "*",
@@ -73,7 +74,7 @@
     "stylelint-config-standard": "^18.2.0",
     "stylelint-order": "^2.1.0",
     "tinify": "^1.6.0-beta.2",
-    "vue-cli-plugin-qrcode": "^0.0.3",
+    "vue-cli-plugin-qrcode": "^0.0.5",
     "vue-router-invoke-webpack-plugin": "^0.2.5",
     "vue-server-renderer": "^2.6.10",
     "vue-template-compiler": "^2.6.10",

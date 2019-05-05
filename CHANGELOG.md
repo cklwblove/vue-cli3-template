@@ -5,6 +5,7 @@
 ### Features
 
 * 增加 mixins(派发与广播—— dispatch 和 broadcast 方法) ([d5157c0](https://github.com/cklwblove/vue-cli3-template/commit/d5157c0))
+* 增加 pwa 的支持 ([6a182e4](https://github.com/cklwblove/vue-cli3-template/commit/6a182e4))
 * 增加 组件通信方法集锦 ([090ba15](https://github.com/cklwblove/vue-cli3-template/commit/090ba15))
 * 增加在 WebStorm 中，配置能够识别 Vue CLI 3 创建的项目的别名 alias @ ([821abf6](https://github.com/cklwblove/vue-cli3-template/commit/821abf6))
 * 支持开发模式下，终端打印入口页面地址及生成二维码 ([568b043](https://github.com/cklwblove/vue-cli3-template/commit/568b043))
