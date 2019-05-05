@@ -7,6 +7,7 @@ import './icons';
 import './filters';
 import './bus';
 import './services';
+import './registerServiceWorker'
 
 /* eslint-disable */
 Vue.config.productionTip = process.env.NODE_ENV === 'production';

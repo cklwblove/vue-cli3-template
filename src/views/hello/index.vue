@@ -85,6 +85,7 @@
 
     methods: {
       movieComingSoon() {
+        // debugger
         const data = {};
         this.$services.octocat({
           method: 'get',
