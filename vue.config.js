@@ -262,6 +262,14 @@ module.exports = {
 
   pluginOptions: {
     lintStyleOnBuild: true,
-    stylelint: {}
+    stylelint: {},
+    dll: {
+      entry: {
+        vendor: [
+          'vue',
+          'vue-router'
+        ]
+      }
+    }
   }
 };

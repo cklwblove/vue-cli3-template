@@ -12,7 +12,9 @@
     "deploy": "npm run build && node build/zip.js",
     "analyz": "vue-cli-service build --mode analyz",
     "carefree-dev": "cross-env NODE_ENV=carefree carefree_env=dev vue-cli-service build --watch",
+    "changlog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "compress": "node build/tinypng.js",
+    "dll": "vue-cli-service dll",
     "inspect": "vue inspect > output.js --verbose",
     "lint:style": "vue-cli-service lint:style",
     "new": "plop",
@@ -23,8 +25,7 @@
     "skeleton-html": "node ./src/skeleton/skeleton.js",
     "skeleton-json": "node ./build/skeleton.js",
     "svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext js --es6",
-    "towebp": "node build/towebp.js",
-    "changlog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "towebp": "node build/towebp.js"
   },
   "dependencies": {
     "@liwb/cloud-utils": "*",
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@ascendancyy/vue-cli-plugin-stylelint": "^1.1.2",
     "@liwb/carefree-webpack-plugin": "^0.4.2",
+    "@liwb/vue-cli-plugin-dll": "^1.0.4",
     "@liwb/vue-router-invoke-webpack-plugin": "^0.3.1",
     "@vue/cli-plugin-babel": "^3.6.0",
     "@vue/cli-plugin-eslint": "^3.6.0",

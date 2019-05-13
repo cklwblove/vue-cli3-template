@@ -1,0 +1,1 @@
+{"name":"vendor_library","content":{"./node_modules/vue/dist/vue.runtime.esm.js":{"id":1,"buildMeta":{"exportsType":"namespace","providedExports":["default"]}},"./node_modules/webpack/buildin/global.js":{"id":2,"buildMeta":{"providedExports":true}},"./node_modules/vue-router/dist/vue-router.esm.js":{"id":3,"buildMeta":{"exportsType":"namespace","providedExports":["default"]}}}}
