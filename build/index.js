@@ -11,7 +11,7 @@ run(`vue-cli-service build ${args}`, {
   async: true,
   stdio: 'inherit'
 }).then((output) => {
-  // console.log(chalk.cyan(output));
+  console.log(chalk.cyan(output || ''));
 }).catch((err) => {
   console.error('\n');
   console.error(chalk.magenta('编译打包出错了 ~~~~(>_<)~~~~ \n'))
