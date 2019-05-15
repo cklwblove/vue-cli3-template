@@ -19,7 +19,7 @@
     "lint:style": "vue-cli-service lint:style",
     "new": "plop",
     "release": "sh build/release.sh",
-    "report": "npm_config_generate_report=true npm run build",
+    "report": "npm run build --generate_report",
     "skeleton": "npm run skeleton-json && npm run skeleton-html ",
     "skeleton-html": "node ./src/skeleton/skeleton.js",
     "skeleton-json": "node ./build/skeleton.js",
