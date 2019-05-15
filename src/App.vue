@@ -23,7 +23,7 @@
       };
     },
     mounted() {
-      this.$bus.$on('isBrokenNetwork', (status) => {
+      this.$eventBus.$on('isBrokenNetwork', (status) => {
         this.netStatus = status;
       });
     }

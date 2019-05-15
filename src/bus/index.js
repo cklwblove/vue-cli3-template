@@ -66,6 +66,7 @@ class EventBus {
 let $EventBus = {};
 
 $EventBus.install = (Vue) => {
+  window.$eventBus = new EventBus(Vue);
   Vue.prototype.$eventBus = new EventBus(Vue);
   Vue.mixin({
     beforeDestroy() {
@@ -75,7 +76,7 @@ $EventBus.install = (Vue) => {
   });
 };
 
-Vue.use(EventBus);
+Vue.use($EventBus);
 
 // 组件中使用
 // created () {

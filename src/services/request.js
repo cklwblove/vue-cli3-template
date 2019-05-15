@@ -28,7 +28,7 @@ axios.interceptors.request.use((config) => {
 // 添加一个返回拦截器 （于transformResponse之后处理）
 // 返回的数据类型默认是json，若是其他类型（text）就会出现问题，因此用try,catch捕获异常
 axios.interceptors.response.use((response) => {
-  window.EventBus.$emit('isBrokenNetwork', false);
+  window.$eventBus.$emit('isBrokenNetwork', false);
   return checkStatus(response);
 }, function (error) {
   const {response, code} = error;
@@ -47,7 +47,7 @@ axios.interceptors.response.use((response) => {
     // network状态在app.vue中控制着一个全局的断网提示组件的显示隐藏
     // 关于断网组件中的刷新重新获取数据，会在断网组件中说明
     console.log('断网了~');
-    window.EventBus.$emit('isBrokenNetwork', true);
+    window.$eventBus.$emit('isBrokenNetwork', true);
   }
 });
 
@@ -152,6 +152,12 @@ export default function request(url, {
 
   if (method === 'get') {
     delete defaultConfig.data;
+    // 给 get 请求加上时间戳参数，避免从缓存中拿数据。
+    if (data !== undefined) {
+      defaultConfig.params = Object.assign(defaultConfig.params, {_t: (new Date()).getTime()})
+    } else {
+      defaultConfig.params = {_t: (new Date()).getTime()}
+    }
   } else {
     delete defaultConfig.params;
 
