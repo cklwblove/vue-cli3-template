@@ -131,11 +131,8 @@ export default function request(url, {
   dataType = 'json'
 }) {
   const baseURL = autoMatchBaseUrl(prefix);
-
-  headers = Object.assign(method === 'get' ? {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json; charset=UTF-8'
-  } : {
+  
+  headers = Object.assign({
     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
   }, headers);
 
