@@ -57,7 +57,11 @@ export function findComponentsDownward(context, componentName) {
 }
 
 // 由一个组件，找到指定组件的兄弟组件
-export function findBrothersComponents(context, componentName, exceptMe = true) {
+export function findBrothersComponents(
+  context,
+  componentName,
+  exceptMe = true
+) {
   let res = context.$parent.$children.filter((item) => {
     return item.$options.name === componentName;
   });
@@ -78,7 +82,7 @@ function typeOf(obj) {
     '[object RegExp]': 'regExp',
     '[object Undefined]': 'undefined',
     '[object Null]': 'null',
-    '[object Object]': 'object'
+    '[object Object]': 'object',
   };
   return map[toString.call(obj)];
 }

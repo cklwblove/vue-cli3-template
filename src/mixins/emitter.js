@@ -40,8 +40,8 @@ export default {
     },
     broadcast(componentName, eventName, params) {
       broadcast.call(this, componentName, eventName, params);
-    }
-  }
+    },
+  },
 };
 
 /*

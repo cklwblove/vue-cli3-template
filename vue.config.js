@@ -7,8 +7,16 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const chalk = require('chalk');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const Carefree = require('@liwb/carefree-webpack-plugin');
-const {host, port, source, username, password, target} = require('./carefree');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const {
+  host,
+  port,
+  source,
+  username,
+  password,
+  target,
+} = require('./carefree');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 const VueRouterInvokeWebpackPlugin = require('@liwb/vue-router-invoke-webpack-plugin');
 
 const resolve = (dir) => {
@@ -26,8 +34,11 @@ const isCarefree = () => {
 const genPlugins = () => {
   const plugins = [
     new ProgressBarPlugin({
-      format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
-      clear: false
+      format:
+        '  build [:bar] ' +
+        chalk.green.bold(':percent') +
+        ' (:elapsed seconds)',
+      clear: false,
     }),
     new VueRouterInvokeWebpackPlugin({
       dir: 'src/views',
@@ -39,15 +50,15 @@ const genPlugins = () => {
       redirect: [
         {
           redirect: '/hello',
-          path: '/'
-        }
-      ]
+          path: '/',
+        },
+      ],
     }),
     // 为静态资源文件添加 hash，防止缓存
     new AddAssetHtmlPlugin({
       filepath: path.resolve(__dirname, './public/config.local.js'),
-      hash: true
-    })
+      hash: true,
+    }),
   ];
 
   if (isProd()) {
@@ -55,14 +66,10 @@ const genPlugins = () => {
       new CompressionWebpackPlugin({
         filename: '[path].gz[query]',
         algorithm: 'gzip',
-        test: new RegExp(
-          '\\.(' +
-          ['js', 'css'].join('|') +
-          ')$'
-        ),
+        test: new RegExp('\\.(' + ['js', 'css'].join('|') + ')$'),
         threshold: 10240,
         minRatio: 0.8,
-        cache: true
+        cache: true,
       })
     );
   }
@@ -78,8 +85,8 @@ const genPlugins = () => {
           source,
           username,
           password,
-          target: `${target}${pkg.name}`
-        }
+          target: `${target}${pkg.name}`,
+        },
       })
     );
   }
@@ -111,8 +118,8 @@ module.exports = {
     hotOnly: false,
     overlay: {
       warnings: false,
-      errors: true
-    }
+      errors: true,
+    },
   },
 
   // css相关配置
@@ -124,7 +131,7 @@ module.exports = {
     // css预设器配置项
     loaderOptions: {},
     // 启用 CSS modules for all css / pre-processor files.
-    modules: false
+    modules: false,
   },
 
   configureWebpack: () => ({
@@ -142,13 +149,13 @@ module.exports = {
         '@views': resolve('src/views'),
 
         // 文件别名
-        'services': resolve('src/services'),
-        'variable': resolve('src/assets/less/variable.less'),
-        'utils': resolve('node_modules/@liwb/cloud-utils/dist/cloud-utils.esm'),
-        'mixins': resolve('node_modules/magicless/magicless.less')
-      }
+        services: resolve('src/services'),
+        variable: resolve('src/assets/less/variable.less'),
+        utils: resolve('node_modules/@liwb/cloud-utils/dist/cloud-utils.esm'),
+        mixins: resolve('node_modules/magicless/magicless.less'),
+      },
     },
-    plugins: genPlugins()
+    plugins: genPlugins(),
   }),
 
   // webpack配置
@@ -163,101 +170,97 @@ module.exports = {
       .use('style-resources-loader')
       .loader('style-resources-loader')
       .options({
-        patterns: [path.resolve(__dirname, 'src/assets/less/variable.less'), path.resolve(__dirname, 'node_modules/magicless/magicless.less')],
-        injector: 'prepend'
-      }).end();
+        patterns: [
+          path.resolve(__dirname, 'src/assets/less/variable.less'),
+          path.resolve(__dirname, 'node_modules/magicless/magicless.less'),
+        ],
+        injector: 'prepend',
+      })
+      .end();
 
-    config
-      .when(process.env.NODE_ENV === 'development',
-        (config) => config.devtool('cheap-source-map')
-      );
+    config.when(process.env.NODE_ENV === 'development', (config) =>
+      config.devtool('cheap-source-map')
+    );
 
     // runtime.js 内联的形式嵌入
-    config
-      .plugin('preload')
-      .tap((args) => {
-        args[0].fileBlacklist.push(/runtime\./);
-        return args;
-      });
+    config.plugin('preload').tap((args) => {
+      args[0].fileBlacklist.push(/runtime\./);
+      return args;
+    });
 
     // webpack-html-plugin
-    config
-      .plugin('html')
-      .tap((args) => {
-        args[0].minify = {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true,
-          removeStyleLinkTypeAttributes: true,
-          keepClosingSlash: true,
-          minifyJS: true,
-          minifyCSS: true,
-          minifyURLs: true
-        };
-        return args;
-      });
+    config.plugin('html').tap((args) => {
+      args[0].minify = {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+      };
+      return args;
+    });
 
     // optimization
     // https://imweb.io/topic/5b66dd601402769b60847149
-    config
-      .when(process.env.NODE_ENV === 'production',
-        (config) => {
-          config
-            .plugin('ScriptExtHtmlWebpackPlugin')
-            .use('script-ext-html-webpack-plugin', [{
-              // `runtime` must same as runtimeChunk name. default is `runtime`
-              inline: /runtime\..*\.js$/
-            }]);
-          config
-            .optimization
-            .splitChunks({
-              chunks: 'all',
-              cacheGroups: {
-                vendors: {
-                  name: 'chunk-vendors',
-                  test: /[\\/]node_modules[\\/]/,
-                  priority: 10,
-                  chunks: 'initial' // 只打包初始时依赖的第三方
-                },
-                commons: {
-                  name: 'chunk-commons',
-                  test: resolve('src/components'), // 可自定义拓展你的规则
-                  minChunks: 3, // 最小公用次数
-                  priority: 5,
-                  reuseExistingChunk: true
-                }
-              }
-            });
-          config.optimization.runtimeChunk('single');
-        }
-      );
+    config.when(process.env.NODE_ENV === 'production', (config) => {
+      config
+        .plugin('ScriptExtHtmlWebpackPlugin')
+        .use('script-ext-html-webpack-plugin', [
+          {
+            // `runtime` must same as runtimeChunk name. default is `runtime`
+            inline: /runtime\..*\.js$/,
+          },
+        ]);
+      config.optimization.splitChunks({
+        chunks: 'all',
+        cacheGroups: {
+          vendors: {
+            name: 'chunk-vendors',
+            test: /[\\/]node_modules[\\/]/,
+            priority: 10,
+            chunks: 'initial', // 只打包初始时依赖的第三方
+          },
+          commons: {
+            name: 'chunk-commons',
+            test: resolve('src/components'), // 可自定义拓展你的规则
+            minChunks: 3, // 最小公用次数
+            priority: 5,
+            reuseExistingChunk: true,
+          },
+        },
+      });
+      config.optimization.runtimeChunk('single');
+    });
 
     // Run the build command with an extra argument to
     // View the bundle analyzer report after build finishes:
     // `npm run analyz`
-    config
-      .when(process.env.IS_ANALYZ,
-        (config) => config
-          .plugin('webpack-bundle-analyzer')
-          .use(BundleAnalyzerPlugin, [{
-            analyzerPort: 8888,
-            generateStatsFile: false
-          }])
-      );
+    config.when(process.env.IS_ANALYZ, (config) =>
+      config.plugin('webpack-bundle-analyzer').use(BundleAnalyzerPlugin, [
+        {
+          analyzerPort: 8888,
+          generateStatsFile: false,
+        },
+      ])
+    );
 
     // `npm run build --generate_report`
-    config
-      .when(process.env.npm_config_generate_report,
-        (config) => config
-          .plugin('webpack-bundle-analyzer-report')
-          .use(BundleAnalyzerPlugin, [{
+    config.when(process.env.npm_config_generate_report, (config) =>
+      config
+        .plugin('webpack-bundle-analyzer-report')
+        .use(BundleAnalyzerPlugin, [
+          {
             analyzerMode: 'static',
             reportFilename: 'bundle-report.html',
-            openAnalyzer: false
-          }])
-      );
+            openAnalyzer: false,
+          },
+        ])
+    );
   },
 
   pluginOptions: {
@@ -265,11 +268,8 @@ module.exports = {
     stylelint: {},
     dll: {
       entry: {
-        vendor: [
-          'vue',
-          'vue-router'
-        ]
-      }
-    }
-  }
+        vendor: ['vue', 'vue-router'],
+      },
+    },
+  },
 };

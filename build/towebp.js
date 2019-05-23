@@ -15,9 +15,7 @@ const fileSrc = './src/assets/img/*.{jpeg,jpg,png,JPEG,JPG,PNG}';
 const fileOut = 'src/assets/img/webp';
 
 imagemin([fileSrc], fileOut, {
-  use: [
-    imageminWebp({autoFilter: true})
-  ]
+  use: [imageminWebp({ autoFilter: true })],
 }).then((ret) => {
   console.log(chalk.green(`webp转换已完成～`));
 });

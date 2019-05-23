@@ -1,4 +1,4 @@
-import {UPLOAD_PREFIX} from '../constant';
+import { UPLOAD_PREFIX } from '../constant';
 
 /**
  * 根据前缀，自动匹配基础的url

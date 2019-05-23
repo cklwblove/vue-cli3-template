@@ -12,15 +12,15 @@
   </div>
 </template>
 <script type="text/babel">
-  export default {
-    methods: {
-      refresh() {
-        this.$router.replace('/refresh');
-      }
-    }
-  };
+export default {
+  methods: {
+    refresh() {
+      this.$router.replace('/refresh');
+    },
+  },
+};
 </script>
 
 <style lang="less" rel="stylesheet/less" scoped>
-  @import "style.less";
+@import 'style.less';
 </style>

@@ -9,10 +9,10 @@ module.exports = {
   resolve: {
     alias: {
       '@': resolve('src'),
-      'services': resolve('src/services'),
-      'variable': resolve('src/assets/less/variable.less'),
-      'utils': resolve('node_modules/@liwb/cloud-utils/dist/cloud-utils.esm'),
-      'mixins': resolve('node_modules/magicless/magicless.less')
-    }
-  }
+      services: resolve('src/services'),
+      variable: resolve('src/assets/less/variable.less'),
+      utils: resolve('node_modules/@liwb/cloud-utils/dist/cloud-utils.esm'),
+      mixins: resolve('node_modules/magicless/magicless.less'),
+    },
+  },
 };

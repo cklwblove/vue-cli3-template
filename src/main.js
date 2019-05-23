@@ -7,7 +7,7 @@ import './icons';
 import './filters';
 import './bus';
 import './services';
-import './registerServiceWorker'
+import './registerServiceWorker';
 
 /* eslint-disable */
 Vue.config.productionTip = process.env.NODE_ENV === 'production';
@@ -18,5 +18,5 @@ new Vue({
   router,
   // use Runtime-only
   // https://vuejs.org/v2/guide/installation.html
-  render: (h) => h(App)
+  render: (h) => h(App),
 });

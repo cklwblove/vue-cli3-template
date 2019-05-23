@@ -7,11 +7,20 @@ module.exports = {
     'postcss-pxtorem': {
       rootValue: 37.5,
       unitPrecision: 5,
-      propList: ['height', 'width', 'padding', 'margin', 'top', 'left', 'right', 'bottom'],
+      propList: [
+        'height',
+        'width',
+        'padding',
+        'margin',
+        'top',
+        'left',
+        'right',
+        'bottom',
+      ],
       selectorBlackList: [],
       replace: true,
       mediaQuery: false,
-      minPixelValue: 1
-    }
-  }
-}
+      minPixelValue: 1,
+    },
+  },
+};

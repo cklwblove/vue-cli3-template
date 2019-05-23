@@ -1,4 +1,4 @@
 /* eslint-disable */
-import './cat'
-import './dog'
-import './refresh'
+import './cat';
+import './dog';
+import './refresh';

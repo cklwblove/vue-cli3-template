@@ -1,3 +1,3 @@
 export default {
-  "octocat": "users/octocat"
-}
+  octocat: 'users/octocat',
+};

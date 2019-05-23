@@ -14,6 +14,6 @@ function install(Vue) {
 }
 
 const skeletonLoading = {
-  install
+  install,
 };
 export default skeletonLoading;

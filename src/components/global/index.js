@@ -18,8 +18,10 @@ function capitalizeFirstLetter(str) {
  * @return {string} BasicTable
  */
 function validateFileName(str) {
-  return /^\S+\.vue$/.test(str) &&
-    str.replace(/^\S+\/(\w+)\.vue$/, (rs, $1) => capitalizeFirstLetter($1));
+  return (
+    /^\S+\.vue$/.test(str) &&
+    str.replace(/^\S+\/(\w+)\.vue$/, (rs, $1) => capitalizeFirstLetter($1))
+  );
 }
 
 // 自动加载 global 目录下的 .vue 结尾的文件
@@ -31,8 +33,9 @@ componentsContext.keys().forEach((component) => {
   // 兼容 import export 和 require module.export 两种规范
   const ctrl = componentConfig.default || componentConfig;
   const fileName = validateFileName(component);
-  const componentName = fileName.toLowerCase() === 'index'
-    ? capitalizeFirstLetter(componentConfig.default.name)
-    : fileName;
+  const componentName =
+    fileName.toLowerCase() === 'index'
+      ? capitalizeFirstLetter(componentConfig.default.name)
+      : fileName;
   Vue.component(componentName, ctrl);
 });

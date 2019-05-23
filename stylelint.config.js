@@ -8,9 +8,8 @@
 module.exports = {
   root: true,
   processors: [],
+  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
   plugins: ['stylelint-order'],
-  extends: 'stylelint-config-standard',
-
   rules: {
     // 允许嵌套的深度最多 3 层
     'max-nesting-depth': 3,
@@ -161,7 +160,7 @@ module.exports = {
       'page',
       'set-link-source',
       'unicode-bidi',
-      'speak'
-    ]
-  }
+      'speak',
+    ],
+  },
 };

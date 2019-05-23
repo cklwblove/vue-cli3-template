@@ -10,7 +10,7 @@
 import Qs from 'qs';
 import axios from 'axios';
 import autoMatchBaseUrl from './autoMatchBaseUrl';
-import {TIMEOUT, HOME_PREFIX} from '../constant';
+import { TIMEOUT, HOME_PREFIX } from '../constant';
 
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
@@ -27,65 +27,72 @@ const codeMessage = {
   500: '服务器发生错误，请检查服务器。',
   502: '网关错误。',
   503: '服务不可用，服务器暂时过载或维护。',
-  504: '网关超时。'
+  504: '网关超时。',
 };
 
 // 添加一个请求拦截器 （于transformRequest之前处理）
-axios.interceptors.request.use((config) => {
-  // 以下代码，鉴权token,可根据具体业务增删。
-  // demo示例:
-  if (~config['url'].indexOf('operatorQry')) {
-    config.headers['accessToken'] = 'de4738c67e1bb450be71b660f0716aa4675860cec1ff9bc23d800efb40519cf3';
+axios.interceptors.request.use(
+  (config) => {
+    // 以下代码，鉴权token,可根据具体业务增删。
+    // demo示例:
+    if (~config['url'].indexOf('operatorQry')) {
+      config.headers['accessToken'] =
+        'de4738c67e1bb450be71b660f0716aa4675860cec1ff9bc23d800efb40519cf3';
+    }
+    return config;
+  },
+  function(error) {
+    // 当出现请求错误是做一些处理
+    return Promise.reject(error);
   }
-  return config;
-}, function (error) {
-  // 当出现请求错误是做一些处理
-  return Promise.reject(error);
-});
+);
 
 // 添加一个返回拦截器 （于transformResponse之后处理）
 // 返回的数据类型默认是json，若是其他类型（text）就会出现问题，因此用try,catch捕获异常
-axios.interceptors.response.use((response) => {
-  window.$eventBus.$emit('isBrokenNetwork', false);
-  return checkStatus(response);
-}, function (error) {
-  const {response, code} = error;
-  // 接口请求异常统一处理
-  if (code === 'ECONNABORTED') {
-    // Timeout error
-    console.log('Timeout error', code);
+axios.interceptors.response.use(
+  (response) => {
+    window.$eventBus.$emit('isBrokenNetwork', false);
+    return checkStatus(response);
+  },
+  function(error) {
+    const { response, code } = error;
+    // 接口请求异常统一处理
+    if (code === 'ECONNABORTED') {
+      // Timeout error
+      console.log('Timeout error', code);
+    }
+    if (response) {
+      // 请求已发出，但是不在2xx的范围
+      // 对返回的错误进行一些处理
+      return Promise.reject(checkStatus(error));
+    } else {
+      // 处理断网的情况
+      // eg:请求超时或断网时，更新state的network状态
+      // network状态在app.vue中控制着一个全局的断网提示组件的显示隐藏
+      // 关于断网组件中的刷新重新获取数据，会在断网组件中说明
+      console.log('断网了~');
+      window.$eventBus.$emit('isBrokenNetwork', true);
+    }
   }
-  if (response) {
-    // 请求已发出，但是不在2xx的范围
-    // 对返回的错误进行一些处理
-    return Promise.reject(checkStatus(error));
-  } else {
-    // 处理断网的情况
-    // eg:请求超时或断网时，更新state的network状态
-    // network状态在app.vue中控制着一个全局的断网提示组件的显示隐藏
-    // 关于断网组件中的刷新重新获取数据，会在断网组件中说明
-    console.log('断网了~');
-    window.$eventBus.$emit('isBrokenNetwork', true);
-  }
-});
+);
 
 function checkStatus(response) {
   // 如果http状态码正常，则直接返回数据
   if (response) {
-    const {status, statusText} = response;
+    const { status, statusText } = response;
     if ((status >= 200 && status < 300) || status === 304) {
       // 如果不需要除了data之外的数据，可以直接 return response.data
       return response.data;
     }
     return {
       status,
-      msg: codeMessage[status] || statusText
+      msg: codeMessage[status] || statusText,
     };
   }
   // 异常状态下，把错误信息返回去
   return {
     status: -404,
-    msg: '网络异常'
+    msg: '网络异常',
   };
 }
 
@@ -100,19 +107,25 @@ function checkStatus(response) {
  * @param dataType
  * @returns {Promise.<T>}
  */
-export default function request(url, {
-  method = 'post',
-  timeout = TIMEOUT,
-  prefix = HOME_PREFIX,
-  data = {},
-  headers = {},
-  dataType = 'json'
-}) {
+export default function request(
+  url,
+  {
+    method = 'post',
+    timeout = TIMEOUT,
+    prefix = HOME_PREFIX,
+    data = {},
+    headers = {},
+    dataType = 'json',
+  }
+) {
   const baseURL = autoMatchBaseUrl(prefix);
 
-  headers = Object.assign({
-    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-  }, headers);
+  headers = Object.assign(
+    {
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+    },
+    headers
+  );
 
   const defaultConfig = {
     baseURL,
@@ -122,16 +135,18 @@ export default function request(url, {
     data: data,
     timeout,
     headers,
-    responseType: dataType
+    responseType: dataType,
   };
 
   if (method === 'get') {
     delete defaultConfig.data;
     // 给 get 请求加上时间戳参数，避免从缓存中拿数据。
     if (data !== undefined) {
-      defaultConfig.params = Object.assign(defaultConfig.params, {_t: (new Date()).getTime()});
+      defaultConfig.params = Object.assign(defaultConfig.params, {
+        _t: new Date().getTime(),
+      });
     } else {
-      defaultConfig.params = {_t: (new Date()).getTime()};
+      defaultConfig.params = { _t: new Date().getTime() };
     }
   } else {
     delete defaultConfig.params;
@@ -162,6 +177,6 @@ export const uploadFile = (url, formData) => {
   return request(url, {
     method: 'post',
     data: formData,
-    headers: {'Content-Type': 'multipart/form-data'}
+    headers: { 'Content-Type': 'multipart/form-data' },
   });
 };

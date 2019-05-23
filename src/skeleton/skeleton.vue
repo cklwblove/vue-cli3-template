@@ -7,7 +7,11 @@
     </skeleton-row>
     <skeleton-row padding="20px 10px">
       <skeleton-circle diameter="50px"></skeleton-circle>
-      <skeleton-square width="275px" :count="3" margin="5px 10px 5px 10px"></skeleton-square>
+      <skeleton-square
+        width="275px"
+        :count="3"
+        margin="5px 10px 5px 10px"
+      ></skeleton-square>
     </skeleton-row>
 
     <skeleton-row padding="0 10px 20px">
@@ -18,7 +22,10 @@
           :count="2"
           margin="5px 10px 5px 10px"
         ></skeleton-square>
-        <skeleton-square width="100px" margin="5px 10px 5px 10px"></skeleton-square>
+        <skeleton-square
+          width="100px"
+          margin="5px 10px 5px 10px"
+        ></skeleton-square>
       </skeleton-column>
     </skeleton-row>
 
@@ -35,8 +42,15 @@
           height="7.5px"
           margin="5px 10px 5px 10px"
         ></skeleton-square>
-        <skeleton-square width="275px" backColor="#ffffff" :count="2"></skeleton-square>
-        <skeleton-square width="50px" margin="0 10px 5px 10px"></skeleton-square>
+        <skeleton-square
+          width="275px"
+          backColor="#ffffff"
+          :count="2"
+        ></skeleton-square>
+        <skeleton-square
+          width="50px"
+          margin="0 10px 5px 10px"
+        ></skeleton-square>
       </skeleton-column>
     </skeleton-row>
     <skeleton-row padding="0 10px 20px">
@@ -52,5 +66,5 @@
 </template>
 
 <script>
-  export default {};
+export default {};
 </script>

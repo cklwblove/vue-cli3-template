@@ -2,4 +2,6 @@
 /dist/
 node_modules
 /public/
+/scripts
 RESTFULLURL.js
+output.js

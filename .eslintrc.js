@@ -5,17 +5,17 @@ module.exports = {
   root: true,
   // JavaScript 语言选项
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
   //环境定义了预定义的全局变量。更多在官网查看
   env: {
-    node: true
+    node: true,
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
     'plugin:vue/essential',
-    'eslint:recommended'
+    '@vue/prettier',
   ],
 
   /** add your custom rules here
@@ -24,6 +24,7 @@ module.exports = {
    *  'error' 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
    */
   rules: {
+    'prettier/prettier': 'error',
     ////////////////
     // 可能的错误  //
     ////////////////
@@ -38,7 +39,7 @@ module.exports = {
     // 风格指南  //
     //////////////
     // 要求或禁止使用分号而不是 ASI（这个才是控制行尾部分号的，）
-    'semi': [0, 'always'],
+    semi: [0, 'always'],
     // 强制在 function的左括号之前使用一致的空格
     'space-before-function-paren': [0, 'always'],
 
@@ -48,6 +49,6 @@ module.exports = {
     // 要求箭头函数的参数使用圆括号
     'arrow-parens': 2,
     // allow async-await
-    'generator-star-spacing': 0
-  }
-}
+    'generator-star-spacing': 0,
+  },
+};

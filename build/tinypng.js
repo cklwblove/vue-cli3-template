@@ -16,7 +16,11 @@ const tinify = require('tinify');
 const config = require('../package.json');
 const chalk = require('chalk');
 if (config.tinypngkey === '') {
-  console.log(chalk.red('请在package.json 文件配置tinypng的key，如果没有key，请前往【https://tinypng.com/developers】申请'));
+  console.log(
+    chalk.red(
+      '请在package.json 文件配置tinypng的key，如果没有key，请前往【https://tinypng.com/developers】申请'
+    )
+  );
   return;
 }
 tinify.key = config.tinypngkey;
@@ -44,9 +48,18 @@ async function compress() {
                 reject(err);
               }
               //将压缩后的文件保存覆盖
-              fs.writeFile(filePathAll, resultData, err => {
+              fs.writeFile(filePathAll, resultData, (err) => {
                 let compressFileSize = fs.statSync(filePathAll).size;
-                console.log(chalk.green(`${file} ${(fileSize / 1024).toFixed(2)}kb 压缩成功 ${(compressFileSize / 1024).toFixed(2)}kb ${((compressFileSize - fileSize) * 100 / fileSize).toFixed(1)}%`));
+                console.log(
+                  chalk.green(
+                    `${file} ${(fileSize / 1024).toFixed(2)}kb 压缩成功 ${(
+                      compressFileSize / 1024
+                    ).toFixed(2)}kb ${(
+                      ((compressFileSize - fileSize) * 100) /
+                      fileSize
+                    ).toFixed(1)}%`
+                  )
+                );
                 resolve();
               });
             });
@@ -58,4 +71,3 @@ async function compress() {
 }
 
 compress();
-

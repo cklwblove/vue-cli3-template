@@ -6,7 +6,7 @@ Vue.use(SkeletonComp);
 
 export default new Vue({
   components: {
-    Skeleton
+    Skeleton,
   },
-  template: '<skeleton />'
+  template: '<skeleton />',
 });
