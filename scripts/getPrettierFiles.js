@@ -8,7 +8,7 @@ const getPrettierFiles = () => {
   const tsFiles = glob.sync('src/**/*.ts*', {
     ignore: ['**/node_modules/**', 'build/**'],
   });
-  const configFiles = glob.sync('config/**/*.js*', {
+  const plopFiles = glob.sync('plop-templates/**/*.js*', {
     ignore: ['**/node_modules/**', 'build/**'],
   });
   const scriptFiles = glob.sync('scripts/**/*.js');
@@ -23,7 +23,7 @@ const getPrettierFiles = () => {
   });
   files = files.concat(jsFiles);
   files = files.concat(tsFiles);
-  files = files.concat(configFiles);
+  files = files.concat(plopFiles);
   files = files.concat(scriptFiles);
   files = files.concat(lessFiles);
   files = files.concat(vueFiles);

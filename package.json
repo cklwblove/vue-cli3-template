@@ -129,5 +129,13 @@
     "gen:view": "自动生成视图相关文件（.vue,.less）",
     "compress": ".jpg或.png格式图片压缩并且转换Webp格式文件"
   },
-  "tinypngkey": "GRbtc5JbDBMyRfjKdKHjPtgcHz7q3cmw"
+  "tinypngkey": "GRbtc5JbDBMyRfjKdKHjPtgcHz7q3cmw",
+  "checkFiles": [
+    "src/**/*.js*",
+    "src/**/*.ts*",
+    "src/**/*.less",
+    "src/**/*.vue",
+    "plop-templates/**/*.js*",
+    "scripts/**/*.js"
+  ]
 }
