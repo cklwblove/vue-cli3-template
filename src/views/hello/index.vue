@@ -89,7 +89,6 @@ export default {
 
   methods: {
     movieComingSoon() {
-      // debugger
       const data = { test: '123' };
       this.$services
         .octocat({
