@@ -15,8 +15,6 @@ const {
   password,
   target,
 } = require('./carefree');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
 const VueRouterInvokeWebpackPlugin = require('@liwb/vue-router-invoke-webpack-plugin');
 const SizePlugin = require('size-plugin');
 
@@ -243,31 +241,6 @@ module.exports = {
       });
       config.optimization.runtimeChunk('single');
     });
-
-    // Run the build command with an extra argument to
-    // View the bundle analyzer report after build finishes:
-    // `npm run analyz`
-    config.when(process.env.IS_ANALYZ, (config) =>
-      config.plugin('webpack-bundle-analyzer').use(BundleAnalyzerPlugin, [
-        {
-          analyzerPort: 8888,
-          generateStatsFile: false,
-        },
-      ])
-    );
-
-    // `npm run build --generate_report`
-    config.when(process.env.npm_config_generate_report, (config) =>
-      config
-        .plugin('webpack-bundle-analyzer-report')
-        .use(BundleAnalyzerPlugin, [
-          {
-            analyzerMode: 'static',
-            reportFilename: 'bundle-report.html',
-            openAnalyzer: false,
-          },
-        ])
-    );
   },
 
   pluginOptions: {

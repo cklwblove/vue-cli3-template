@@ -10,6 +10,7 @@
     "test": "",
     "deploy": "npm run build && node build/zip.js",
     "analyz": "vue-cli-service build --mode analyz",
+    "report": "vue-cli-service build --report",
     "carefree-dev": "cross-env NODE_ENV=carefree carefree_env=dev vue-cli-service build --watch",
     "changlog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "compress": "node build/tinypng.js",
@@ -23,7 +24,6 @@
     "prettier": "node ./scripts/prettier.js",
     "new": "plop",
     "release": "sh build/release.sh",
-    "report": "npm run build --generate_report",
     "skeleton": "npm run skeleton-json && npm run skeleton-html ",
     "skeleton-html": "node ./src/skeleton/skeleton.js",
     "skeleton-json": "node ./build/skeleton.js",
@@ -86,7 +86,6 @@
     "vue-router-invoke-webpack-plugin": "^0.3.0",
     "vue-server-renderer": "^2.6.10",
     "vue-template-compiler": "^2.6.10",
-    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-node-externals": "^1.7.2",
     "webstorm-disable-index": "^1.2.0"
   },
