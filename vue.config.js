@@ -18,6 +18,7 @@ const {
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 const VueRouterInvokeWebpackPlugin = require('@liwb/vue-router-invoke-webpack-plugin');
+const SizePlugin = require('size-plugin');
 
 const resolve = (dir) => {
   return path.join(__dirname, './', dir);
@@ -83,7 +84,9 @@ const genPlugins = () => {
         threshold: 10240,
         minRatio: 0.8,
         cache: true,
-      })
+      }),
+      // 在每次执行打包命令后打印出本次构建的资源体积并和上次构建结果进行对比
+      new SizePlugin()
     );
   }
 
