@@ -184,7 +184,7 @@ module.exports = {
     );
 
     config.when(process.env.NODE_ENV === 'development', (config) =>
-      config.devtool('cheap-source-map')
+      config.devtool('cheap-eval-source-map')
     );
 
     // runtime.js 内联的形式嵌入
