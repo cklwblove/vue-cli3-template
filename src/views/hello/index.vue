@@ -69,6 +69,7 @@
 // 工具类
 import { formatDate } from 'utils';
 import { SendCode } from '@/components';
+import createApiFunc from '@/services/createApiFunc';
 
 export default {
   components: {
@@ -85,9 +86,11 @@ export default {
 
   created() {
     this.movieComingSoon();
+    this.movieComingSoon2();
   },
 
   methods: {
+    // promise
     movieComingSoon() {
       const data = { test: '123' };
       this.$services
@@ -101,6 +104,19 @@ export default {
         .catch((err) => {
           console.log('接口请求异常：' + err);
         });
+    },
+    // async await
+    async movieComingSoon2() {
+      const data = { test: '123' };
+      const list = await createApiFunc('octocat', {
+        method: 'get',
+        data,
+      });
+      if (list) {
+        console.log('接口请求成功：' + JSON.stringify(list, null, 2));
+      } else {
+        console.log('接口请求异常：');
+      }
     },
     sendCode() {
       setTimeout(() => {
