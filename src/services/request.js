@@ -64,7 +64,7 @@ axios.interceptors.response.use(
     if (response) {
       // 请求已发出，但是不在2xx的范围
       // 对返回的错误进行一些处理
-      return Promise.reject(checkStatus(error));
+      return Promise.reject(checkStatus(response));
     } else {
       // 处理断网的情况
       // eg:请求超时或断网时，更新state的network状态
