@@ -4,7 +4,7 @@
       <!--断网处理-->
       <NoNet v-if="netStatus" />
       <transition name="fade" mode="out-in">
-        <router-view />
+        <router-view v-if="isRouterAlive" />
       </transition>
     </div>
   </div>
@@ -17,15 +17,29 @@ export default {
   components: {
     NoNet,
   },
+  provide() {
+    return {
+      reload: this.reload,
+    };
+  },
   data() {
     return {
       netStatus: false,
+      isRouterAlive: true,
     };
   },
   mounted() {
     this.$eventBus.$on('isBrokenNetwork', (status) => {
       this.netStatus = status;
     });
+  },
+  methods: {
+    reload() {
+      this.isRouterAlive = false;
+      this.$nextTick(() => {
+        this.isRouterAlive = true;
+      });
+    },
   },
 };
 </script>

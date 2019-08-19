@@ -13,9 +13,10 @@
 </template>
 <script type="text/babel">
 export default {
+  inject: ['reload'],
   methods: {
     refresh() {
-      this.$router.replace('/refresh');
+      this.reload();
     },
   },
 };
