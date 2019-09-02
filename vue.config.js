@@ -1,7 +1,9 @@
 'use strict';
 
 const path = require('path');
+const { formatDate } = require('@liwb/cloud-utils');
 const pkg = require('./package');
+const webpack = require('webpack');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const chalk = require('chalk');
@@ -70,6 +72,10 @@ const genPlugins = () => {
     new AddAssetHtmlPlugin({
       filepath: path.resolve(__dirname, './public/config.local.js'),
       hash: true,
+    }),
+    // bannerPlugin
+    new webpack.BannerPlugin({
+      banner: 'Build time ' + formatDate(new Date(), 'yyyy-MM-dd HH:mm:ss'),
     }),
   ];
 
