@@ -6,7 +6,6 @@
  * 安卓4.4.3一下的手机还是不支持Promise的,需要引入npm install babel-polyfill和npm install babel-runtime，在入口文件上加上即可
  * import 'babel-polyfill';
  */
-
 import Qs from 'qs';
 import axios from 'axios';
 import autoMatchBaseUrl from './autoMatchBaseUrl';
@@ -30,9 +29,12 @@ const codeMessage = {
   504: '网关超时。',
 };
 
-// 添加一个请求拦截器 （于transformRequest之前处理）
-axios.interceptors.request.use(
-  (config) => {
+/**
+ * 全局请求扩展配置
+ * 添加一个请求拦截器 （于transformRequest之前处理）
+ */
+const axiosConfig = {
+  success: (config) => {
     // 以下代码，鉴权token,可根据具体业务增删。
     // demo示例:
     if (~config['url'].indexOf('operatorQry')) {
@@ -41,20 +43,20 @@ axios.interceptors.request.use(
     }
     return config;
   },
-  function(error) {
-    // 当出现请求错误是做一些处理
-    return Promise.reject(error);
-  }
-);
+  error: (error) => Promise.reject(error),
+};
 
-// 添加一个返回拦截器 （于transformResponse之后处理）
-// 返回的数据类型默认是json，若是其他类型（text）就会出现问题，因此用try,catch捕获异常
-axios.interceptors.response.use(
-  (response) => {
+/**
+ * 全局请求响应处理
+ * 添加一个返回拦截器 （于transformResponse之后处理）
+ * 返回的数据类型默认是json，若是其他类型（text）就会出现问题，因此用try,catch捕获异常
+ */
+const axiosResponse = {
+  success: (response) => {
     window.$eventBus.$emit('isBrokenNetwork', false);
     return checkStatus(response);
   },
-  function(error) {
+  error: (error) => {
     const { response, code } = error;
     // 接口请求异常统一处理
     if (code === 'ECONNABORTED') {
@@ -73,8 +75,8 @@ axios.interceptors.response.use(
       console.log('断网了~');
       window.$eventBus.$emit('isBrokenNetwork', true);
     }
-  }
-);
+  },
+};
 
 function checkStatus(response) {
   // 如果http状态码正常，则直接返回数据
@@ -95,6 +97,9 @@ function checkStatus(response) {
     msg: '网络异常',
   };
 }
+
+axios.interceptors.request.use(axiosConfig.success, axiosConfig.error);
+axios.interceptors.response.use(axiosResponse.success, axiosResponse.error);
 
 /**
  * 基于axios ajax请求
