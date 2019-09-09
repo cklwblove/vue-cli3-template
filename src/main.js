@@ -20,4 +20,7 @@ new Vue({
   // use Runtime-only
   // https://vuejs.org/v2/guide/installation.html
   render: (h) => h(App),
+  mounted() {
+    document.dispatchEvent(new Event('render-event'));
+  },
 });
