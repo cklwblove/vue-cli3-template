@@ -52,6 +52,7 @@
 
 - 引用 [vue-cli-plugin-dll](https://www.npmjs.com/package/@liwb/vue-cli-plugin-dll)，支持 `webpack` 的 `Dll`、`DllReference`，加快**编译**速度。
 
+- 生产环境移除 `console.log`(https://github.com/cklwblove/vue-cli3-template/issues/12)
 ## 目录介绍
 
 ```

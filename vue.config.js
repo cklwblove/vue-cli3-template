@@ -19,6 +19,7 @@ const {
 } = require('./carefree');
 const VueRouterInvokeWebpackPlugin = require('@liwb/vue-router-invoke-webpack-plugin');
 const SizePlugin = require('size-plugin');
+// const TerserPlugin = require('terser-webpack-plugin');
 
 const resolve = (dir) => {
   return path.join(__dirname, './', dir);
@@ -176,6 +177,22 @@ module.exports = {
       },
     },
     plugins: genPlugins(),
+    // optimization: {
+    //   // https://webpack.docschina.org/configuration/optimization/#optimization-minimizer
+    //   minimizer: [
+    //     new TerserPlugin({
+    //       terserOptions: {
+    //         // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
+    //         compress: {
+    //           warnings: false,
+    //           drop_console: true,
+    //           drop_debugger: true,
+    //           pure_funcs: ['console.log'],
+    //         },
+    //       }
+    //     })
+    //   ],
+    // },
   }),
 
   // webpack配置
