@@ -1,6 +1,6 @@
 {
   "name": "vue-cli3-template",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "private": true,
   "description": "A front-end template built on vue-cli3",
   "author": "liwb <liwb@gmail.com>",
@@ -55,6 +55,7 @@
     "add-asset-html-webpack-plugin": "^3.1.3",
     "archiver": "^3.0.0",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "chalk": "^2.4.2",
     "check-prettier": "^1.0.3",
     "compression-webpack-plugin": "^3.0.0",
