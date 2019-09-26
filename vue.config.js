@@ -115,6 +115,29 @@ const genPlugins = () => {
   return plugins;
 };
 
+// const getOptimization = () => {
+//   let optimization = {};
+//   if (isProd()) {
+//     optimization = {
+//       // https://webpack.docschina.org/configuration/optimization/#optimization-minimizer
+//       minimizer: [
+//         new TerserPlugin({
+//           terserOptions: {
+//             // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
+//             compress: {
+//               warnings: false,
+//               drop_console: true,
+//               drop_debugger: true,
+//               pure_funcs: ['console.log'],
+//             },
+//           },
+//         }),
+//       ],
+//     };
+//   }
+//   return optimization;
+// };
+
 module.exports = {
   /**
    * You can set by yourself according to actual condition
@@ -177,22 +200,9 @@ module.exports = {
       },
     },
     plugins: genPlugins(),
-    // optimization: {
-    //   // https://webpack.docschina.org/configuration/optimization/#optimization-minimizer
-    //   minimizer: [
-    //     new TerserPlugin({
-    //       terserOptions: {
-    //         // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
-    //         compress: {
-    //           warnings: false,
-    //           drop_console: true,
-    //           drop_debugger: true,
-    //           pure_funcs: ['console.log'],
-    //         },
-    //       }
-    //     })
-    //   ],
-    // },
+    // 生产环境去掉 console.log
+    // https://github.com/cklwblove/vue-cli3-template/issues/12
+    // optimization: getOptimization()
   }),
 
   // webpack配置
