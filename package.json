@@ -67,8 +67,6 @@
     "eslint-plugin-vue": "^5.2.3",
     "html-minifier": "^4.0.0",
     "husky": "^3.0.9",
-    "imagemin": "^7.0.0",
-    "imagemin-webp": "^5.1.0",
     "imagemin-webp-webpack-plugin": "^3.2.2",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",

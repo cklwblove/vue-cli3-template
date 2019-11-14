@@ -2,7 +2,22 @@
   <div class="page page-hello">
     <div class="page-content">
       <!-- 静态资源路径写法事例 -->
-      <img src="~@assets/img/logo.png" />
+      <picture>
+        <source
+          srcset="~@assets/img/webp/logo.webp"
+          width="200"
+          height="200"
+          type="image/webp"
+        />
+        <source
+          srcset="~@assets/img/logo.png"
+          width="200"
+          height="200"
+          type="image/png"
+        />
+        <img src="~@assets/img/logo.png" width="200" height="200" />
+      </picture>
+      <!--      <img src="~@assets/img/logo1.png" width="200" height="200" />-->
       <h1 v-text="msg"></h1>
       <h2 v-text="message"></h2>
       <svg-icon name="cat"></svg-icon>

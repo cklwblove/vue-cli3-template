@@ -217,6 +217,13 @@ module.exports = {
       addStyleResource(config.module.rule('less').oneOf(type))
     );
 
+    // svg
+    // exclude icons
+    config.module
+      .rule('svg')
+      .exclude.add(resolve('src/icons'))
+      .end();
+
     config.when(process.env.NODE_ENV === 'development', (config) =>
       config.devtool('cheap-eval-source-map')
     );
