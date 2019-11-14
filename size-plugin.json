@@ -1,0 +1,215 @@
+[
+  {
+    "timestamp": 1573711547691,
+    "files": [
+      {
+        "filename": "static/css/app.5f638d9c.css",
+        "previous": 5419,
+        "size": 5419,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6284,
+        "size": 6563,
+        "diff": 279
+      },
+      {
+        "filename": "static/css/chunk-18894a84.df40ae4d.css",
+        "previous": 272,
+        "size": 272,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-18894a84.********.js",
+        "previous": 5962,
+        "size": 6003,
+        "diff": 41
+      },
+      {
+        "filename": "static/css/chunk-7e6f570f.2d97809e.css",
+        "previous": 283,
+        "size": 283,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-7e6f570f.********.js",
+        "previous": 1193,
+        "size": 1194,
+        "diff": 1
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 27929,
+        "size": 28021,
+        "diff": 92
+      },
+      {
+        "filename": "dll/js/vendor.dll.d887dd4e.js",
+        "previous": 32622,
+        "size": 32622,
+        "diff": 0
+      },
+      { "filename": "config.local.js", "previous": 84, "size": 84, "diff": 0 },
+      { "filename": "index.html", "previous": 3241, "size": 3253, "diff": 12 },
+      {
+        "filename": "service-worker.js",
+        "previous": 628,
+        "size": 626,
+        "diff": -2
+      },
+      {
+        "filename": "precache-manifest.7786bcf5a3d228b08a006dcd67d29509.js",
+        "previous": 604,
+        "size": 0,
+        "diff": -604
+      },
+      {
+        "filename": "precache-manifest.3bd9d1d54f4df5ed0322b6eab45d6fb6.js",
+        "previous": 0,
+        "size": 608,
+        "diff": 608
+      }
+    ]
+  },
+  {
+    "timestamp": 1573711507249,
+    "files": [
+      {
+        "filename": "static/css/app.5f638d9c.css",
+        "previous": 5419,
+        "size": 5419,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6284,
+        "size": 6284,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-18894a84.df40ae4d.css",
+        "previous": 272,
+        "size": 272,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-18894a84.********.js",
+        "previous": 5962,
+        "size": 5962,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-7e6f570f.2d97809e.css",
+        "previous": 283,
+        "size": 283,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-7e6f570f.********.js",
+        "previous": 1194,
+        "size": 1193,
+        "diff": -1
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 27929,
+        "size": 27929,
+        "diff": 0
+      },
+      {
+        "filename": "dll/js/vendor.dll.d887dd4e.js",
+        "previous": 32622,
+        "size": 32622,
+        "diff": 0
+      },
+      { "filename": "config.local.js", "previous": 84, "size": 84, "diff": 0 },
+      { "filename": "index.html", "previous": 3244, "size": 3241, "diff": -3 },
+      {
+        "filename": "precache-manifest.1c796d17af14f7f6f258aacbc124af16.js",
+        "previous": 608,
+        "size": 0,
+        "diff": -608
+      },
+      {
+        "filename": "service-worker.js",
+        "previous": 626,
+        "size": 628,
+        "diff": 2
+      },
+      {
+        "filename": "precache-manifest.7786bcf5a3d228b08a006dcd67d29509.js",
+        "previous": 0,
+        "size": 604,
+        "diff": 604
+      }
+    ]
+  },
+  {
+    "timestamp": 1573711411563,
+    "files": [
+      {
+        "filename": "static/css/app.5f638d9c.css",
+        "previous": 0,
+        "size": 5419,
+        "diff": 5419
+      },
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 0,
+        "size": 6284,
+        "diff": 6284
+      },
+      {
+        "filename": "static/css/chunk-18894a84.df40ae4d.css",
+        "previous": 0,
+        "size": 272,
+        "diff": 272
+      },
+      {
+        "filename": "static/js/chunk-18894a84.********.js",
+        "previous": 0,
+        "size": 5962,
+        "diff": 5962
+      },
+      {
+        "filename": "static/css/chunk-7e6f570f.2d97809e.css",
+        "previous": 0,
+        "size": 283,
+        "diff": 283
+      },
+      {
+        "filename": "static/js/chunk-7e6f570f.********.js",
+        "previous": 0,
+        "size": 1194,
+        "diff": 1194
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 0,
+        "size": 27929,
+        "diff": 27929
+      },
+      {
+        "filename": "dll/js/vendor.dll.d887dd4e.js",
+        "previous": 0,
+        "size": 32622,
+        "diff": 32622
+      },
+      { "filename": "config.local.js", "previous": 0, "size": 84, "diff": 84 },
+      { "filename": "index.html", "previous": 0, "size": 3244, "diff": 3244 },
+      {
+        "filename": "precache-manifest.1c796d17af14f7f6f258aacbc124af16.js",
+        "previous": 0,
+        "size": 608,
+        "diff": 608
+      },
+      {
+        "filename": "service-worker.js",
+        "previous": 0,
+        "size": 626,
+        "diff": 626
+      }
+    ]
+  }
+]

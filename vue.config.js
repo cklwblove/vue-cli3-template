@@ -247,6 +247,12 @@ module.exports = {
     // optimization
     // https://imweb.io/topic/5b66dd601402769b60847149
     config.when(process.env.NODE_ENV === 'production', (config) => {
+      // vue-cli4
+      // https://cli.vuejs.org/migrating-from-v3/#vue-cli-service
+      // config.optimization.minimizer('terser').tap((args) => {
+      //   args[0].terserOptions.compress.drop_console = true;
+      //   return args;
+      // });
       config
         .plugin('ScriptExtHtmlWebpackPlugin')
         .use('script-ext-html-webpack-plugin', [

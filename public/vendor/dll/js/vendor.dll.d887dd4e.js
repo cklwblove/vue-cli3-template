@@ -196,8 +196,8 @@ var vendor_library = (function(t) {
           for (var e = {}, n = 0; n < t.length; n++) t[n] && T(e, t[n]);
           return e;
         }
-        function R(t, e, n) {}
-        var P = function(t, e, n) {
+        function P(t, e, n) {}
+        var R = function(t, e, n) {
             return !1;
           },
           L = function(t) {
@@ -245,7 +245,7 @@ var vendor_library = (function(t) {
         }
         var F = 'data-server-rendered',
           U = ['component', 'directive', 'filter'],
-          H = [
+          B = [
             'beforeCreate',
             'created',
             'beforeMount',
@@ -259,7 +259,7 @@ var vendor_library = (function(t) {
             'errorCaptured',
             'serverPrefetch',
           ],
-          V = {
+          H = {
             optionMergeStrategies: Object.create(null),
             silent: !1,
             productionTip: !1,
@@ -269,16 +269,16 @@ var vendor_library = (function(t) {
             warnHandler: null,
             ignoredElements: [],
             keyCodes: Object.create(null),
-            isReservedTag: P,
-            isReservedAttr: P,
-            isUnknownElement: P,
-            getTagNamespace: R,
+            isReservedTag: R,
+            isReservedAttr: R,
+            isUnknownElement: R,
+            getTagNamespace: P,
             parsePlatformTagName: L,
-            mustUseProp: P,
+            mustUseProp: R,
             async: !0,
-            _lifecycleHooks: H,
+            _lifecycleHooks: B,
           },
-          B = /a-zA-Z\u00B7\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u037D\u037F-\u1FFF\u200C-\u200D\u203F-\u2040\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD/;
+          V = /a-zA-Z\u00B7\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u037D\u037F-\u1FFF\u200C-\u200D\u203F-\u2040\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD/;
         function q(t) {
           var e = (t + '').charCodeAt(0);
           return 36 === e || 95 === e;
@@ -291,7 +291,7 @@ var vendor_library = (function(t) {
             configurable: !0,
           });
         }
-        var W = new RegExp('[^' + B.source + '.$_\\d]');
+        var W = new RegExp('[^' + V.source + '.$_\\d]');
         function K(t) {
           if (!W.test(t)) {
             var e = t.split('.');
@@ -373,7 +373,7 @@ var vendor_library = (function(t) {
                   t
                 );
               })();
-        var dt = R,
+        var dt = P,
           ht = 0,
           vt = function() {
             (this.id = ht++), (this.subs = []);
@@ -508,7 +508,7 @@ var vendor_library = (function(t) {
             z(t, i, e[i]);
           }
         }
-        function Rt(t, e) {
+        function Pt(t, e) {
           var n;
           if (c(t) && !(t instanceof _t))
             return (
@@ -524,14 +524,14 @@ var vendor_library = (function(t) {
               n
             );
         }
-        function Pt(t, e, n, r, o) {
+        function Rt(t, e, n, r, o) {
           var i = new vt(),
             a = Object.getOwnPropertyDescriptor(t, e);
           if (!a || !1 !== a.configurable) {
             var s = a && a.get,
               c = a && a.set;
             (s && !c) || 2 !== arguments.length || (n = t[e]);
-            var u = !o && Rt(n);
+            var u = !o && Pt(n);
             Object.defineProperty(t, e, {
               enumerable: !0,
               configurable: !0,
@@ -549,7 +549,7 @@ var vendor_library = (function(t) {
                 e === r ||
                   (e !== e && r !== r) ||
                   (s && !c) ||
-                  (c ? c.call(t, e) : (n = e), (u = !o && Rt(e)), i.notify());
+                  (c ? c.call(t, e) : (n = e), (u = !o && Pt(e)), i.notify());
               },
             });
           }
@@ -562,7 +562,7 @@ var vendor_library = (function(t) {
           return t._isVue || (r && r.vmCount)
             ? n
             : r
-            ? (Pt(r.value, e, n), r.dep.notify(), n)
+            ? (Rt(r.value, e, n), r.dep.notify(), n)
             : ((t[e] = n), n);
         }
         function Dt(t, e) {
@@ -581,12 +581,12 @@ var vendor_library = (function(t) {
               Array.isArray(e) && Mt(e);
         }
         (jt.prototype.walk = function(t) {
-          for (var e = Object.keys(t), n = 0; n < e.length; n++) Pt(t, e[n]);
+          for (var e = Object.keys(t), n = 0; n < e.length; n++) Rt(t, e[n]);
         }),
           (jt.prototype.observeArray = function(t) {
-            for (var e = 0, n = t.length; e < n; e++) Rt(t[e]);
+            for (var e = 0, n = t.length; e < n; e++) Pt(t[e]);
           });
-        var Nt = V.optionMergeStrategies;
+        var Nt = H.optionMergeStrategies;
         function Ft(t, e) {
           if (!e) return t;
           for (
@@ -619,27 +619,27 @@ var vendor_library = (function(t) {
               : e
             : t;
         }
-        function Ht(t, e) {
+        function Bt(t, e) {
           var n = e ? (t ? t.concat(e) : Array.isArray(e) ? e : [e]) : t;
-          return n ? Vt(n) : n;
+          return n ? Ht(n) : n;
         }
-        function Vt(t) {
+        function Ht(t) {
           for (var e = [], n = 0; n < t.length; n++)
             -1 === e.indexOf(t[n]) && e.push(t[n]);
           return e;
         }
-        function Bt(t, e, n, r) {
+        function Vt(t, e, n, r) {
           var o = Object.create(t || null);
           return e ? T(o, e) : o;
         }
         (Nt.data = function(t, e, n) {
           return n ? Ut(t, e, n) : e && 'function' !== typeof e ? t : Ut(t, e);
         }),
-          H.forEach(function(t) {
-            Nt[t] = Ht;
+          B.forEach(function(t) {
+            Nt[t] = Bt;
           }),
           U.forEach(function(t) {
-            Nt[t + 's'] = Bt;
+            Nt[t + 's'] = Vt;
           }),
           (Nt.watch = function(t, e, n, r) {
             if ((t === it && (t = void 0), e === it && (e = void 0), !e))
@@ -756,7 +756,7 @@ var vendor_library = (function(t) {
           if (void 0 === a) {
             a = Qt(r, o, t);
             var u = St;
-            Et(!0), Rt(a), Et(u);
+            Et(!0), Pt(a), Et(u);
           }
           return a;
         }
@@ -825,9 +825,9 @@ var vendor_library = (function(t) {
           return i;
         }
         function re(t, e, n) {
-          if (V.errorHandler)
+          if (H.errorHandler)
             try {
-              return V.errorHandler.call(null, t, e, n);
+              return H.errorHandler.call(null, t, e, n);
             } catch (Ca) {
               Ca !== t && oe(Ca, null, 'config.errorHandler');
             }
@@ -850,7 +850,7 @@ var vendor_library = (function(t) {
         if ('undefined' !== typeof Promise && ft(Promise)) {
           var fe = Promise.resolve();
           (ie = function() {
-            fe.then(ue), rt && setTimeout(R);
+            fe.then(ue), rt && setTimeout(P);
           }),
             (ae = !0);
         } else if (
@@ -1045,7 +1045,7 @@ var vendor_library = (function(t) {
           e &&
             (Et(!1),
             Object.keys(e).forEach(function(n) {
-              Pt(t, n, e[n]);
+              Rt(t, n, e[n]);
             }),
             Et(!0));
         }
@@ -1103,7 +1103,7 @@ var vendor_library = (function(t) {
         function Ie(t) {
           return (t.isComment && !t.asyncFactory) || ' ' === t.text;
         }
-        function Re(t, e, r) {
+        function Pe(t, e, r) {
           var o,
             i = Object.keys(e).length > 0,
             a = t ? !!t.$stable : !i,
@@ -1113,7 +1113,7 @@ var vendor_library = (function(t) {
             if (a && r && r !== n && s === r.$key && !i && !r.$hasNormal)
               return r;
             for (var c in ((o = {}), t))
-              t[c] && '$' !== c[0] && (o[c] = Pe(e, c, t[c]));
+              t[c] && '$' !== c[0] && (o[c] = Re(e, c, t[c]));
           } else o = {};
           for (var u in e) u in o || (o[u] = Le(e, u));
           return (
@@ -1124,7 +1124,7 @@ var vendor_library = (function(t) {
             o
           );
         }
-        function Pe(t, e, n) {
+        function Re(t, e, n) {
           var r = function() {
             var t = arguments.length ? n.apply(null, arguments) : n({});
             return (
@@ -1191,8 +1191,8 @@ var vendor_library = (function(t) {
           return Array.isArray(t) ? -1 === t.indexOf(e) : t !== e;
         }
         function Ue(t, e, n, r, o) {
-          var i = V.keyCodes[e] || n;
-          return o && r && !V.keyCodes[e]
+          var i = H.keyCodes[e] || n;
+          return o && r && !H.keyCodes[e]
             ? Fe(o, r)
             : i
             ? Fe(i, t)
@@ -1200,7 +1200,7 @@ var vendor_library = (function(t) {
             ? k(r) !== e
             : void 0;
         }
-        function He(t, e, n, r, o) {
+        function Be(t, e, n, r, o) {
           if (n)
             if (c(n)) {
               var i;
@@ -1210,7 +1210,7 @@ var vendor_library = (function(t) {
                 else {
                   var s = t.attrs && t.attrs.type;
                   i =
-                    r || V.mustUseProp(e, s, a)
+                    r || H.mustUseProp(e, s, a)
                       ? t.domProps || (t.domProps = {})
                       : t.attrs || (t.attrs = {});
                 }
@@ -1227,7 +1227,7 @@ var vendor_library = (function(t) {
             } else;
           return t;
         }
-        function Ve(t, e) {
+        function He(t, e) {
           var n = this._staticTrees || (this._staticTrees = []),
             r = n[t];
           return r && !e
@@ -1240,7 +1240,7 @@ var vendor_library = (function(t) {
               qe(r, '__static__' + t, !1),
               r);
         }
-        function Be(t, e, n) {
+        function Ve(t, e, n) {
           return qe(t, '__once__' + e + (n ? '_' + n : ''), !0), t;
         }
         function qe(t, e, n) {
@@ -1285,17 +1285,17 @@ var vendor_library = (function(t) {
           return 'string' === typeof t ? e + t : t;
         }
         function Je(t) {
-          (t._o = Be),
+          (t._o = Ve),
             (t._n = v),
             (t._s = h),
             (t._l = De),
             (t._t = Me),
             (t._q = D),
             (t._i = M),
-            (t._m = Ve),
+            (t._m = He),
             (t._f = Ne),
             (t._k = Ue),
-            (t._b = He),
+            (t._b = Be),
             (t._v = xt),
             (t._e = wt),
             (t._u = Ke),
@@ -1320,19 +1320,19 @@ var vendor_library = (function(t) {
             (this.injections = je(u.inject, o)),
             (this.slots = function() {
               return (
-                c.$slots || Re(t.scopedSlots, (c.$slots = Te(r, o))), c.$slots
+                c.$slots || Pe(t.scopedSlots, (c.$slots = Te(r, o))), c.$slots
               );
             }),
             Object.defineProperty(this, 'scopedSlots', {
               enumerable: !0,
               get: function() {
-                return Re(t.scopedSlots, this.slots());
+                return Pe(t.scopedSlots, this.slots());
               },
             }),
             f &&
               ((this.$options = u),
               (this.$slots = this.slots()),
-              (this.$scopedSlots = Re(t.scopedSlots, this.$slots))),
+              (this.$scopedSlots = Pe(t.scopedSlots, this.$slots))),
             u._scopeId
               ? (this._c = function(t, e, n, r) {
                   var i = ln(s, t, e, n, r, l);
@@ -1496,9 +1496,9 @@ var vendor_library = (function(t) {
             (r.length = 0)),
           i === fn ? (r = $e(r)) : i === un && (r = Ae(r)),
           'string' === typeof e)
-            ? ((s = (t.$vnode && t.$vnode.ns) || V.getTagNamespace(e)),
-              (a = V.isReservedTag(e)
-                ? new _t(V.parsePlatformTagName(e), n, r, void 0, void 0, t)
+            ? ((s = (t.$vnode && t.$vnode.ns) || H.getTagNamespace(e)),
+              (a = H.isReservedTag(e)
+                ? new _t(H.parsePlatformTagName(e), n, r, void 0, void 0, t)
                 : (n && n.pre) || !o((c = Gt(t.$options, 'components', e)))
                 ? new _t(e, n, r, void 0, void 0, t)
                 : rn(c, n, t, r, e)))
@@ -1537,8 +1537,8 @@ var vendor_library = (function(t) {
               return ln(t, e, n, r, o, !0);
             });
           var i = r && r.data;
-          Pt(t, '$attrs', (i && i.attrs) || n, null, !0),
-            Pt(t, '$listeners', e._parentListeners || n, null, !0);
+          Rt(t, '$attrs', (i && i.attrs) || n, null, !0),
+            Rt(t, '$listeners', e._parentListeners || n, null, !0);
         }
         var yn,
           mn = null;
@@ -1554,7 +1554,7 @@ var vendor_library = (function(t) {
                 r = n.render,
                 o = n._parentVnode;
               o &&
-                (e.$scopedSlots = Re(
+                (e.$scopedSlots = Pe(
                   o.data.scopedSlots,
                   e.$slots,
                   e.$scopedSlots
@@ -1762,7 +1762,7 @@ var vendor_library = (function(t) {
             (t._isDestroyed = !1),
             (t._isBeingDestroyed = !1);
         }
-        function Rn(t) {
+        function Pn(t) {
           (t.prototype._update = function(t, e) {
             var n = this,
               r = n.$el,
@@ -1804,7 +1804,7 @@ var vendor_library = (function(t) {
               }
             });
         }
-        function Pn(t, e, n) {
+        function Rn(t, e, n) {
           var r;
           return (
             (t.$el = e),
@@ -1816,7 +1816,7 @@ var vendor_library = (function(t) {
             new nr(
               t,
               r,
-              R,
+              P,
               {
                 before: function() {
                   t._isMounted && !t._isDestroyed && Fn(t, 'beforeUpdate');
@@ -1895,13 +1895,13 @@ var vendor_library = (function(t) {
           t._hasHookEvent && t.$emit('hook:' + e), gt();
         }
         var Un = [],
-          Hn = [],
-          Vn = {},
-          Bn = !1,
+          Bn = [],
+          Hn = {},
+          Vn = !1,
           qn = !1,
           zn = 0;
         function Wn() {
-          (zn = Un.length = Hn.length = 0), (Vn = {}), (Bn = qn = !1);
+          (zn = Un.length = Bn.length = 0), (Hn = {}), (Vn = qn = !1);
         }
         var Kn = 0,
           Xn = Date.now;
@@ -1929,11 +1929,11 @@ var vendor_library = (function(t) {
             (t = Un[zn]),
               t.before && t.before(),
               (e = t.id),
-              (Vn[e] = null),
+              (Hn[e] = null),
               t.run();
-          var n = Hn.slice(),
+          var n = Bn.slice(),
             r = Un.slice();
-          Wn(), Zn(n), Qn(r), ut && V.devtools && ut.emit('flush');
+          Wn(), Zn(n), Qn(r), ut && H.devtools && ut.emit('flush');
         }
         function Qn(t) {
           var e = t.length;
@@ -1947,7 +1947,7 @@ var vendor_library = (function(t) {
           }
         }
         function Yn(t) {
-          (t._inactive = !1), Hn.push(t);
+          (t._inactive = !1), Bn.push(t);
         }
         function Zn(t) {
           for (var e = 0; e < t.length; e++)
@@ -1955,13 +1955,13 @@ var vendor_library = (function(t) {
         }
         function tr(t) {
           var e = t.id;
-          if (null == Vn[e]) {
-            if (((Vn[e] = !0), qn)) {
+          if (null == Hn[e]) {
+            if (((Hn[e] = !0), qn)) {
               var n = Un.length - 1;
               while (n > zn && Un[n].id > t.id) n--;
               Un.splice(n + 1, 0, t);
             } else Un.push(t);
-            Bn || ((Bn = !0), he(Jn));
+            Vn || ((Vn = !0), he(Jn));
           }
         }
         var er = 0,
@@ -1987,7 +1987,7 @@ var vendor_library = (function(t) {
               (this.expression = ''),
               'function' === typeof e
                 ? (this.getter = e)
-                : ((this.getter = K(e)), this.getter || (this.getter = R)),
+                : ((this.getter = K(e)), this.getter || (this.getter = P)),
               (this.value = this.lazy ? void 0 : this.get());
           };
         (nr.prototype.get = function() {
@@ -2063,7 +2063,7 @@ var vendor_library = (function(t) {
               this.active = !1;
             }
           });
-        var rr = { enumerable: !0, configurable: !0, get: R, set: R };
+        var rr = { enumerable: !0, configurable: !0, get: P, set: P };
         function or(t, e, n) {
           (rr.get = function() {
             return this[e][n];
@@ -2078,7 +2078,7 @@ var vendor_library = (function(t) {
           var e = t.$options;
           e.props && ar(t, e.props),
             e.methods && hr(t, e.methods),
-            e.data ? sr(t) : Rt((t._data = {}), !0),
+            e.data ? sr(t) : Pt((t._data = {}), !0),
             e.computed && fr(t, e.computed),
             e.watch && e.watch !== it && vr(t, e.watch);
         }
@@ -2091,7 +2091,7 @@ var vendor_library = (function(t) {
           var a = function(i) {
             o.push(i);
             var a = Jt(i, e, n, t);
-            Pt(r, i, a), i in t || or(t, '_props', i);
+            Rt(r, i, a), i in t || or(t, '_props', i);
           };
           for (var s in e) a(s);
           Et(!0);
@@ -2107,7 +2107,7 @@ var vendor_library = (function(t) {
             var i = n[o];
             0, (r && b(r, i)) || q(i) || or(t, '_data', i);
           }
-          Rt(e, !0);
+          Pt(e, !0);
         }
         function cr(t, e) {
           mt();
@@ -2126,15 +2126,15 @@ var vendor_library = (function(t) {
           for (var o in e) {
             var i = e[o],
               a = 'function' === typeof i ? i : i.get;
-            0, r || (n[o] = new nr(t, a || R, R, ur)), o in t || lr(t, o, i);
+            0, r || (n[o] = new nr(t, a || P, P, ur)), o in t || lr(t, o, i);
           }
         }
         function lr(t, e, n) {
           var r = !ct();
           'function' === typeof n
-            ? ((rr.get = r ? pr(e) : dr(n)), (rr.set = R))
-            : ((rr.get = n.get ? (r && !1 !== n.cache ? pr(e) : dr(n.get)) : R),
-              (rr.set = n.set || R)),
+            ? ((rr.get = r ? pr(e) : dr(n)), (rr.set = P))
+            : ((rr.get = n.get ? (r && !1 !== n.cache ? pr(e) : dr(n.get)) : P),
+              (rr.set = n.set || P)),
             Object.defineProperty(t, e, rr);
         }
         function pr(t) {
@@ -2151,7 +2151,7 @@ var vendor_library = (function(t) {
         }
         function hr(t, e) {
           t.$options.props;
-          for (var n in e) t[n] = 'function' !== typeof e[n] ? R : E(e[n], t);
+          for (var n in e) t[n] = 'function' !== typeof e[n] ? P : E(e[n], t);
         }
         function vr(t, e) {
           for (var n in e) {
@@ -2361,27 +2361,27 @@ var vendor_library = (function(t) {
             var a = n[i];
             if (a) {
               var s = jr(a.componentOptions);
-              s && !e(s) && Rr(n, i, r, o);
+              s && !e(s) && Pr(n, i, r, o);
             }
           }
         }
-        function Rr(t, e, n, r) {
+        function Pr(t, e, n, r) {
           var o = t[e];
           !o || (r && o.tag === r.tag) || o.componentInstance.$destroy(),
             (t[e] = null),
             g(n, e);
         }
-        _r(Cr), mr(Cr), En(Cr), Rn(Cr), gn(Cr);
-        var Pr = [String, RegExp, Array],
+        _r(Cr), mr(Cr), En(Cr), Pn(Cr), gn(Cr);
+        var Rr = [String, RegExp, Array],
           Lr = {
             name: 'keep-alive',
             abstract: !0,
-            props: { include: Pr, exclude: Pr, max: [String, Number] },
+            props: { include: Rr, exclude: Rr, max: [String, Number] },
             created: function() {
               (this.cache = Object.create(null)), (this.keys = []);
             },
             destroyed: function() {
-              for (var t in this.cache) Rr(this.cache, t, this.keys);
+              for (var t in this.cache) Pr(this.cache, t, this.keys);
             },
             mounted: function() {
               var t = this;
@@ -2421,7 +2421,7 @@ var vendor_library = (function(t) {
                     u.push(f),
                     this.max &&
                       u.length > parseInt(this.max) &&
-                      Rr(c, u[0], u, this._vnode)),
+                      Pr(c, u[0], u, this._vnode)),
                   (e.data.keepAlive = !0);
               }
               return e || (t && t[0]);
@@ -2431,7 +2431,7 @@ var vendor_library = (function(t) {
         function Mr(t) {
           var e = {
             get: function() {
-              return V;
+              return H;
             },
           };
           Object.defineProperty(t, 'config', e),
@@ -2439,13 +2439,13 @@ var vendor_library = (function(t) {
               warn: dt,
               extend: T,
               mergeOptions: Xt,
-              defineReactive: Pt,
+              defineReactive: Rt,
             }),
             (t.set = Lt),
             (t.delete = Dt),
             (t.nextTick = he),
             (t.observable = function(t) {
-              return Rt(t), t;
+              return Pt(t), t;
             }),
             (t.options = Object.create(null)),
             U.forEach(function(e) {
@@ -2477,12 +2477,12 @@ var vendor_library = (function(t) {
               ('muted' === n && 'video' === t)
             );
           },
-          Hr = y('contenteditable,draggable,spellcheck'),
-          Vr = y('events,caret,typing,plaintext-only'),
-          Br = function(t, e) {
+          Br = y('contenteditable,draggable,spellcheck'),
+          Hr = y('events,caret,typing,plaintext-only'),
+          Vr = function(t, e) {
             return Xr(e) || 'false' === e
               ? 'false'
-              : 'contenteditable' === t && Vr(e)
+              : 'contenteditable' === t && Hr(e)
               ? e
               : 'true';
           },
@@ -3048,14 +3048,14 @@ var vendor_library = (function(t) {
             o(t) && A(t);
           };
         }
-        var Ro = {
-          create: Po,
-          update: Po,
+        var Po = {
+          create: Ro,
+          update: Ro,
           destroy: function(t) {
-            Po(t, Oo);
+            Ro(t, Oo);
           },
         };
-        function Po(t, e) {
+        function Ro(t, e) {
           (t.data.directives || e.data.directives) && Lo(t, e);
         }
         function Lo(t, e) {
@@ -3120,8 +3120,8 @@ var vendor_library = (function(t) {
               ee(Ca, n.context, 'directive ' + t.name + ' ' + e + ' hook');
             }
         }
-        var Uo = [$o, Ro];
-        function Ho(t, e) {
+        var Uo = [$o, Po];
+        function Bo(t, e) {
           var n = e.componentOptions;
           if (
             (!o(n) || !1 !== n.Ctor.options.inheritAttrs) &&
@@ -3134,20 +3134,20 @@ var vendor_library = (function(t) {
               u = t.data.attrs || {},
               f = e.data.attrs || {};
             for (i in (o(f.__ob__) && (f = e.data.attrs = T({}, f)), f))
-              (a = f[i]), (s = u[i]), s !== a && Vo(c, i, a);
+              (a = f[i]), (s = u[i]), s !== a && Ho(c, i, a);
             for (i in ((tt || nt) &&
               f.value !== u.value &&
-              Vo(c, 'value', f.value),
+              Ho(c, 'value', f.value),
             u))
               r(f[i]) &&
                 (Wr(i)
                   ? c.removeAttributeNS(zr, Kr(i))
-                  : Hr(i) || c.removeAttribute(i));
+                  : Br(i) || c.removeAttribute(i));
           }
         }
-        function Vo(t, e, n) {
+        function Ho(t, e, n) {
           t.tagName.indexOf('-') > -1
-            ? Bo(t, e, n)
+            ? Vo(t, e, n)
             : qr(e)
             ? Xr(n)
               ? t.removeAttribute(e)
@@ -3156,15 +3156,15 @@ var vendor_library = (function(t) {
                     ? 'true'
                     : e),
                 t.setAttribute(e, n))
-            : Hr(e)
-            ? t.setAttribute(e, Br(e, n))
+            : Br(e)
+            ? t.setAttribute(e, Vr(e, n))
             : Wr(e)
             ? Xr(n)
               ? t.removeAttributeNS(zr, Kr(e))
               : t.setAttributeNS(zr, e, n)
-            : Bo(t, e, n);
+            : Vo(t, e, n);
         }
-        function Bo(t, e, n) {
+        function Vo(t, e, n) {
           if (Xr(n)) t.removeAttribute(e);
           else {
             if (
@@ -3183,7 +3183,7 @@ var vendor_library = (function(t) {
             t.setAttribute(e, n);
           }
         }
-        var qo = { create: Ho, update: Ho };
+        var qo = { create: Bo, update: Bo };
         function zo(t, e) {
           var n = e.elm,
             i = e.data,
@@ -3455,16 +3455,16 @@ var vendor_library = (function(t) {
           void 0 === window.onanimationend &&
             void 0 !== window.onwebkitanimationend &&
             ((Ti = 'WebkitAnimation'), (Ii = 'webkitAnimationEnd')));
-        var Ri = J
+        var Pi = J
           ? window.requestAnimationFrame
             ? window.requestAnimationFrame.bind(window)
             : setTimeout
           : function(t) {
               return t();
             };
-        function Pi(t) {
-          Ri(function() {
-            Ri(t);
+        function Ri(t) {
+          Pi(function() {
+            Pi(t);
           });
         }
         function Li(t, e) {
@@ -3520,14 +3520,14 @@ var vendor_library = (function(t) {
           return Math.max.apply(
             null,
             e.map(function(e, n) {
-              return Hi(e) + Hi(t[n]);
+              return Bi(e) + Bi(t[n]);
             })
           );
         }
-        function Hi(t) {
+        function Bi(t) {
           return 1e3 * Number(t.slice(0, -1).replace(',', '.'));
         }
-        function Vi(t, e) {
+        function Hi(t, e) {
           var n = t.elm;
           o(n._leaveCb) && ((n._leaveCb.cancelled = !0), n._leaveCb());
           var i = Ai(t.data.transition);
@@ -3559,15 +3559,15 @@ var vendor_library = (function(t) {
                 j = O && d ? d : f,
                 T = (O && b) || y,
                 I = O && 'function' === typeof w ? w : m,
-                R = (O && x) || g,
-                P = (O && C) || _,
+                P = (O && x) || g,
+                R = (O && C) || _,
                 L = v(c(A) ? A.enter : A);
               0;
               var D = !1 !== a && !et,
                 M = zi(I),
                 F = (n._enterCb = N(function() {
                   D && (Di(n, j), Di(n, E)),
-                    F.cancelled ? (D && Di(n, S), P && P(n)) : R && R(n),
+                    F.cancelled ? (D && Di(n, S), R && R(n)) : P && P(n),
                     (n._enterCb = null);
                 }));
               t.data.show ||
@@ -3581,7 +3581,7 @@ var vendor_library = (function(t) {
                 D &&
                   (Li(n, S),
                   Li(n, E),
-                  Pi(function() {
+                  Ri(function() {
                     Di(n, S),
                       F.cancelled ||
                         (Li(n, j),
@@ -3592,7 +3592,7 @@ var vendor_library = (function(t) {
             }
           }
         }
-        function Bi(t, e) {
+        function Vi(t, e) {
           var n = t.elm;
           o(n._enterCb) && ((n._enterCb.cancelled = !0), n._enterCb());
           var i = Ai(t.data.transition);
@@ -3634,7 +3634,7 @@ var vendor_library = (function(t) {
               _ &&
                 (Li(n, u),
                 Li(n, l),
-                Pi(function() {
+                Ri(function() {
                   Di(n, u),
                     x.cancelled ||
                       (Li(n, f), b || (qi(w) ? setTimeout(x, w) : Mi(n, s, x)));
@@ -3654,14 +3654,14 @@ var vendor_library = (function(t) {
             : (t._length || t.length) > 1;
         }
         function Wi(t, e) {
-          !0 !== e.data.show && Vi(e);
+          !0 !== e.data.show && Hi(e);
         }
         var Ki = J
             ? {
                 create: Wi,
                 activate: Wi,
                 remove: function(t, e) {
-                  !0 !== t.data.show ? Bi(t, e) : e();
+                  !0 !== t.data.show ? Vi(t, e) : e();
                 },
               }
             : {},
@@ -3762,7 +3762,7 @@ var vendor_library = (function(t) {
                   'none' === t.style.display ? '' : t.style.display);
               r && o
                 ? ((n.data.show = !0),
-                  Vi(n, function() {
+                  Hi(n, function() {
                     t.style.display = i;
                   }))
                 : (t.style.display = r ? i : 'none');
@@ -3776,10 +3776,10 @@ var vendor_library = (function(t) {
                 i
                   ? ((n.data.show = !0),
                     r
-                      ? Vi(n, function() {
+                      ? Hi(n, function() {
                           t.style.display = t.__vOriginalDisplay;
                         })
-                      : Bi(n, function() {
+                      : Vi(n, function() {
                           t.style.display = 'none';
                         }))
                   : (t.style.display = r ? t.__vOriginalDisplay : 'none');
@@ -4021,13 +4021,13 @@ var vendor_library = (function(t) {
           (Cr.config.isUnknownElement = co),
           T(Cr.options.directives, sa),
           T(Cr.options.components, xa),
-          (Cr.prototype.__patch__ = J ? Ji : R),
+          (Cr.prototype.__patch__ = J ? Ji : P),
           (Cr.prototype.$mount = function(t, e) {
-            return (t = t && J ? fo(t) : void 0), Pn(this, t, e);
+            return (t = t && J ? fo(t) : void 0), Rn(this, t, e);
           }),
           J &&
             setTimeout(function() {
-              V.devtools && ut && ut.emit('init', Cr);
+              H.devtools && ut && ut.emit('init', Cr);
             }, 0),
           (e['default'] = Cr);
       }.call(this, n(2));
@@ -4053,11 +4053,16 @@ var vendor_library = (function(t) {
       return Object.prototype.toString.call(t).indexOf('Error') > -1;
     }
     function i(t, e) {
+      return (
+        e instanceof t || (e && (e.name === t.name || e._name === t._name))
+      );
+    }
+    function a(t, e) {
       for (var n in e) t[n] = e[n];
       return t;
     }
     n.r(e);
-    var a = {
+    var s = {
       name: 'RouterView',
       functional: !0,
       props: { name: { type: String, default: 'default' } },
@@ -4065,9 +4070,9 @@ var vendor_library = (function(t) {
         var n = e.props,
           r = e.children,
           o = e.parent,
-          a = e.data;
-        a.routerView = !0;
-        var c = o.$createElement,
+          i = e.data;
+        i.routerView = !0;
+        var s = o.$createElement,
           u = n.name,
           f = o.$route,
           l = o._routerViewCache || (o._routerViewCache = {}),
@@ -4078,34 +4083,34 @@ var vendor_library = (function(t) {
           h && (h.routerView && p++, h.keepAlive && o._inactive && (d = !0)),
             (o = o.$parent);
         }
-        if (((a.routerViewDepth = p), d)) return c(l[u], a, r);
+        if (((i.routerViewDepth = p), d)) return s(l[u], i, r);
         var v = f.matched[p];
-        if (!v) return (l[u] = null), c();
+        if (!v) return (l[u] = null), s();
         var y = (l[u] = v.components[u]);
-        (a.registerRouteInstance = function(t, e) {
+        (i.registerRouteInstance = function(t, e) {
           var n = v.instances[u];
           ((e && n !== t) || (!e && n === t)) && (v.instances[u] = e);
         }),
-          ((a.hook || (a.hook = {})).prepatch = function(t, e) {
+          ((i.hook || (i.hook = {})).prepatch = function(t, e) {
             v.instances[u] = e.componentInstance;
           }),
-          (a.hook.init = function(t) {
+          (i.hook.init = function(t) {
             t.data.keepAlive &&
               t.componentInstance &&
               t.componentInstance !== v.instances[u] &&
               (v.instances[u] = t.componentInstance);
           });
-        var m = (a.props = s(f, v.props && v.props[u]));
+        var m = (i.props = c(f, v.props && v.props[u]));
         if (m) {
-          m = a.props = i({}, m);
-          var g = (a.attrs = a.attrs || {});
+          m = i.props = a({}, m);
+          var g = (i.attrs = i.attrs || {});
           for (var _ in m)
             (y.props && _ in y.props) || ((g[_] = m[_]), delete m[_]);
         }
-        return c(y, a, r);
+        return s(y, i, r);
       },
     };
-    function s(t, e) {
+    function c(t, e) {
       switch (typeof e) {
         case 'undefined':
           return;
@@ -4119,21 +4124,21 @@ var vendor_library = (function(t) {
           0;
       }
     }
-    var c = /[!'()*]/g,
-      u = function(t) {
+    var u = /[!'()*]/g,
+      f = function(t) {
         return '%' + t.charCodeAt(0).toString(16);
       },
-      f = /%2C/g,
-      l = function(t) {
+      l = /%2C/g,
+      p = function(t) {
         return encodeURIComponent(t)
-          .replace(c, u)
-          .replace(f, ',');
+          .replace(u, f)
+          .replace(l, ',');
       },
-      p = decodeURIComponent;
-    function d(t, e, n) {
+      d = decodeURIComponent;
+    function h(t, e, n) {
       void 0 === e && (e = {});
       var r,
-        o = n || h;
+        o = n || v;
       try {
         r = o(t || '');
       } catch (a) {
@@ -4142,15 +4147,15 @@ var vendor_library = (function(t) {
       for (var i in e) r[i] = e[i];
       return r;
     }
-    function h(t) {
+    function v(t) {
       var e = {};
       return (
         (t = t.trim().replace(/^(\?|#|&)/, '')),
         t
           ? (t.split('&').forEach(function(t) {
               var n = t.replace(/\+/g, ' ').split('='),
-                r = p(n.shift()),
-                o = n.length > 0 ? p(n.join('=')) : null;
+                r = d(n.shift()),
+                o = n.length > 0 ? d(n.join('=')) : null;
               void 0 === e[r]
                 ? (e[r] = o)
                 : Array.isArray(e[r])
@@ -4161,24 +4166,24 @@ var vendor_library = (function(t) {
           : e
       );
     }
-    function v(t) {
+    function y(t) {
       var e = t
         ? Object.keys(t)
             .map(function(e) {
               var n = t[e];
               if (void 0 === n) return '';
-              if (null === n) return l(e);
+              if (null === n) return p(e);
               if (Array.isArray(n)) {
                 var r = [];
                 return (
                   n.forEach(function(t) {
                     void 0 !== t &&
-                      (null === t ? r.push(l(e)) : r.push(l(e) + '=' + l(t)));
+                      (null === t ? r.push(p(e)) : r.push(p(e) + '=' + p(t)));
                   }),
                   r.join('&')
                 );
               }
-              return l(e) + '=' + l(n);
+              return p(e) + '=' + p(n);
             })
             .filter(function(t) {
               return t.length > 0;
@@ -4187,12 +4192,12 @@ var vendor_library = (function(t) {
         : null;
       return e ? '?' + e : '';
     }
-    var y = /\/?$/;
-    function m(t, e, n, r) {
+    var m = /\/?$/;
+    function g(t, e, n, r) {
       var o = r && r.options.stringifyQuery,
         i = e.query || {};
       try {
-        i = g(i);
+        i = _(i);
       } catch (s) {}
       var a = {
         name: e.name || (t && t.name),
@@ -4201,50 +4206,50 @@ var vendor_library = (function(t) {
         hash: e.hash || '',
         query: i,
         params: e.params || {},
-        fullPath: w(e, o),
-        matched: t ? b(t) : [],
+        fullPath: x(e, o),
+        matched: t ? w(t) : [],
       };
-      return n && (a.redirectedFrom = w(n, o)), Object.freeze(a);
+      return n && (a.redirectedFrom = x(n, o)), Object.freeze(a);
     }
-    function g(t) {
-      if (Array.isArray(t)) return t.map(g);
+    function _(t) {
+      if (Array.isArray(t)) return t.map(_);
       if (t && 'object' === typeof t) {
         var e = {};
-        for (var n in t) e[n] = g(t[n]);
+        for (var n in t) e[n] = _(t[n]);
         return e;
       }
       return t;
     }
-    var _ = m(null, { path: '/' });
-    function b(t) {
+    var b = g(null, { path: '/' });
+    function w(t) {
       var e = [];
       while (t) e.unshift(t), (t = t.parent);
       return e;
     }
-    function w(t, e) {
+    function x(t, e) {
       var n = t.path,
         r = t.query;
       void 0 === r && (r = {});
       var o = t.hash;
       void 0 === o && (o = '');
-      var i = e || v;
+      var i = e || y;
       return (n || '/') + i(r) + o;
     }
-    function x(t, e) {
-      return e === _
+    function C(t, e) {
+      return e === b
         ? t === e
         : !!e &&
             (t.path && e.path
-              ? t.path.replace(y, '') === e.path.replace(y, '') &&
+              ? t.path.replace(m, '') === e.path.replace(m, '') &&
                 t.hash === e.hash &&
-                C(t.query, e.query)
+                A(t.query, e.query)
               : !(!t.name || !e.name) &&
                 (t.name === e.name &&
                   t.hash === e.hash &&
-                  C(t.query, e.query) &&
-                  C(t.params, e.params)));
+                  A(t.query, e.query) &&
+                  A(t.params, e.params)));
     }
-    function C(t, e) {
+    function A(t, e) {
       if ((void 0 === t && (t = {}), void 0 === e && (e = {}), !t || !e))
         return t === e;
       var n = Object.keys(t),
@@ -4255,43 +4260,336 @@ var vendor_library = (function(t) {
           var r = t[n],
             o = e[n];
           return 'object' === typeof r && 'object' === typeof o
-            ? C(r, o)
+            ? A(r, o)
             : String(r) === String(o);
         })
       );
     }
-    function A(t, e) {
+    function $(t, e) {
       return (
-        0 === t.path.replace(y, '/').indexOf(e.path.replace(y, '/')) &&
+        0 === t.path.replace(m, '/').indexOf(e.path.replace(m, '/')) &&
         (!e.hash || t.hash === e.hash) &&
-        $(t.query, e.query)
+        k(t.query, e.query)
       );
     }
-    function $(t, e) {
+    function k(t, e) {
       for (var n in e) if (!(n in t)) return !1;
       return !0;
     }
-    var k,
-      O = [String, Object],
-      S = [String, Array],
-      E = {
+    function O(t, e, n) {
+      var r = t.charAt(0);
+      if ('/' === r) return t;
+      if ('?' === r || '#' === r) return e + t;
+      var o = e.split('/');
+      (n && o[o.length - 1]) || o.pop();
+      for (var i = t.replace(/^\//, '').split('/'), a = 0; a < i.length; a++) {
+        var s = i[a];
+        '..' === s ? o.pop() : '.' !== s && o.push(s);
+      }
+      return '' !== o[0] && o.unshift(''), o.join('/');
+    }
+    function S(t) {
+      var e = '',
+        n = '',
+        r = t.indexOf('#');
+      r >= 0 && ((e = t.slice(r)), (t = t.slice(0, r)));
+      var o = t.indexOf('?');
+      return (
+        o >= 0 && ((n = t.slice(o + 1)), (t = t.slice(0, o))),
+        { path: t, query: n, hash: e }
+      );
+    }
+    function E(t) {
+      return t.replace(/\/\//g, '/');
+    }
+    var j =
+        Array.isArray ||
+        function(t) {
+          return '[object Array]' == Object.prototype.toString.call(t);
+        },
+      T = J,
+      I = M,
+      P = N,
+      R = B,
+      L = G,
+      D = new RegExp(
+        [
+          '(\\\\.)',
+          '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))',
+        ].join('|'),
+        'g'
+      );
+    function M(t, e) {
+      var n,
+        r = [],
+        o = 0,
+        i = 0,
+        a = '',
+        s = (e && e.delimiter) || '/';
+      while (null != (n = D.exec(t))) {
+        var c = n[0],
+          u = n[1],
+          f = n.index;
+        if (((a += t.slice(i, f)), (i = f + c.length), u)) a += u[1];
+        else {
+          var l = t[i],
+            p = n[2],
+            d = n[3],
+            h = n[4],
+            v = n[5],
+            y = n[6],
+            m = n[7];
+          a && (r.push(a), (a = ''));
+          var g = null != p && null != l && l !== p,
+            _ = '+' === y || '*' === y,
+            b = '?' === y || '*' === y,
+            w = n[2] || s,
+            x = h || v;
+          r.push({
+            name: d || o++,
+            prefix: p || '',
+            delimiter: w,
+            optional: b,
+            repeat: _,
+            partial: g,
+            asterisk: !!m,
+            pattern: x ? V(x) : m ? '.*' : '[^' + H(w) + ']+?',
+          });
+        }
+      }
+      return i < t.length && (a += t.substr(i)), a && r.push(a), r;
+    }
+    function N(t, e) {
+      return B(M(t, e));
+    }
+    function F(t) {
+      return encodeURI(t).replace(/[\/?#]/g, function(t) {
+        return (
+          '%' +
+          t
+            .charCodeAt(0)
+            .toString(16)
+            .toUpperCase()
+        );
+      });
+    }
+    function U(t) {
+      return encodeURI(t).replace(/[?#]/g, function(t) {
+        return (
+          '%' +
+          t
+            .charCodeAt(0)
+            .toString(16)
+            .toUpperCase()
+        );
+      });
+    }
+    function B(t) {
+      for (var e = new Array(t.length), n = 0; n < t.length; n++)
+        'object' === typeof t[n] &&
+          (e[n] = new RegExp('^(?:' + t[n].pattern + ')$'));
+      return function(n, r) {
+        for (
+          var o = '',
+            i = n || {},
+            a = r || {},
+            s = a.pretty ? F : encodeURIComponent,
+            c = 0;
+          c < t.length;
+          c++
+        ) {
+          var u = t[c];
+          if ('string' !== typeof u) {
+            var f,
+              l = i[u.name];
+            if (null == l) {
+              if (u.optional) {
+                u.partial && (o += u.prefix);
+                continue;
+              }
+              throw new TypeError('Expected "' + u.name + '" to be defined');
+            }
+            if (j(l)) {
+              if (!u.repeat)
+                throw new TypeError(
+                  'Expected "' +
+                    u.name +
+                    '" to not repeat, but received `' +
+                    JSON.stringify(l) +
+                    '`'
+                );
+              if (0 === l.length) {
+                if (u.optional) continue;
+                throw new TypeError(
+                  'Expected "' + u.name + '" to not be empty'
+                );
+              }
+              for (var p = 0; p < l.length; p++) {
+                if (((f = s(l[p])), !e[c].test(f)))
+                  throw new TypeError(
+                    'Expected all "' +
+                      u.name +
+                      '" to match "' +
+                      u.pattern +
+                      '", but received `' +
+                      JSON.stringify(f) +
+                      '`'
+                  );
+                o += (0 === p ? u.prefix : u.delimiter) + f;
+              }
+            } else {
+              if (((f = u.asterisk ? U(l) : s(l)), !e[c].test(f)))
+                throw new TypeError(
+                  'Expected "' +
+                    u.name +
+                    '" to match "' +
+                    u.pattern +
+                    '", but received "' +
+                    f +
+                    '"'
+                );
+              o += u.prefix + f;
+            }
+          } else o += u;
+        }
+        return o;
+      };
+    }
+    function H(t) {
+      return t.replace(/([.+*?=^!:${}()[\]|\/\\])/g, '\\$1');
+    }
+    function V(t) {
+      return t.replace(/([=!:$\/()])/g, '\\$1');
+    }
+    function q(t, e) {
+      return (t.keys = e), t;
+    }
+    function z(t) {
+      return t.sensitive ? '' : 'i';
+    }
+    function W(t, e) {
+      var n = t.source.match(/\((?!\?)/g);
+      if (n)
+        for (var r = 0; r < n.length; r++)
+          e.push({
+            name: r,
+            prefix: null,
+            delimiter: null,
+            optional: !1,
+            repeat: !1,
+            partial: !1,
+            asterisk: !1,
+            pattern: null,
+          });
+      return q(t, e);
+    }
+    function K(t, e, n) {
+      for (var r = [], o = 0; o < t.length; o++) r.push(J(t[o], e, n).source);
+      var i = new RegExp('(?:' + r.join('|') + ')', z(n));
+      return q(i, e);
+    }
+    function X(t, e, n) {
+      return G(M(t, n), e, n);
+    }
+    function G(t, e, n) {
+      j(e) || ((n = e || n), (e = [])), (n = n || {});
+      for (
+        var r = n.strict, o = !1 !== n.end, i = '', a = 0;
+        a < t.length;
+        a++
+      ) {
+        var s = t[a];
+        if ('string' === typeof s) i += H(s);
+        else {
+          var c = H(s.prefix),
+            u = '(?:' + s.pattern + ')';
+          e.push(s),
+            s.repeat && (u += '(?:' + c + u + ')*'),
+            (u = s.optional
+              ? s.partial
+                ? c + '(' + u + ')?'
+                : '(?:' + c + '(' + u + '))?'
+              : c + '(' + u + ')'),
+            (i += u);
+        }
+      }
+      var f = H(n.delimiter || '/'),
+        l = i.slice(-f.length) === f;
+      return (
+        r || (i = (l ? i.slice(0, -f.length) : i) + '(?:' + f + '(?=$))?'),
+        (i += o ? '$' : r && l ? '' : '(?=' + f + '|$)'),
+        q(new RegExp('^' + i, z(n)), e)
+      );
+    }
+    function J(t, e, n) {
+      return (
+        j(e) || ((n = e || n), (e = [])),
+        (n = n || {}),
+        t instanceof RegExp ? W(t, e) : j(t) ? K(t, e, n) : X(t, e, n)
+      );
+    }
+    (T.parse = I),
+      (T.compile = P),
+      (T.tokensToFunction = R),
+      (T.tokensToRegExp = L);
+    var Q = Object.create(null);
+    function Y(t, e, n) {
+      e = e || {};
+      try {
+        var r = Q[t] || (Q[t] = T.compile(t));
+        return e.pathMatch && (e[0] = e.pathMatch), r(e, { pretty: !0 });
+      } catch (o) {
+        return '';
+      } finally {
+        delete e[0];
+      }
+    }
+    function Z(t, e, n, r) {
+      var o = 'string' === typeof t ? { path: t } : t;
+      if (o._normalized) return o;
+      if (o.name) return a({}, t);
+      if (!o.path && o.params && e) {
+        (o = a({}, o)), (o._normalized = !0);
+        var i = a(a({}, e.params), o.params);
+        if (e.name) (o.name = e.name), (o.params = i);
+        else if (e.matched.length) {
+          var s = e.matched[e.matched.length - 1].path;
+          o.path = Y(s, i, 'path ' + e.path);
+        } else 0;
+        return o;
+      }
+      var c = S(o.path || ''),
+        u = (e && e.path) || '/',
+        f = c.path ? O(c.path, u, n || o.append) : u,
+        l = h(c.query, o.query, r && r.options.parseQuery),
+        p = o.hash || c.hash;
+      return (
+        p && '#' !== p.charAt(0) && (p = '#' + p),
+        { _normalized: !0, path: f, query: l, hash: p }
+      );
+    }
+    var tt,
+      et = [String, Object],
+      nt = [String, Array],
+      rt = function() {},
+      ot = {
         name: 'RouterLink',
         props: {
-          to: { type: O, required: !0 },
+          to: { type: et, required: !0 },
           tag: { type: String, default: 'a' },
           exact: Boolean,
           append: Boolean,
           replace: Boolean,
           activeClass: String,
           exactActiveClass: String,
-          event: { type: S, default: 'click' },
+          event: { type: nt, default: 'click' },
         },
         render: function(t) {
           var e = this,
             n = this.$router,
             r = this.$route,
             o = n.resolve(this.to, r, this.append),
-            a = o.location,
+            i = o.location,
             s = o.route,
             c = o.href,
             u = {},
@@ -4301,33 +4599,52 @@ var vendor_library = (function(t) {
             d = null == l ? 'router-link-exact-active' : l,
             h = null == this.activeClass ? p : this.activeClass,
             v = null == this.exactActiveClass ? d : this.exactActiveClass,
-            y = a.path ? m(null, a, null, n) : s;
-          (u[v] = x(r, y)), (u[h] = this.exact ? u[v] : A(r, y));
-          var g = function(t) {
-              j(t) && (e.replace ? n.replace(a) : n.push(a));
+            y = s.redirectedFrom ? g(null, Z(s.redirectedFrom), null, n) : s;
+          (u[v] = C(r, y)), (u[h] = this.exact ? u[v] : $(r, y));
+          var m = function(t) {
+              it(t) && (e.replace ? n.replace(i, rt) : n.push(i, rt));
             },
-            _ = { click: j };
+            _ = { click: it };
           Array.isArray(this.event)
             ? this.event.forEach(function(t) {
-                _[t] = g;
+                _[t] = m;
               })
-            : (_[this.event] = g);
-          var b = { class: u };
+            : (_[this.event] = m);
+          var b = { class: u },
+            w =
+              !this.$scopedSlots.$hasNormal &&
+              this.$scopedSlots.default &&
+              this.$scopedSlots.default({
+                href: c,
+                route: s,
+                navigate: m,
+                isActive: u[h],
+                isExactActive: u[v],
+              });
+          if (w) {
+            if (1 === w.length) return w[0];
+            if (w.length > 1 || !w.length)
+              return 0 === w.length ? t() : t('span', {}, w);
+          }
           if ('a' === this.tag) (b.on = _), (b.attrs = { href: c });
           else {
-            var w = T(this.$slots.default);
-            if (w) {
-              w.isStatic = !1;
-              var C = (w.data = i({}, w.data));
-              C.on = _;
-              var $ = (w.data.attrs = i({}, w.data.attrs));
-              $.href = c;
+            var x = at(this.$slots.default);
+            if (x) {
+              x.isStatic = !1;
+              var A = (x.data = a({}, x.data));
+              for (var k in ((A.on = A.on || {}), A.on)) {
+                var O = A.on[k];
+                k in _ && (A.on[k] = Array.isArray(O) ? O : [O]);
+              }
+              for (var S in _) S in A.on ? A.on[S].push(_[S]) : (A.on[S] = m);
+              var E = (x.data.attrs = a({}, x.data.attrs));
+              E.href = c;
             } else b.on = _;
           }
           return t(this.tag, b, this.$slots.default);
         },
       };
-    function j(t) {
+    function it(t) {
       if (
         !(t.metaKey || t.altKey || t.ctrlKey || t.shiftKey) &&
         !t.defaultPrevented &&
@@ -4340,16 +4657,16 @@ var vendor_library = (function(t) {
         return t.preventDefault && t.preventDefault(), !0;
       }
     }
-    function T(t) {
+    function at(t) {
       if (t)
         for (var e, n = 0; n < t.length; n++) {
           if (((e = t[n]), 'a' === e.tag)) return e;
-          if (e.children && (e = T(e.children))) return e;
+          if (e.children && (e = at(e.children))) return e;
         }
     }
-    function I(t) {
-      if (!I.installed || k !== t) {
-        (I.installed = !0), (k = t);
+    function st(t) {
+      if (!st.installed || tt !== t) {
+        (st.installed = !0), (tt = t);
         var e = function(t) {
             return void 0 !== t;
           },
@@ -4389,302 +4706,34 @@ var vendor_library = (function(t) {
               return this._routerRoot._route;
             },
           }),
-          t.component('RouterView', a),
-          t.component('RouterLink', E);
+          t.component('RouterView', s),
+          t.component('RouterLink', ot);
         var r = t.config.optionMergeStrategies;
         r.beforeRouteEnter = r.beforeRouteLeave = r.beforeRouteUpdate =
           r.created;
       }
     }
-    var R = 'undefined' !== typeof window;
-    function P(t, e, n) {
-      var r = t.charAt(0);
-      if ('/' === r) return t;
-      if ('?' === r || '#' === r) return e + t;
-      var o = e.split('/');
-      (n && o[o.length - 1]) || o.pop();
-      for (var i = t.replace(/^\//, '').split('/'), a = 0; a < i.length; a++) {
-        var s = i[a];
-        '..' === s ? o.pop() : '.' !== s && o.push(s);
-      }
-      return '' !== o[0] && o.unshift(''), o.join('/');
-    }
-    function L(t) {
-      var e = '',
-        n = '',
-        r = t.indexOf('#');
-      r >= 0 && ((e = t.slice(r)), (t = t.slice(0, r)));
-      var o = t.indexOf('?');
-      return (
-        o >= 0 && ((n = t.slice(o + 1)), (t = t.slice(0, o))),
-        { path: t, query: n, hash: e }
-      );
-    }
-    function D(t) {
-      return t.replace(/\/\//g, '/');
-    }
-    var M =
-        Array.isArray ||
-        function(t) {
-          return '[object Array]' == Object.prototype.toString.call(t);
-        },
-      N = rt,
-      F = q,
-      U = z,
-      H = X,
-      V = nt,
-      B = new RegExp(
-        [
-          '(\\\\.)',
-          '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))',
-        ].join('|'),
-        'g'
-      );
-    function q(t, e) {
-      var n,
-        r = [],
-        o = 0,
-        i = 0,
-        a = '',
-        s = (e && e.delimiter) || '/';
-      while (null != (n = B.exec(t))) {
-        var c = n[0],
-          u = n[1],
-          f = n.index;
-        if (((a += t.slice(i, f)), (i = f + c.length), u)) a += u[1];
-        else {
-          var l = t[i],
-            p = n[2],
-            d = n[3],
-            h = n[4],
-            v = n[5],
-            y = n[6],
-            m = n[7];
-          a && (r.push(a), (a = ''));
-          var g = null != p && null != l && l !== p,
-            _ = '+' === y || '*' === y,
-            b = '?' === y || '*' === y,
-            w = n[2] || s,
-            x = h || v;
-          r.push({
-            name: d || o++,
-            prefix: p || '',
-            delimiter: w,
-            optional: b,
-            repeat: _,
-            partial: g,
-            asterisk: !!m,
-            pattern: x ? J(x) : m ? '.*' : '[^' + G(w) + ']+?',
-          });
-        }
-      }
-      return i < t.length && (a += t.substr(i)), a && r.push(a), r;
-    }
-    function z(t, e) {
-      return X(q(t, e));
-    }
-    function W(t) {
-      return encodeURI(t).replace(/[\/?#]/g, function(t) {
-        return (
-          '%' +
-          t
-            .charCodeAt(0)
-            .toString(16)
-            .toUpperCase()
-        );
-      });
-    }
-    function K(t) {
-      return encodeURI(t).replace(/[?#]/g, function(t) {
-        return (
-          '%' +
-          t
-            .charCodeAt(0)
-            .toString(16)
-            .toUpperCase()
-        );
-      });
-    }
-    function X(t) {
-      for (var e = new Array(t.length), n = 0; n < t.length; n++)
-        'object' === typeof t[n] &&
-          (e[n] = new RegExp('^(?:' + t[n].pattern + ')$'));
-      return function(n, r) {
-        for (
-          var o = '',
-            i = n || {},
-            a = r || {},
-            s = a.pretty ? W : encodeURIComponent,
-            c = 0;
-          c < t.length;
-          c++
-        ) {
-          var u = t[c];
-          if ('string' !== typeof u) {
-            var f,
-              l = i[u.name];
-            if (null == l) {
-              if (u.optional) {
-                u.partial && (o += u.prefix);
-                continue;
-              }
-              throw new TypeError('Expected "' + u.name + '" to be defined');
-            }
-            if (M(l)) {
-              if (!u.repeat)
-                throw new TypeError(
-                  'Expected "' +
-                    u.name +
-                    '" to not repeat, but received `' +
-                    JSON.stringify(l) +
-                    '`'
-                );
-              if (0 === l.length) {
-                if (u.optional) continue;
-                throw new TypeError(
-                  'Expected "' + u.name + '" to not be empty'
-                );
-              }
-              for (var p = 0; p < l.length; p++) {
-                if (((f = s(l[p])), !e[c].test(f)))
-                  throw new TypeError(
-                    'Expected all "' +
-                      u.name +
-                      '" to match "' +
-                      u.pattern +
-                      '", but received `' +
-                      JSON.stringify(f) +
-                      '`'
-                  );
-                o += (0 === p ? u.prefix : u.delimiter) + f;
-              }
-            } else {
-              if (((f = u.asterisk ? K(l) : s(l)), !e[c].test(f)))
-                throw new TypeError(
-                  'Expected "' +
-                    u.name +
-                    '" to match "' +
-                    u.pattern +
-                    '", but received "' +
-                    f +
-                    '"'
-                );
-              o += u.prefix + f;
-            }
-          } else o += u;
-        }
-        return o;
-      };
-    }
-    function G(t) {
-      return t.replace(/([.+*?=^!:${}()[\]|\/\\])/g, '\\$1');
-    }
-    function J(t) {
-      return t.replace(/([=!:$\/()])/g, '\\$1');
-    }
-    function Q(t, e) {
-      return (t.keys = e), t;
-    }
-    function Y(t) {
-      return t.sensitive ? '' : 'i';
-    }
-    function Z(t, e) {
-      var n = t.source.match(/\((?!\?)/g);
-      if (n)
-        for (var r = 0; r < n.length; r++)
-          e.push({
-            name: r,
-            prefix: null,
-            delimiter: null,
-            optional: !1,
-            repeat: !1,
-            partial: !1,
-            asterisk: !1,
-            pattern: null,
-          });
-      return Q(t, e);
-    }
-    function tt(t, e, n) {
-      for (var r = [], o = 0; o < t.length; o++) r.push(rt(t[o], e, n).source);
-      var i = new RegExp('(?:' + r.join('|') + ')', Y(n));
-      return Q(i, e);
-    }
-    function et(t, e, n) {
-      return nt(q(t, n), e, n);
-    }
-    function nt(t, e, n) {
-      M(e) || ((n = e || n), (e = [])), (n = n || {});
-      for (
-        var r = n.strict, o = !1 !== n.end, i = '', a = 0;
-        a < t.length;
-        a++
-      ) {
-        var s = t[a];
-        if ('string' === typeof s) i += G(s);
-        else {
-          var c = G(s.prefix),
-            u = '(?:' + s.pattern + ')';
-          e.push(s),
-            s.repeat && (u += '(?:' + c + u + ')*'),
-            (u = s.optional
-              ? s.partial
-                ? c + '(' + u + ')?'
-                : '(?:' + c + '(' + u + '))?'
-              : c + '(' + u + ')'),
-            (i += u);
-        }
-      }
-      var f = G(n.delimiter || '/'),
-        l = i.slice(-f.length) === f;
-      return (
-        r || (i = (l ? i.slice(0, -f.length) : i) + '(?:' + f + '(?=$))?'),
-        (i += o ? '$' : r && l ? '' : '(?=' + f + '|$)'),
-        Q(new RegExp('^' + i, Y(n)), e)
-      );
-    }
-    function rt(t, e, n) {
-      return (
-        M(e) || ((n = e || n), (e = [])),
-        (n = n || {}),
-        t instanceof RegExp ? Z(t, e) : M(t) ? tt(t, e, n) : et(t, e, n)
-      );
-    }
-    (N.parse = F),
-      (N.compile = U),
-      (N.tokensToFunction = H),
-      (N.tokensToRegExp = V);
-    var ot = Object.create(null);
-    function it(t, e, n) {
-      e = e || {};
-      try {
-        var r = ot[t] || (ot[t] = N.compile(t));
-        return e.pathMatch && (e[0] = e.pathMatch), r(e, { pretty: !0 });
-      } catch (o) {
-        return '';
-      } finally {
-        delete e[0];
-      }
-    }
-    function at(t, e, n, r) {
+    var ct = 'undefined' !== typeof window;
+    function ut(t, e, n, r) {
       var o = e || [],
         i = n || Object.create(null),
         a = r || Object.create(null);
       t.forEach(function(t) {
-        st(o, i, a, t);
+        ft(o, i, a, t);
       });
       for (var s = 0, c = o.length; s < c; s++)
         '*' === o[s] && (o.push(o.splice(s, 1)[0]), c--, s--);
       return { pathList: o, pathMap: i, nameMap: a };
     }
-    function st(t, e, n, r, o, i) {
+    function ft(t, e, n, r, o, i) {
       var a = r.path,
         s = r.name;
       var c = r.pathToRegexpOptions || {},
-        u = ut(a, o, c.strict);
+        u = pt(a, o, c.strict);
       'boolean' === typeof r.caseSensitive && (c.sensitive = r.caseSensitive);
       var f = {
         path: u,
-        regex: ct(u, c),
+        regex: lt(u, c),
         components: r.components || { default: r.component },
         instances: {},
         name: s,
@@ -4699,63 +4748,44 @@ var vendor_library = (function(t) {
       if (
         (r.children &&
           r.children.forEach(function(r) {
-            var o = i ? D(i + '/' + r.path) : void 0;
-            st(t, e, n, r, f, o);
+            var o = i ? E(i + '/' + r.path) : void 0;
+            ft(t, e, n, r, f, o);
           }),
+        e[f.path] || (t.push(f.path), (e[f.path] = f)),
         void 0 !== r.alias)
-      ) {
-        var l = Array.isArray(r.alias) ? r.alias : [r.alias];
-        l.forEach(function(i) {
-          var a = { path: i, children: r.children };
-          st(t, e, n, a, o, f.path || '/');
-        });
-      }
-      e[f.path] || (t.push(f.path), (e[f.path] = f)), s && (n[s] || (n[s] = f));
-    }
-    function ct(t, e) {
-      var n = N(t, [], e);
-      return n;
-    }
-    function ut(t, e, n) {
-      return (
-        n || (t = t.replace(/\/$/, '')),
-        '/' === t[0] ? t : null == e ? t : D(e.path + '/' + t)
-      );
-    }
-    function ft(t, e, n, r) {
-      var o = 'string' === typeof t ? { path: t } : t;
-      if (o._normalized) return o;
-      if (o.name) return i({}, t);
-      if (!o.path && o.params && e) {
-        (o = i({}, o)), (o._normalized = !0);
-        var a = i(i({}, e.params), o.params);
-        if (e.name) (o.name = e.name), (o.params = a);
-        else if (e.matched.length) {
-          var s = e.matched[e.matched.length - 1].path;
-          o.path = it(s, a, 'path ' + e.path);
-        } else 0;
-        return o;
-      }
-      var c = L(o.path || ''),
-        u = (e && e.path) || '/',
-        f = c.path ? P(c.path, u, n || o.append) : u,
-        l = d(c.query, o.query, r && r.options.parseQuery),
-        p = o.hash || c.hash;
-      return (
-        p && '#' !== p.charAt(0) && (p = '#' + p),
-        { _normalized: !0, path: f, query: l, hash: p }
-      );
+      )
+        for (
+          var l = Array.isArray(r.alias) ? r.alias : [r.alias], p = 0;
+          p < l.length;
+          ++p
+        ) {
+          var d = l[p];
+          0;
+          var h = { path: d, children: r.children };
+          ft(t, e, n, h, o, f.path || '/');
+        }
+      s && (n[s] || (n[s] = f));
     }
     function lt(t, e) {
-      var n = at(t),
+      var n = T(t, [], e);
+      return n;
+    }
+    function pt(t, e, n) {
+      return (
+        n || (t = t.replace(/\/$/, '')),
+        '/' === t[0] ? t : null == e ? t : E(e.path + '/' + t)
+      );
+    }
+    function dt(t, e) {
+      var n = ut(t),
         r = n.pathList,
         o = n.pathMap,
         i = n.nameMap;
       function a(t) {
-        at(t, r, o, i);
+        ut(t, r, o, i);
       }
       function s(t, n, a) {
-        var s = ft(t, n, !1, e),
+        var s = Z(t, n, !1, e),
           c = s.name;
         if (c) {
           var u = i[c];
@@ -4775,24 +4805,24 @@ var vendor_library = (function(t) {
               !(p in s.params) &&
                 l.indexOf(p) > -1 &&
                 (s.params[p] = n.params[p]);
-          if (u)
-            return (
-              (s.path = it(u.path, s.params, 'named route "' + c + '"')),
-              f(u, s, a)
-            );
-        } else if (s.path) {
+          return (
+            (s.path = Y(u.path, s.params, 'named route "' + c + '"')),
+            f(u, s, a)
+          );
+        }
+        if (s.path) {
           s.params = {};
           for (var d = 0; d < r.length; d++) {
             var h = r[d],
               v = o[h];
-            if (pt(v.regex, s.path, s.params)) return f(v, s, a);
+            if (ht(v.regex, s.path, s.params)) return f(v, s, a);
           }
         }
         return f(null, s);
       }
       function c(t, n) {
         var r = t.redirect,
-          o = 'function' === typeof r ? r(m(t, n, null, e)) : r;
+          o = 'function' === typeof r ? r(g(t, n, null, e)) : r;
         if (
           ('string' === typeof o && (o = { path: o }),
           !o || 'object' !== typeof o)
@@ -4818,14 +4848,14 @@ var vendor_library = (function(t) {
           );
         }
         if (u) {
-          var h = dt(u, t),
-            v = it(h, d, 'redirect route with path "' + h + '"');
+          var h = vt(u, t),
+            v = Y(h, d, 'redirect route with path "' + h + '"');
           return s({ _normalized: !0, path: v, query: l, hash: p }, void 0, n);
         }
         return f(null, n);
       }
       function u(t, e, n) {
-        var r = it(n, e.params, 'aliased route with path "' + n + '"'),
+        var r = Y(n, e.params, 'aliased route with path "' + n + '"'),
           o = s({ _normalized: !0, path: r });
         if (o) {
           var i = o.matched,
@@ -4839,11 +4869,11 @@ var vendor_library = (function(t) {
           ? c(t, r || n)
           : t && t.matchAs
           ? u(t, n, t.matchAs)
-          : m(t, n, r, e);
+          : g(t, n, r, e);
       }
       return { match: s, addRoutes: a };
     }
-    function pt(t, e, n) {
+    function ht(t, e, n) {
       var r = e.match(t);
       if (!r) return !1;
       if (!n) return !0;
@@ -4854,122 +4884,123 @@ var vendor_library = (function(t) {
       }
       return !0;
     }
-    function dt(t, e) {
-      return P(t, e.parent ? e.parent.path : '/', !0);
+    function vt(t, e) {
+      return O(t, e.parent ? e.parent.path : '/', !0);
     }
-    var ht = Object.create(null);
-    function vt() {
-      window.history.replaceState(
-        { key: Et() },
-        '',
-        window.location.href.replace(window.location.origin, '')
-      ),
+    var yt =
+      ct && window.performance && window.performance.now
+        ? window.performance
+        : Date;
+    function mt() {
+      return yt.now().toFixed(3);
+    }
+    var gt = mt();
+    function _t() {
+      return gt;
+    }
+    function bt(t) {
+      return (gt = t);
+    }
+    var wt = Object.create(null);
+    function xt() {
+      var t = window.location.protocol + '//' + window.location.host,
+        e = window.location.href.replace(t, '');
+      window.history.replaceState({ key: _t() }, '', e),
         window.addEventListener('popstate', function(t) {
-          mt(), t.state && t.state.key && jt(t.state.key);
+          At(), t.state && t.state.key && bt(t.state.key);
         });
     }
-    function yt(t, e, n, r) {
+    function Ct(t, e, n, r) {
       if (t.app) {
         var o = t.options.scrollBehavior;
         o &&
           t.app.$nextTick(function() {
-            var i = gt(),
+            var i = $t(),
               a = o.call(t, e, n, r ? i : null);
             a &&
               ('function' === typeof a.then
                 ? a
                     .then(function(t) {
-                      At(t, i);
+                      It(t, i);
                     })
                     .catch(function(t) {
                       0;
                     })
-                : At(a, i));
+                : It(a, i));
           });
       }
     }
-    function mt() {
-      var t = Et();
-      t && (ht[t] = { x: window.pageXOffset, y: window.pageYOffset });
+    function At() {
+      var t = _t();
+      t && (wt[t] = { x: window.pageXOffset, y: window.pageYOffset });
     }
-    function gt() {
-      var t = Et();
-      if (t) return ht[t];
+    function $t() {
+      var t = _t();
+      if (t) return wt[t];
     }
-    function _t(t, e) {
+    function kt(t, e) {
       var n = document.documentElement,
         r = n.getBoundingClientRect(),
         o = t.getBoundingClientRect();
       return { x: o.left - r.left - e.x, y: o.top - r.top - e.y };
     }
-    function bt(t) {
-      return Ct(t.x) || Ct(t.y);
+    function Ot(t) {
+      return jt(t.x) || jt(t.y);
     }
-    function wt(t) {
+    function St(t) {
       return {
-        x: Ct(t.x) ? t.x : window.pageXOffset,
-        y: Ct(t.y) ? t.y : window.pageYOffset,
+        x: jt(t.x) ? t.x : window.pageXOffset,
+        y: jt(t.y) ? t.y : window.pageYOffset,
       };
     }
-    function xt(t) {
-      return { x: Ct(t.x) ? t.x : 0, y: Ct(t.y) ? t.y : 0 };
-    }
-    function Ct(t) {
-      return 'number' === typeof t;
-    }
-    function At(t, e) {
-      var n = 'object' === typeof t;
-      if (n && 'string' === typeof t.selector) {
-        var r = document.querySelector(t.selector);
-        if (r) {
-          var o = t.offset && 'object' === typeof t.offset ? t.offset : {};
-          (o = xt(o)), (e = _t(r, o));
-        } else bt(t) && (e = wt(t));
-      } else n && bt(t) && (e = wt(t));
-      e && window.scrollTo(e.x, e.y);
-    }
-    var $t =
-        R &&
-        (function() {
-          var t = window.navigator.userAgent;
-          return (
-            ((-1 === t.indexOf('Android 2.') &&
-              -1 === t.indexOf('Android 4.0')) ||
-              -1 === t.indexOf('Mobile Safari') ||
-              -1 !== t.indexOf('Chrome') ||
-              -1 !== t.indexOf('Windows Phone')) &&
-            (window.history && 'pushState' in window.history)
-          );
-        })(),
-      kt =
-        R && window.performance && window.performance.now
-          ? window.performance
-          : Date,
-      Ot = St();
-    function St() {
-      return kt.now().toFixed(3);
-    }
-    function Et() {
-      return Ot;
+    function Et(t) {
+      return { x: jt(t.x) ? t.x : 0, y: jt(t.y) ? t.y : 0 };
     }
     function jt(t) {
-      Ot = t;
+      return 'number' === typeof t;
     }
-    function Tt(t, e) {
-      mt();
+    var Tt = /^#\d/;
+    function It(t, e) {
+      var n = 'object' === typeof t;
+      if (n && 'string' === typeof t.selector) {
+        var r = Tt.test(t.selector)
+          ? document.getElementById(t.selector.slice(1))
+          : document.querySelector(t.selector);
+        if (r) {
+          var o = t.offset && 'object' === typeof t.offset ? t.offset : {};
+          (o = Et(o)), (e = kt(r, o));
+        } else Ot(t) && (e = St(t));
+      } else n && Ot(t) && (e = St(t));
+      e && window.scrollTo(e.x, e.y);
+    }
+    var Pt =
+      ct &&
+      (function() {
+        var t = window.navigator.userAgent;
+        return (
+          ((-1 === t.indexOf('Android 2.') &&
+            -1 === t.indexOf('Android 4.0')) ||
+            -1 === t.indexOf('Mobile Safari') ||
+            -1 !== t.indexOf('Chrome') ||
+            -1 !== t.indexOf('Windows Phone')) &&
+          (window.history && 'pushState' in window.history)
+        );
+      })();
+    function Rt(t, e) {
+      At();
       var n = window.history;
       try {
         e
-          ? n.replaceState({ key: Ot }, '', t)
-          : ((Ot = St()), n.pushState({ key: Ot }, '', t));
+          ? n.replaceState({ key: _t() }, '', t)
+          : n.pushState({ key: bt(mt()) }, '', t);
       } catch (r) {
         window.location[e ? 'replace' : 'assign'](t);
       }
     }
-    function It(t) {
-      Tt(t, !0);
+    function Lt(t) {
+      Rt(t, !0);
     }
-    function Rt(t, e, n) {
+    function Dt(t, e, n) {
       var r = function(o) {
         o >= t.length
           ? n()
@@ -4981,23 +5012,23 @@ var vendor_library = (function(t) {
       };
       r(0);
     }
-    function Pt(t) {
+    function Mt(t) {
       return function(e, n, r) {
         var i = !1,
           a = 0,
           s = null;
-        Lt(t, function(t, e, n, c) {
+        Nt(t, function(t, e, n, c) {
           if ('function' === typeof t && void 0 === t.cid) {
             (i = !0), a++;
             var u,
-              f = Ft(function(e) {
-                Nt(e) && (e = e.default),
-                  (t.resolved = 'function' === typeof e ? e : k.extend(e)),
+              f = Ht(function(e) {
+                Bt(e) && (e = e.default),
+                  (t.resolved = 'function' === typeof e ? e : tt.extend(e)),
                   (n.components[c] = e),
                   a--,
                   a <= 0 && r();
               }),
-              l = Ft(function(t) {
+              l = Ht(function(t) {
                 var e = 'Failed to resolve async component ' + c + ': ' + t;
                 s || ((s = o(t) ? t : new Error(e)), r(s));
               });
@@ -5017,8 +5048,8 @@ var vendor_library = (function(t) {
           i || r();
       };
     }
-    function Lt(t, e) {
-      return Dt(
+    function Nt(t, e) {
+      return Ft(
         t.map(function(t) {
           return Object.keys(t.components).map(function(n) {
             return e(t.components[n], t.instances[n], t, n);
@@ -5026,15 +5057,15 @@ var vendor_library = (function(t) {
         })
       );
     }
-    function Dt(t) {
+    function Ft(t) {
       return Array.prototype.concat.apply([], t);
     }
-    var Mt =
+    var Ut =
       'function' === typeof Symbol && 'symbol' === typeof Symbol.toStringTag;
-    function Nt(t) {
-      return t.__esModule || (Mt && 'Module' === t[Symbol.toStringTag]);
+    function Bt(t) {
+      return t.__esModule || (Ut && 'Module' === t[Symbol.toStringTag]);
     }
-    function Ft(t) {
+    function Ht(t) {
       var e = !1;
       return function() {
         var n = [],
@@ -5043,26 +5074,48 @@ var vendor_library = (function(t) {
         if (!e) return (e = !0), t.apply(this, n);
       };
     }
-    var Ut = function(t, e) {
+    var Vt = (function(t) {
+      function e(e) {
+        t.call(this),
+          (this.name = this._name = 'NavigationDuplicated'),
+          (this.message =
+            'Navigating to current location ("' +
+            e.fullPath +
+            '") is not allowed'),
+          Object.defineProperty(this, 'stack', {
+            value: new t().stack,
+            writable: !0,
+            configurable: !0,
+          });
+      }
+      return (
+        t && (e.__proto__ = t),
+        (e.prototype = Object.create(t && t.prototype)),
+        (e.prototype.constructor = e),
+        e
+      );
+    })(Error);
+    Vt._name = 'NavigationDuplicated';
+    var qt = function(t, e) {
       (this.router = t),
-        (this.base = Ht(e)),
-        (this.current = _),
+        (this.base = zt(e)),
+        (this.current = b),
         (this.pending = null),
         (this.ready = !1),
         (this.readyCbs = []),
         (this.readyErrorCbs = []),
         (this.errorCbs = []);
     };
-    function Ht(t) {
+    function zt(t) {
       if (!t)
-        if (R) {
+        if (ct) {
           var e = document.querySelector('base');
           (t = (e && e.getAttribute('href')) || '/'),
             (t = t.replace(/^https?:\/\/[^\/]+/, ''));
         } else t = '/';
       return '/' !== t.charAt(0) && (t = '/' + t), t.replace(/\/$/, '');
     }
-    function Vt(t, e) {
+    function Wt(t, e) {
       var n,
         r = Math.max(t.length, e.length);
       for (n = 0; n < r; n++) if (t[n] !== e[n]) break;
@@ -5072,9 +5125,9 @@ var vendor_library = (function(t) {
         deactivated: t.slice(n),
       };
     }
-    function Bt(t, e, n, r) {
-      var o = Lt(t, function(t, r, o, i) {
-        var a = qt(t, e);
+    function Kt(t, e, n, r) {
+      var o = Nt(t, function(t, r, o, i) {
+        var a = Xt(t, e);
         if (a)
           return Array.isArray(a)
             ? a.map(function(t) {
@@ -5082,59 +5135,59 @@ var vendor_library = (function(t) {
               })
             : n(a, r, o, i);
       });
-      return Dt(r ? o.reverse() : o);
+      return Ft(r ? o.reverse() : o);
     }
-    function qt(t, e) {
-      return 'function' !== typeof t && (t = k.extend(t)), t.options[e];
+    function Xt(t, e) {
+      return 'function' !== typeof t && (t = tt.extend(t)), t.options[e];
     }
-    function zt(t) {
-      return Bt(t, 'beforeRouteLeave', Kt, !0);
+    function Gt(t) {
+      return Kt(t, 'beforeRouteLeave', Qt, !0);
     }
-    function Wt(t) {
-      return Bt(t, 'beforeRouteUpdate', Kt);
+    function Jt(t) {
+      return Kt(t, 'beforeRouteUpdate', Qt);
     }
-    function Kt(t, e) {
+    function Qt(t, e) {
       if (e)
         return function() {
           return t.apply(e, arguments);
         };
     }
-    function Xt(t, e, n) {
-      return Bt(t, 'beforeRouteEnter', function(t, r, o, i) {
-        return Gt(t, o, i, e, n);
+    function Yt(t, e, n) {
+      return Kt(t, 'beforeRouteEnter', function(t, r, o, i) {
+        return Zt(t, o, i, e, n);
       });
     }
-    function Gt(t, e, n, r, o) {
+    function Zt(t, e, n, r, o) {
       return function(i, a, s) {
         return t(i, a, function(t) {
-          s(t),
-            'function' === typeof t &&
-              r.push(function() {
-                Jt(t, e.instances, n, o);
-              });
+          'function' === typeof t &&
+            r.push(function() {
+              te(t, e.instances, n, o);
+            }),
+            s(t);
         });
       };
     }
-    function Jt(t, e, n, r) {
+    function te(t, e, n, r) {
       e[n] && !e[n]._isBeingDestroyed
         ? t(e[n])
         : r() &&
           setTimeout(function() {
-            Jt(t, e, n, r);
+            te(t, e, n, r);
           }, 16);
     }
-    (Ut.prototype.listen = function(t) {
+    (qt.prototype.listen = function(t) {
       this.cb = t;
     }),
-      (Ut.prototype.onReady = function(t, e) {
+      (qt.prototype.onReady = function(t, e) {
         this.ready
           ? t()
           : (this.readyCbs.push(t), e && this.readyErrorCbs.push(e));
       }),
-      (Ut.prototype.onError = function(t) {
+      (qt.prototype.onError = function(t) {
         this.errorCbs.push(t);
       }),
-      (Ut.prototype.transitionTo = function(t, e, n) {
+      (qt.prototype.transitionTo = function(t, e, n) {
         var r = this,
           o = this.router.match(t, this.current);
         this.confirmTransition(
@@ -5160,65 +5213,66 @@ var vendor_library = (function(t) {
           }
         );
       }),
-      (Ut.prototype.confirmTransition = function(t, e, n) {
-        var i = this,
-          a = this.current,
-          s = function(t) {
-            o(t) &&
-              (i.errorCbs.length
-                ? i.errorCbs.forEach(function(e) {
+      (qt.prototype.confirmTransition = function(t, e, n) {
+        var a = this,
+          s = this.current,
+          c = function(t) {
+            !i(Vt, t) &&
+              o(t) &&
+              (a.errorCbs.length
+                ? a.errorCbs.forEach(function(e) {
                     e(t);
                   })
                 : (r(!1, 'uncaught error during route navigation:'),
                   console.error(t))),
               n && n(t);
           };
-        if (x(t, a) && t.matched.length === a.matched.length)
-          return this.ensureURL(), s();
-        var c = Vt(this.current.matched, t.matched),
-          u = c.updated,
-          f = c.deactivated,
-          l = c.activated,
-          p = [].concat(
-            zt(f),
+        if (C(t, s) && t.matched.length === s.matched.length)
+          return this.ensureURL(), c(new Vt(t));
+        var u = Wt(this.current.matched, t.matched),
+          f = u.updated,
+          l = u.deactivated,
+          p = u.activated,
+          d = [].concat(
+            Gt(l),
             this.router.beforeHooks,
-            Wt(u),
-            l.map(function(t) {
+            Jt(f),
+            p.map(function(t) {
               return t.beforeEnter;
             }),
-            Pt(l)
+            Mt(p)
           );
         this.pending = t;
-        var d = function(e, n) {
-          if (i.pending !== t) return s();
+        var h = function(e, n) {
+          if (a.pending !== t) return c();
           try {
-            e(t, a, function(t) {
+            e(t, s, function(t) {
               !1 === t || o(t)
-                ? (i.ensureURL(!0), s(t))
+                ? (a.ensureURL(!0), c(t))
                 : 'string' === typeof t ||
                   ('object' === typeof t &&
                     ('string' === typeof t.path || 'string' === typeof t.name))
-                ? (s(),
-                  'object' === typeof t && t.replace ? i.replace(t) : i.push(t))
+                ? (c(),
+                  'object' === typeof t && t.replace ? a.replace(t) : a.push(t))
                 : n(t);
             });
           } catch (r) {
-            s(r);
+            c(r);
           }
         };
-        Rt(p, d, function() {
+        Dt(d, h, function() {
           var n = [],
             r = function() {
-              return i.current === t;
+              return a.current === t;
             },
-            o = Xt(l, n, r),
-            a = o.concat(i.router.resolveHooks);
-          Rt(a, d, function() {
-            if (i.pending !== t) return s();
-            (i.pending = null),
+            o = Yt(p, n, r),
+            i = o.concat(a.router.resolveHooks);
+          Dt(i, h, function() {
+            if (a.pending !== t) return c();
+            (a.pending = null),
               e(t),
-              i.router.app &&
-                i.router.app.$nextTick(function() {
+              a.router.app &&
+                a.router.app.$nextTick(function() {
                   n.forEach(function(t) {
                     t();
                   });
@@ -5226,7 +5280,7 @@ var vendor_library = (function(t) {
           });
         });
       }),
-      (Ut.prototype.updateRoute = function(t) {
+      (qt.prototype.updateRoute = function(t) {
         var e = this.current;
         (this.current = t),
           this.cb && this.cb(t),
@@ -5234,20 +5288,20 @@ var vendor_library = (function(t) {
             n && n(t, e);
           });
       });
-    var Qt = (function(t) {
+    var ee = (function(t) {
       function e(e, n) {
         var r = this;
         t.call(this, e, n);
         var o = e.options.scrollBehavior,
-          i = $t && o;
-        i && vt();
-        var a = Yt(this.base);
+          i = Pt && o;
+        i && xt();
+        var a = ne(this.base);
         window.addEventListener('popstate', function(t) {
           var n = r.current,
-            o = Yt(r.base);
-          (r.current === _ && o === a) ||
+            o = ne(r.base);
+          (r.current === b && o === a) ||
             r.transitionTo(o, function(t) {
-              i && yt(e, t, n, !0);
+              i && Ct(e, t, n, !0);
             });
         });
       }
@@ -5265,7 +5319,7 @@ var vendor_library = (function(t) {
           this.transitionTo(
             t,
             function(t) {
-              Tt(D(r.base + t.fullPath)), yt(r.router, t, i, !1), e && e(t);
+              Rt(E(r.base + t.fullPath)), Ct(r.router, t, i, !1), e && e(t);
             },
             n
           );
@@ -5277,33 +5331,33 @@ var vendor_library = (function(t) {
           this.transitionTo(
             t,
             function(t) {
-              It(D(r.base + t.fullPath)), yt(r.router, t, i, !1), e && e(t);
+              Lt(E(r.base + t.fullPath)), Ct(r.router, t, i, !1), e && e(t);
             },
             n
           );
         }),
         (e.prototype.ensureURL = function(t) {
-          if (Yt(this.base) !== this.current.fullPath) {
-            var e = D(this.base + this.current.fullPath);
-            t ? Tt(e) : It(e);
+          if (ne(this.base) !== this.current.fullPath) {
+            var e = E(this.base + this.current.fullPath);
+            t ? Rt(e) : Lt(e);
           }
         }),
         (e.prototype.getCurrentLocation = function() {
-          return Yt(this.base);
+          return ne(this.base);
         }),
         e
       );
-    })(Ut);
-    function Yt(t) {
+    })(qt);
+    function ne(t) {
       var e = decodeURI(window.location.pathname);
       return (
         t && 0 === e.indexOf(t) && (e = e.slice(t.length)),
         (e || '/') + window.location.search + window.location.hash
       );
     }
-    var Zt = (function(t) {
+    var re = (function(t) {
       function e(e, n, r) {
-        t.call(this, e, n), (r && te(this.base)) || ee();
+        t.call(this, e, n), (r && oe(this.base)) || ie();
       }
       return (
         t && (e.__proto__ = t),
@@ -5313,13 +5367,13 @@ var vendor_library = (function(t) {
           var t = this,
             e = this.router,
             n = e.options.scrollBehavior,
-            r = $t && n;
-          r && vt(),
-            window.addEventListener($t ? 'popstate' : 'hashchange', function() {
+            r = Pt && n;
+          r && xt(),
+            window.addEventListener(Pt ? 'popstate' : 'hashchange', function() {
               var e = t.current;
-              ee() &&
-                t.transitionTo(ne(), function(n) {
-                  r && yt(t.router, n, e, !0), $t || ie(n.fullPath);
+              ie() &&
+                t.transitionTo(ae(), function(n) {
+                  r && Ct(t.router, n, e, !0), Pt || ue(n.fullPath);
                 });
             });
         }),
@@ -5330,7 +5384,7 @@ var vendor_library = (function(t) {
           this.transitionTo(
             t,
             function(t) {
-              oe(t.fullPath), yt(r.router, t, i, !1), e && e(t);
+              ce(t.fullPath), Ct(r.router, t, i, !1), e && e(t);
             },
             n
           );
@@ -5342,7 +5396,7 @@ var vendor_library = (function(t) {
           this.transitionTo(
             t,
             function(t) {
-              ie(t.fullPath), yt(r.router, t, i, !1), e && e(t);
+              ue(t.fullPath), Ct(r.router, t, i, !1), e && e(t);
             },
             n
           );
@@ -5352,23 +5406,23 @@ var vendor_library = (function(t) {
         }),
         (e.prototype.ensureURL = function(t) {
           var e = this.current.fullPath;
-          ne() !== e && (t ? oe(e) : ie(e));
+          ae() !== e && (t ? ce(e) : ue(e));
         }),
         (e.prototype.getCurrentLocation = function() {
-          return ne();
+          return ae();
         }),
         e
       );
-    })(Ut);
-    function te(t) {
-      var e = Yt(t);
-      if (!/^\/#/.test(e)) return window.location.replace(D(t + '/#' + e)), !0;
+    })(qt);
+    function oe(t) {
+      var e = ne(t);
+      if (!/^\/#/.test(e)) return window.location.replace(E(t + '/#' + e)), !0;
     }
-    function ee() {
-      var t = ne();
-      return '/' === t.charAt(0) || (ie('/' + t), !1);
+    function ie() {
+      var t = ae();
+      return '/' === t.charAt(0) || (ue('/' + t), !1);
     }
-    function ne() {
+    function ae() {
       var t = window.location.href,
         e = t.indexOf('#');
       if (e < 0) return '';
@@ -5380,19 +5434,19 @@ var vendor_library = (function(t) {
       } else n > -1 && (t = decodeURI(t.slice(0, n)) + t.slice(n));
       return t;
     }
-    function re(t) {
+    function se(t) {
       var e = window.location.href,
         n = e.indexOf('#'),
         r = n >= 0 ? e.slice(0, n) : e;
       return r + '#' + t;
     }
-    function oe(t) {
-      $t ? Tt(re(t)) : (window.location.hash = t);
+    function ce(t) {
+      Pt ? Rt(se(t)) : (window.location.hash = t);
     }
-    function ie(t) {
-      $t ? It(re(t)) : window.location.replace(re(t));
+    function ue(t) {
+      Pt ? Lt(se(t)) : window.location.replace(se(t));
     }
-    var ae = (function(t) {
+    var fe = (function(t) {
         function e(e, n) {
           t.call(this, e, n), (this.stack = []), (this.index = -1);
         }
@@ -5427,9 +5481,15 @@ var vendor_library = (function(t) {
               n = this.index + t;
             if (!(n < 0 || n >= this.stack.length)) {
               var r = this.stack[n];
-              this.confirmTransition(r, function() {
-                (e.index = n), e.updateRoute(r);
-              });
+              this.confirmTransition(
+                r,
+                function() {
+                  (e.index = n), e.updateRoute(r);
+                },
+                function(t) {
+                  i(Vt, t) && (e.index = n);
+                }
+              );
             }
           }),
           (e.prototype.getCurrentLocation = function() {
@@ -5439,8 +5499,8 @@ var vendor_library = (function(t) {
           (e.prototype.ensureURL = function() {}),
           e
         );
-      })(Ut),
-      se = function(t) {
+      })(qt),
+      le = function(t) {
         void 0 === t && (t = {}),
           (this.app = null),
           (this.apps = []),
@@ -5448,30 +5508,30 @@ var vendor_library = (function(t) {
           (this.beforeHooks = []),
           (this.resolveHooks = []),
           (this.afterHooks = []),
-          (this.matcher = lt(t.routes || [], this));
+          (this.matcher = dt(t.routes || [], this));
         var e = t.mode || 'hash';
         switch (
-          ((this.fallback = 'history' === e && !$t && !1 !== t.fallback),
+          ((this.fallback = 'history' === e && !Pt && !1 !== t.fallback),
           this.fallback && (e = 'hash'),
-          R || (e = 'abstract'),
+          ct || (e = 'abstract'),
           (this.mode = e),
           e)
         ) {
           case 'history':
-            this.history = new Qt(this, t.base);
+            this.history = new ee(this, t.base);
             break;
           case 'hash':
-            this.history = new Zt(this, t.base, this.fallback);
+            this.history = new re(this, t.base, this.fallback);
             break;
           case 'abstract':
-            this.history = new ae(this, t.base);
+            this.history = new fe(this, t.base);
             break;
           default:
             0;
         }
       },
-      ce = { currentRoute: { configurable: !0 } };
-    function ue(t, e) {
+      pe = { currentRoute: { configurable: !0 } };
+    function de(t, e) {
       return (
         t.push(e),
         function() {
@@ -5480,17 +5540,17 @@ var vendor_library = (function(t) {
         }
       );
     }
-    function fe(t, e, n) {
+    function he(t, e, n) {
       var r = 'hash' === n ? '#' + e : e;
-      return t ? D(t + '/' + r) : r;
+      return t ? E(t + '/' + r) : r;
     }
-    (se.prototype.match = function(t, e, n) {
+    (le.prototype.match = function(t, e, n) {
       return this.matcher.match(t, e, n);
     }),
-      (ce.currentRoute.get = function() {
+      (pe.currentRoute.get = function() {
         return this.history && this.history.current;
       }),
-      (se.prototype.init = function(t) {
+      (le.prototype.init = function(t) {
         var e = this;
         if (
           (this.apps.push(t),
@@ -5503,8 +5563,8 @@ var vendor_library = (function(t) {
         ) {
           this.app = t;
           var n = this.history;
-          if (n instanceof Qt) n.transitionTo(n.getCurrentLocation());
-          else if (n instanceof Zt) {
+          if (n instanceof ee) n.transitionTo(n.getCurrentLocation());
+          else if (n instanceof re) {
             var r = function() {
               n.setupListeners();
             };
@@ -5517,37 +5577,47 @@ var vendor_library = (function(t) {
           });
         }
       }),
-      (se.prototype.beforeEach = function(t) {
-        return ue(this.beforeHooks, t);
+      (le.prototype.beforeEach = function(t) {
+        return de(this.beforeHooks, t);
       }),
-      (se.prototype.beforeResolve = function(t) {
-        return ue(this.resolveHooks, t);
+      (le.prototype.beforeResolve = function(t) {
+        return de(this.resolveHooks, t);
       }),
-      (se.prototype.afterEach = function(t) {
-        return ue(this.afterHooks, t);
+      (le.prototype.afterEach = function(t) {
+        return de(this.afterHooks, t);
       }),
-      (se.prototype.onReady = function(t, e) {
+      (le.prototype.onReady = function(t, e) {
         this.history.onReady(t, e);
       }),
-      (se.prototype.onError = function(t) {
+      (le.prototype.onError = function(t) {
         this.history.onError(t);
       }),
-      (se.prototype.push = function(t, e, n) {
+      (le.prototype.push = function(t, e, n) {
+        var r = this;
+        if (!e && !n && 'undefined' !== typeof Promise)
+          return new Promise(function(e, n) {
+            r.history.push(t, e, n);
+          });
         this.history.push(t, e, n);
       }),
-      (se.prototype.replace = function(t, e, n) {
+      (le.prototype.replace = function(t, e, n) {
+        var r = this;
+        if (!e && !n && 'undefined' !== typeof Promise)
+          return new Promise(function(e, n) {
+            r.history.replace(t, e, n);
+          });
         this.history.replace(t, e, n);
       }),
-      (se.prototype.go = function(t) {
+      (le.prototype.go = function(t) {
         this.history.go(t);
       }),
-      (se.prototype.back = function() {
+      (le.prototype.back = function() {
         this.go(-1);
       }),
-      (se.prototype.forward = function() {
+      (le.prototype.forward = function() {
         this.go(1);
       }),
-      (se.prototype.getMatchedComponents = function(t) {
+      (le.prototype.getMatchedComponents = function(t) {
         var e = t ? (t.matched ? t : this.resolve(t).route) : this.currentRoute;
         return e
           ? [].concat.apply(
@@ -5560,24 +5630,24 @@ var vendor_library = (function(t) {
             )
           : [];
       }),
-      (se.prototype.resolve = function(t, e, n) {
+      (le.prototype.resolve = function(t, e, n) {
         e = e || this.history.current;
-        var r = ft(t, e, n, this),
+        var r = Z(t, e, n, this),
           o = this.match(r, e),
           i = o.redirectedFrom || o.fullPath,
           a = this.history.base,
-          s = fe(a, i, this.mode);
+          s = he(a, i, this.mode);
         return { location: r, route: o, href: s, normalizedTo: r, resolved: o };
       }),
-      (se.prototype.addRoutes = function(t) {
+      (le.prototype.addRoutes = function(t) {
         this.matcher.addRoutes(t),
-          this.history.current !== _ &&
+          this.history.current !== b &&
             this.history.transitionTo(this.history.getCurrentLocation());
       }),
-      Object.defineProperties(se.prototype, ce),
-      (se.install = I),
-      (se.version = '3.0.6'),
-      R && window.Vue && window.Vue.use(se),
-      (e['default'] = se);
+      Object.defineProperties(le.prototype, pe),
+      (le.install = st),
+      (le.version = '3.1.3'),
+      ct && window.Vue && window.Vue.use(le),
+      (e['default'] = le);
   },
 ]);
