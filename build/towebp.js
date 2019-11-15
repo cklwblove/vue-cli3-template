@@ -15,25 +15,6 @@ const chalk = require('chalk');
 const fileSrc = './src/assets/img/*.{jpeg,jpg,png,JPEG,JPG,PNG}';
 const fileOut = 'src/assets/img/';
 
-// imagemin([fileSrc], fileOut, {
-//   use: [imageminWebp({autoFilter: true})],
-// }).then((ret) => {
-//   let outputName = '';
-//   if (Array.isArray(ret) && ret.length) {
-//     ret.forEach((file) => {
-//       outputName = file.path
-//         .split('.')
-//         .slice(0, -1)
-//         .join('.');
-//       outputName = `${outputName}.webp`;
-//       fs.rename(file.path, outputName, function () {
-//       });
-//     });
-//   }
-//   console.log(ret);
-//   console.log(chalk.green(`webp转换已完成～`));
-// })();
-
 (async () => {
   const files = await imagemin([fileSrc], {
     destination: fileOut,
@@ -57,19 +38,3 @@ const fileOut = 'src/assets/img/';
 
   console.log(chalk.green(`webp转换已完成～`));
 })();
-
-// new imagemin()
-//   .src(fileSrc)
-//   .dest(fileOut)                       //新文件夹
-//   .use(imageminWebp({quality: 50}))
-//   .run(function (err, files) {
-//     console.log(files);
-//     //重命名当前webp文件
-//     var newpath;
-//     if (file.useHash) {
-//       newpath = files[0].path.replace(file.filename, file.filename + '_' + file.getHash()); //生成带md5的webp图片路径
-//       fs.rename(files[0].path, newpath, function () {
-//       });
-//     }
-//
-//   });
