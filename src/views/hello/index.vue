@@ -2,9 +2,10 @@
   <div class="page page-hello">
     <div class="page-content">
       <!-- 静态资源路径写法事例 -->
+      <p>webp 格式的图片作为 img 标签的使用</p>
       <picture>
         <source
-          srcset="~@assets/img/webp/logo.webp"
+          srcset="~@assets/img/logo.png.webp"
           width="200"
           height="200"
           type="image/webp"
@@ -17,6 +18,9 @@
         />
         <img src="~@assets/img/logo.png" width="200" height="200" />
       </picture>
+      <!--      webp 格式图片作为背景的使用-->
+      <p>webp 格式的图片作为 background 的使用</p>
+      <div class="logo"></div>
       <!--      <img src="~@assets/img/logo1.png" width="200" height="200" />-->
       <h1 v-text="msg"></h1>
       <h2 v-text="message"></h2>
