@@ -29,7 +29,8 @@
     "skeleton-html": "node ./src/skeleton/skeleton.js",
     "skeleton-json": "node ./build/skeleton.js",
     "svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext js --es6",
-    "towebp": "node build/towebp.js"
+    "towebp": "node build/towebp.js",
+    "fix-memory-limit": "cross-env LIMIT=2048 increase-memory-limit"
   },
   "dependencies": {
     "@liwb/cloud-utils": "^1.4.5",
