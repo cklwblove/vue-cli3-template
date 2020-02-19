@@ -1,5 +1,789 @@
 [
   {
+    "timestamp": 1582085701142,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6696,
+        "size": 6697,
+        "diff": 1
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 7363,
+        "size": 7364,
+        "diff": 1
+      },
+      { "filename": "config.local.js", "previous": 84, "size": 84, "diff": 0 },
+      { "filename": "index.html", "previous": 3284, "size": 3286, "diff": 2 },
+      {
+        "filename": "service-worker.js",
+        "previous": 628,
+        "size": 626,
+        "diff": -2
+      },
+      {
+        "filename": "static/css/app.7b8c8014.css",
+        "previous": 5415,
+        "size": 5416,
+        "diff": 1
+      },
+      {
+        "filename": "static/css/chunk-2ebf1fc0.2d97809e.css",
+        "previous": 282,
+        "size": 282,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-2ebf1fc0.********.js",
+        "previous": 3866,
+        "size": 3866,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-77bd2386.49034b84.css",
+        "previous": 370,
+        "size": 372,
+        "diff": 2
+      },
+      {
+        "filename": "static/js/chunk-77bd2386.********.js",
+        "previous": 4115,
+        "size": 4116,
+        "diff": 1
+      },
+      {
+        "filename": "precache-manifest.e05180bc7d55ccf4b6ef68099add30b8.js",
+        "previous": 545,
+        "size": 0,
+        "diff": -545
+      },
+      {
+        "filename": "precache-manifest.31ac45caa6d8e2a0462dafa62c7bcdfb.js",
+        "previous": 0,
+        "size": 543,
+        "diff": 543
+      }
+    ]
+  },
+  {
+    "timestamp": 1582085576038,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6661,
+        "size": 6696,
+        "diff": 35
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 45011,
+        "size": 7363,
+        "diff": -37648
+      },
+      { "filename": "config.local.js", "previous": 84, "size": 84, "diff": 0 },
+      { "filename": "index.html", "previous": 3286, "size": 3284, "diff": -2 },
+      {
+        "filename": "service-worker.js",
+        "previous": 628,
+        "size": 628,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/app.7b8c8014.css",
+        "previous": 5415,
+        "size": 5415,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-2ebf1fc0.2d97809e.css",
+        "previous": 282,
+        "size": 282,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-2ebf1fc0.********.js",
+        "previous": 3866,
+        "size": 3866,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-77bd2386.49034b84.css",
+        "previous": 372,
+        "size": 370,
+        "diff": -2
+      },
+      {
+        "filename": "static/js/chunk-77bd2386.********.js",
+        "previous": 4110,
+        "size": 4115,
+        "diff": 5
+      },
+      {
+        "filename": "precache-manifest.7037a102547aa90949eddda68fb1e6d6.js",
+        "previous": 544,
+        "size": 0,
+        "diff": -544
+      },
+      {
+        "filename": "precache-manifest.e05180bc7d55ccf4b6ef68099add30b8.js",
+        "previous": 0,
+        "size": 545,
+        "diff": 545
+      }
+    ]
+  },
+  {
+    "timestamp": 1582085395701,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6664,
+        "size": 6661,
+        "diff": -3
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 77935,
+        "size": 45011,
+        "diff": -32924
+      },
+      { "filename": "config.local.js", "previous": 84, "size": 84, "diff": 0 },
+      { "filename": "index.html", "previous": 3285, "size": 3286, "diff": 1 },
+      {
+        "filename": "service-worker.js",
+        "previous": 629,
+        "size": 628,
+        "diff": -1
+      },
+      {
+        "filename": "static/css/app.7b8c8014.css",
+        "previous": 5415,
+        "size": 5415,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-061ed8a0.2d97809e.css",
+        "previous": 282,
+        "size": 0,
+        "diff": -282
+      },
+      {
+        "filename": "static/js/chunk-061ed8a0.********.js",
+        "previous": 3867,
+        "size": 0,
+        "diff": -3867
+      },
+      {
+        "filename": "static/css/chunk-6887c177.49034b84.css",
+        "previous": 372,
+        "size": 0,
+        "diff": -372
+      },
+      {
+        "filename": "static/js/chunk-6887c177.********.js",
+        "previous": 1893,
+        "size": 0,
+        "diff": -1893
+      },
+      {
+        "filename": "precache-manifest.93a60c855377e1df5184e252400451fb.js",
+        "previous": 542,
+        "size": 0,
+        "diff": -542
+      },
+      {
+        "filename": "static/css/chunk-2ebf1fc0.2d97809e.css",
+        "previous": 0,
+        "size": 282,
+        "diff": 282
+      },
+      {
+        "filename": "static/js/chunk-2ebf1fc0.********.js",
+        "previous": 0,
+        "size": 3866,
+        "diff": 3866
+      },
+      {
+        "filename": "static/css/chunk-77bd2386.49034b84.css",
+        "previous": 0,
+        "size": 372,
+        "diff": 372
+      },
+      {
+        "filename": "static/js/chunk-77bd2386.********.js",
+        "previous": 0,
+        "size": 4110,
+        "diff": 4110
+      },
+      {
+        "filename": "precache-manifest.7037a102547aa90949eddda68fb1e6d6.js",
+        "previous": 0,
+        "size": 544,
+        "diff": 544
+      }
+    ]
+  },
+  {
+    "timestamp": 1582085360052,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6660,
+        "size": 6664,
+        "diff": 4
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 45010,
+        "size": 77935,
+        "diff": 32925
+      },
+      { "filename": "config.local.js", "previous": 84, "size": 84, "diff": 0 },
+      { "filename": "index.html", "previous": 3286, "size": 3285, "diff": -1 },
+      {
+        "filename": "service-worker.js",
+        "previous": 628,
+        "size": 629,
+        "diff": 1
+      },
+      {
+        "filename": "static/css/app.7b8c8014.css",
+        "previous": 5415,
+        "size": 5415,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-2ebf1fc0.2d97809e.css",
+        "previous": 282,
+        "size": 0,
+        "diff": -282
+      },
+      {
+        "filename": "static/js/chunk-2ebf1fc0.********.js",
+        "previous": 3866,
+        "size": 0,
+        "diff": -3866
+      },
+      {
+        "filename": "static/css/chunk-77bd2386.49034b84.css",
+        "previous": 372,
+        "size": 0,
+        "diff": -372
+      },
+      {
+        "filename": "static/js/chunk-77bd2386.********.js",
+        "previous": 4110,
+        "size": 0,
+        "diff": -4110
+      },
+      {
+        "filename": "precache-manifest.7037a102547aa90949eddda68fb1e6d6.js",
+        "previous": 544,
+        "size": 0,
+        "diff": -544
+      },
+      {
+        "filename": "static/css/chunk-061ed8a0.2d97809e.css",
+        "previous": 0,
+        "size": 282,
+        "diff": 282
+      },
+      {
+        "filename": "static/js/chunk-061ed8a0.********.js",
+        "previous": 0,
+        "size": 3867,
+        "diff": 3867
+      },
+      {
+        "filename": "static/css/chunk-6887c177.49034b84.css",
+        "previous": 0,
+        "size": 372,
+        "diff": 372
+      },
+      {
+        "filename": "static/js/chunk-6887c177.********.js",
+        "previous": 0,
+        "size": 1893,
+        "diff": 1893
+      },
+      {
+        "filename": "precache-manifest.93a60c855377e1df5184e252400451fb.js",
+        "previous": 0,
+        "size": 542,
+        "diff": 542
+      }
+    ]
+  },
+  {
+    "timestamp": 1582085000732,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6661,
+        "size": 6660,
+        "diff": -1
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 45010,
+        "size": 45010,
+        "diff": 0
+      },
+      { "filename": "config.local.js", "previous": 84, "size": 84, "diff": 0 },
+      { "filename": "index.html", "previous": 3286, "size": 3286, "diff": 0 },
+      {
+        "filename": "service-worker.js",
+        "previous": 628,
+        "size": 628,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/app.7b8c8014.css",
+        "previous": 5415,
+        "size": 5415,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-2ebf1fc0.2d97809e.css",
+        "previous": 282,
+        "size": 282,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-2ebf1fc0.********.js",
+        "previous": 3866,
+        "size": 3866,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-77bd2386.49034b84.css",
+        "previous": 371,
+        "size": 372,
+        "diff": 1
+      },
+      {
+        "filename": "static/js/chunk-77bd2386.********.js",
+        "previous": 4110,
+        "size": 4110,
+        "diff": 0
+      },
+      {
+        "filename": "precache-manifest.7037a102547aa90949eddda68fb1e6d6.js",
+        "previous": 544,
+        "size": 544,
+        "diff": 0
+      }
+    ]
+  },
+  {
+    "timestamp": 1582084849965,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6661,
+        "size": 6661,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 45011,
+        "size": 45010,
+        "diff": -1
+      },
+      { "filename": "config.local.js", "previous": 84, "size": 84, "diff": 0 },
+      { "filename": "index.html", "previous": 3356, "size": 3286, "diff": -70 },
+      {
+        "filename": "service-worker.js",
+        "previous": 627,
+        "size": 628,
+        "diff": 1
+      },
+      {
+        "filename": "static/css/app.7b8c8014.css",
+        "previous": 5415,
+        "size": 5415,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-2ebf1fc0.2d97809e.css",
+        "previous": 283,
+        "size": 282,
+        "diff": -1
+      },
+      {
+        "filename": "static/js/chunk-2ebf1fc0.********.js",
+        "previous": 3866,
+        "size": 3866,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-77bd2386.49034b84.css",
+        "previous": 372,
+        "size": 371,
+        "diff": -1
+      },
+      {
+        "filename": "static/js/chunk-77bd2386.********.js",
+        "previous": 4111,
+        "size": 4110,
+        "diff": -1
+      },
+      {
+        "filename": "precache-manifest.790b0c3b6b7dd60ea9b0e582ee2863d4.js",
+        "previous": 542,
+        "size": 0,
+        "diff": -542
+      },
+      {
+        "filename": "precache-manifest.7037a102547aa90949eddda68fb1e6d6.js",
+        "previous": 0,
+        "size": 544,
+        "diff": 544
+      }
+    ]
+  },
+  {
+    "timestamp": 1582084405147,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6661,
+        "size": 6661,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 45011,
+        "size": 45011,
+        "diff": 0
+      },
+      { "filename": "config.local.js", "previous": 84, "size": 84, "diff": 0 },
+      { "filename": "index.html", "previous": 3356, "size": 3356, "diff": 0 },
+      {
+        "filename": "service-worker.js",
+        "previous": 628,
+        "size": 627,
+        "diff": -1
+      },
+      {
+        "filename": "static/css/app.7b8c8014.css",
+        "previous": 5415,
+        "size": 5415,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-2ebf1fc0.2d97809e.css",
+        "previous": 283,
+        "size": 283,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-2ebf1fc0.********.js",
+        "previous": 3867,
+        "size": 3866,
+        "diff": -1
+      },
+      {
+        "filename": "static/css/chunk-77bd2386.49034b84.css",
+        "previous": 372,
+        "size": 372,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-77bd2386.********.js",
+        "previous": 4109,
+        "size": 4111,
+        "diff": 2
+      },
+      {
+        "filename": "precache-manifest.d83ae70ac6c193898bcf840be3993233.js",
+        "previous": 543,
+        "size": 0,
+        "diff": -543
+      },
+      {
+        "filename": "precache-manifest.790b0c3b6b7dd60ea9b0e582ee2863d4.js",
+        "previous": 0,
+        "size": 542,
+        "diff": 542
+      }
+    ]
+  },
+  {
+    "timestamp": 1582084066260,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6699,
+        "size": 6661,
+        "diff": -38
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 12765,
+        "size": 45011,
+        "diff": 32246
+      },
+      {
+        "filename": "dll/js/vendor.dll.d887dd4e.js",
+        "previous": 40842,
+        "size": 0,
+        "diff": -40842
+      },
+      { "filename": "config.local.js", "previous": 84, "size": 84, "diff": 0 },
+      { "filename": "index.html", "previous": 3374, "size": 3356, "diff": -18 },
+      {
+        "filename": "service-worker.js",
+        "previous": 627,
+        "size": 628,
+        "diff": 1
+      },
+      {
+        "filename": "static/css/app.7b8c8014.css",
+        "previous": 5415,
+        "size": 5415,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-85b88a5c.2d97809e.css",
+        "previous": 284,
+        "size": 0,
+        "diff": -284
+      },
+      {
+        "filename": "static/js/chunk-85b88a5c.********.js",
+        "previous": 3867,
+        "size": 0,
+        "diff": -3867
+      },
+      {
+        "filename": "static/css/chunk-a204eb46.49034b84.css",
+        "previous": 372,
+        "size": 0,
+        "diff": -372
+      },
+      {
+        "filename": "static/js/chunk-a204eb46.********.js",
+        "previous": 4111,
+        "size": 0,
+        "diff": -4111
+      },
+      {
+        "filename": "precache-manifest.5e2d19d74dde680a068e7777e364d8a9.js",
+        "previous": 585,
+        "size": 0,
+        "diff": -585
+      },
+      {
+        "filename": "static/css/chunk-2ebf1fc0.2d97809e.css",
+        "previous": 0,
+        "size": 283,
+        "diff": 283
+      },
+      {
+        "filename": "static/js/chunk-2ebf1fc0.********.js",
+        "previous": 0,
+        "size": 3867,
+        "diff": 3867
+      },
+      {
+        "filename": "static/css/chunk-77bd2386.49034b84.css",
+        "previous": 0,
+        "size": 372,
+        "diff": 372
+      },
+      {
+        "filename": "static/js/chunk-77bd2386.********.js",
+        "previous": 0,
+        "size": 4109,
+        "diff": 4109
+      },
+      {
+        "filename": "precache-manifest.d83ae70ac6c193898bcf840be3993233.js",
+        "previous": 0,
+        "size": 543,
+        "diff": 543
+      }
+    ]
+  },
+  {
+    "timestamp": 1582019893831,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6698,
+        "size": 6699,
+        "diff": 1
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 12764,
+        "size": 12765,
+        "diff": 1
+      },
+      {
+        "filename": "dll/js/vendor.dll.d887dd4e.js",
+        "previous": 40842,
+        "size": 40842,
+        "diff": 0
+      },
+      { "filename": "config.local.js", "previous": 84, "size": 84, "diff": 0 },
+      { "filename": "index.html", "previous": 3438, "size": 3374, "diff": -64 },
+      {
+        "filename": "service-worker.js",
+        "previous": 628,
+        "size": 627,
+        "diff": -1
+      },
+      {
+        "filename": "static/css/app.7b8c8014.css",
+        "previous": 5415,
+        "size": 5415,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-85b88a5c.2d97809e.css",
+        "previous": 284,
+        "size": 284,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-85b88a5c.********.js",
+        "previous": 3867,
+        "size": 3867,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-a204eb46.49034b84.css",
+        "previous": 372,
+        "size": 372,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-a204eb46.********.js",
+        "previous": 4111,
+        "size": 4111,
+        "diff": 0
+      },
+      {
+        "filename": "precache-manifest.0a4673757fa45f0b43c4cd7b90236c7a.js",
+        "previous": 585,
+        "size": 0,
+        "diff": -585
+      },
+      {
+        "filename": "precache-manifest.5e2d19d74dde680a068e7777e364d8a9.js",
+        "previous": 0,
+        "size": 585,
+        "diff": 585
+      }
+    ]
+  },
+  {
+    "timestamp": 1582019620674,
+    "files": [
+      {
+        "filename": "static/css/app.5f638d9c.css",
+        "previous": 5420,
+        "size": 0,
+        "diff": -5420
+      },
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6564,
+        "size": 6698,
+        "diff": 134
+      },
+      {
+        "filename": "static/css/chunk-7e6f570f.2d97809e.css",
+        "previous": 283,
+        "size": 0,
+        "diff": -283
+      },
+      {
+        "filename": "static/js/chunk-7e6f570f.********.js",
+        "previous": 4270,
+        "size": 0,
+        "diff": -4270
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 28877,
+        "size": 12764,
+        "diff": -16113
+      },
+      {
+        "filename": "dll/js/vendor.dll.d887dd4e.js",
+        "previous": 40842,
+        "size": 40842,
+        "diff": 0
+      },
+      { "filename": "config.local.js", "previous": 84, "size": 84, "diff": 0 },
+      { "filename": "index.html", "previous": 3255, "size": 3438, "diff": 183 },
+      {
+        "filename": "service-worker.js",
+        "previous": 629,
+        "size": 628,
+        "diff": -1
+      },
+      {
+        "filename": "static/css/chunk-18894a84.7ecc4519.css",
+        "previous": 272,
+        "size": 0,
+        "diff": -272
+      },
+      {
+        "filename": "static/js/chunk-18894a84.********.js",
+        "previous": 3999,
+        "size": 0,
+        "diff": -3999
+      },
+      {
+        "filename": "precache-manifest.8b71e0398bb05ad1ac1851b485955405.js",
+        "previous": 551,
+        "size": 0,
+        "diff": -551
+      },
+      {
+        "filename": "static/css/app.7b8c8014.css",
+        "previous": 0,
+        "size": 5415,
+        "diff": 5415
+      },
+      {
+        "filename": "static/css/chunk-85b88a5c.2d97809e.css",
+        "previous": 0,
+        "size": 284,
+        "diff": 284
+      },
+      {
+        "filename": "static/js/chunk-85b88a5c.********.js",
+        "previous": 0,
+        "size": 3867,
+        "diff": 3867
+      },
+      {
+        "filename": "static/css/chunk-a204eb46.49034b84.css",
+        "previous": 0,
+        "size": 372,
+        "diff": 372
+      },
+      {
+        "filename": "static/js/chunk-a204eb46.********.js",
+        "previous": 0,
+        "size": 4111,
+        "diff": 4111
+      },
+      {
+        "filename": "precache-manifest.0a4673757fa45f0b43c4cd7b90236c7a.js",
+        "previous": 0,
+        "size": 585,
+        "diff": 585
+      }
+    ]
+  },
+  {
     "timestamp": 1573781105792,
     "files": [
       {

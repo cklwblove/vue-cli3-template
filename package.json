@@ -1,6 +1,6 @@
 {
   "name": "vue-cli3-template",
-  "version": "0.1.27",
+  "version": "0.1.28",
   "private": true,
   "description": "A front-end template built on vue-cli3",
   "author": "liwb <liwb@gmail.com>",
@@ -15,7 +15,6 @@
     "carefree-dev": "cross-env NODE_ENV=carefree carefree_env=dev vue-cli-service build --watch",
     "changlog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "compress": "node build/tinypng.js",
-    "dll": "vue-cli-service dll",
     "inspect": "vue inspect > output.js --verbose",
     "lint": "vue-cli-service lint",
     "lint-staged:js": "eslint --ext .js,.vue src",
@@ -47,7 +46,6 @@
   "devDependencies": {
     "@ascendancyy/vue-cli-plugin-stylelint": "^1.1.2",
     "@liwb/carefree-webpack-plugin": "^0.4.4",
-    "@liwb/vue-cli-plugin-dll": "^1.0.6",
     "@liwb/vue-router-invoke-webpack-plugin": "^0.3.7",
     "@vue/cli-plugin-babel": "^4.0.5",
     "@vue/cli-plugin-eslint": "^4.0.5",
@@ -109,7 +107,7 @@
       "git add"
     ],
     "*.{html,vue,css,less}": [
-      "stylelint --fix",
+      "npm run lint:style",
       "git add"
     ],
     "**/*.{js,ts,tsx,json,jsx,less}": [

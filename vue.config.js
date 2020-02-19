@@ -46,6 +46,31 @@ function addStyleResource(rule) {
     });
 }
 
+// cdn
+const cdn = {
+  // 开发环境
+  dev: {
+    css: [],
+    js: [],
+  },
+  // 生产环境
+  build: {
+    css: [],
+    js: [
+      'https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.6/vue-router.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/vuex/3.1.1/vuex.min.js',
+    ],
+  },
+};
+
+const externals = {
+  vue: 'Vue',
+  'vue-router': 'VueRouter',
+  axios: 'axios',
+};
+
 const genPlugins = () => {
   const plugins = [
     new ProgressBarPlugin({
@@ -201,6 +226,7 @@ module.exports = {
       },
     },
     plugins: genPlugins(),
+    externals: isProd() ? externals : {},
     // 生产环境去掉 console.log
     // https://github.com/cklwblove/vue-cli3-template/issues/12
     // optimization: getOptimization()
@@ -209,6 +235,8 @@ module.exports = {
   // webpack配置
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   chainWebpack: (config) => {
+    config.plugins.delete('preload'); // TODO: need test
+    config.plugins.delete('prefetch'); // TODO: need test
     // module
 
     // style-resources-loader
@@ -237,12 +265,6 @@ module.exports = {
       config.devtool('cheap-eval-source-map')
     );
 
-    // runtime.js 内联的形式嵌入
-    config.plugin('preload').tap((args) => {
-      args[0].fileBlacklist.push(/runtime\./);
-      return args;
-    });
-
     // webpack-html-plugin
     config.plugin('html').tap((args) => {
       args[0].minify = {
@@ -257,8 +279,24 @@ module.exports = {
         minifyCSS: true,
         minifyURLs: true,
       };
+      // 添加CDN参数到htmlWebpackPlugin配置中
+      if (process.env.NODE_ENV === 'production') {
+        args[0].cdn = cdn.build;
+      }
+
       return args;
     });
+
+    // set preserveWhitespace
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .loader('vue-loader')
+      .tap((options) => {
+        options.compilerOptions.preserveWhitespace = true;
+        return options;
+      })
+      .end();
 
     // optimization
     // https://imweb.io/topic/5b66dd601402769b60847149
@@ -271,12 +309,15 @@ module.exports = {
       // });
       config
         .plugin('ScriptExtHtmlWebpackPlugin')
+        .after('html')
         .use('script-ext-html-webpack-plugin', [
           {
             // `runtime` must same as runtimeChunk name. default is `runtime`
             inline: /runtime\..*\.js$/,
           },
-        ]);
+        ])
+        .end();
+
       config.optimization.splitChunks({
         chunks: 'all',
         cacheGroups: {
@@ -302,10 +343,5 @@ module.exports = {
   pluginOptions: {
     lintStyleOnBuild: true,
     stylelint: {},
-    dll: {
-      entry: {
-        vendor: ['vue', 'vue-router'],
-      },
-    },
   },
 };

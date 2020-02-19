@@ -1,29 +1,220 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="renderer" content="webkit">
-  <meta name="viewport" content="width=device-width,viewport-fit=cover,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <meta name="viewport"
+    content="width=device-width,viewport-fit=cover,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta content="telephone=no" name="format-detection">
   <meta content="email=no" name="format-detection">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.css) { %>
+  <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="preload" as="style" />
+  <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="stylesheet" />
+  <% } %>
   <title>vue-cl3-template</title>
-<style data-vue-ssr-id="150d799e:0">.vue-skeleton-loading{position:fixed;top:0;right:0;bottom:0;left:0;z-index:99999;font-size:12px;background:#fff}@-webkit-keyframes backpos{from{background-position-x:-200px}to{background-position-x:calc(200px + 100%)}}@keyframes backpos{from{background-position-x:-200px}to{background-position-x:calc(200px + 100%)}}.vue-skeleton-loading .skeleton-bac-animation{position:absolute;z-index:auto;width:100%;height:100%;background:-webkit-gradient(linear,left top,right top,from(rgba(255,255,255,0)),color-stop(50%,rgba(255,255,255,.5)),color-stop(80%,rgba(255,255,255,0)));background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.5) 50%,rgba(255,255,255,0) 80%);background-size:30% 100%;background-repeat:no-repeat;-webkit-animation:backpos .9s ease-in-out 0s infinite;animation:backpos .9s ease-in-out 0s infinite}.vue-skeleton-loading .skeleton-bac-content{overflow:hidden}.vue-skeleton-column{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.vue-skeleton-row{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.vue-skeleton-square-wrap{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.vue-skeleton-square-wrap .vue-skeleton-square{width:100%}</style></head>
+  <style data-vue-ssr-id="150d799e:0">
+    .vue-skeleton-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 99999;
+      font-size: 12px;
+      background: #fff
+    }
+
+    @-webkit-keyframes backpos {
+      from {
+        background-position-x: -200px
+      }
+
+      to {
+        background-position-x: calc(200px + 100%)
+      }
+    }
+
+    @keyframes backpos {
+      from {
+        background-position-x: -200px
+      }
+
+      to {
+        background-position-x: calc(200px + 100%)
+      }
+    }
+
+    .vue-skeleton-loading .skeleton-bac-animation {
+      position: absolute;
+      z-index: auto;
+      width: 100%;
+      height: 100%;
+      background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, .5)), color-stop(80%, rgba(255, 255, 255, 0)));
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, .5) 50%, rgba(255, 255, 255, 0) 80%);
+      background-size: 30% 100%;
+      background-repeat: no-repeat;
+      -webkit-animation: backpos .9s ease-in-out 0s infinite;
+      animation: backpos .9s ease-in-out 0s infinite
+    }
+
+    .vue-skeleton-loading .skeleton-bac-content {
+      overflow: hidden
+    }
+
+    .vue-skeleton-column {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center
+    }
+
+    .vue-skeleton-row {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center
+    }
+
+    .vue-skeleton-square-wrap {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column
+    }
+
+    .vue-skeleton-square-wrap .vue-skeleton-square {
+      width: 100%
+    }
+  </style>
+</head>
+
 <body>
-<noscript>
-  <strong>很抱歉，如果没有启用JavaScript，此项目将无法正常运行。请启用它。</strong>
-</noscript>
-<script>
-  window.supportWebp = false;
-  if (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0) {
-    document.body.classList.add('webpa');
-    window.supportWebp = true;
-  }
-</script>
-<div id="app">
-  <div data-server-rendered="true" class="vue-skeleton-loading"><div class="skeleton-bac-animation"></div> <div class="skeleton-bac-content"><div class="vue-skeleton-row" style="width:auto;padding:15px 10px 0;justify-content:flex-start"><div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:200px;height:12px;margin:0"></div></div> <div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:50px;height:12px;margin:0 0 0 40px"></div></div> <div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:50px;height:12px;margin:0 0 0 10px"></div></div></div> <div class="vue-skeleton-row" style="width:auto;padding:20px 10px;justify-content:flex-start"><div class="vue-skeleton-circle" style="background-color:#f1f1f1;width:50px;height:50px;border-radius:50%;margin:0"></div> <div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:275px;height:12px;margin:5px 10px 5px 10px"></div><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:275px;height:12px;margin:5px 10px 5px 10px"></div><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:275px;height:12px;margin:5px 10px 5px 10px"></div></div></div> <div class="vue-skeleton-row" style="width:auto;padding:0 10px 20px;justify-content:flex-start"><div class="vue-skeleton-circle" style="background-color:#f1f1f1;width:50px;height:50px;border-radius:50%;margin:0"></div> <div class="vue-skeleton-column" style="padding:0;align-items:flex-start"><div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:275px;height:12px;margin:5px 10px 5px 10px"></div><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:275px;height:12px;margin:5px 10px 5px 10px"></div></div> <div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:100px;height:12px;margin:5px 10px 5px 10px"></div></div></div></div> <div class="vue-skeleton-row" style="width:auto;padding:0 10px 20px;justify-content:flex-start"><div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:75px;height:75px;margin:0"></div></div> <div class="vue-skeleton-column" style="padding:0 0 0 10px;align-items:flex-start"><div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:275px;height:10px;margin:0 10px 5px 10px"></div></div> <div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:100px;height:7.5px;margin:5px 10px 5px 10px"></div></div> <div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#fff;width:275px;height:12px;margin:0"></div><div class="vue-skeleton-square" style="background-color:#fff;width:275px;height:12px;margin:0"></div></div> <div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:50px;height:12px;margin:0 10px 5px 10px"></div></div></div></div> <div class="vue-skeleton-row" style="width:auto;padding:0 10px 20px;justify-content:flex-start"><div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:30px;height:30px;margin:15px"></div></div><div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:30px;height:30px;margin:15px"></div></div><div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:30px;height:30px;margin:15px"></div></div><div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:30px;height:30px;margin:15px"></div></div><div class="vue-skeleton-square-wrap"><div class="vue-skeleton-square" style="background-color:#f1f1f1;width:30px;height:30px;margin:15px"></div></div></div></div></div>
-</div>
+  <noscript>
+    <strong>很抱歉，如果没有启用JavaScript，此项目将无法正常运行。请启用它。</strong>
+  </noscript>
+  <script>
+    window.supportWebp = false;
+    if (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0) {
+      document.body.classList.add('webpa');
+      window.supportWebp = true;
+    }
+  </script>
+  <div id="app">
+    <div data-server-rendered="true" class="vue-skeleton-loading">
+      <div class="skeleton-bac-animation"></div>
+      <div class="skeleton-bac-content">
+        <div class="vue-skeleton-row" style="width:auto;padding:15px 10px 0;justify-content:flex-start">
+          <div class="vue-skeleton-square-wrap">
+            <div class="vue-skeleton-square" style="background-color:#f1f1f1;width:200px;height:12px;margin:0"></div>
+          </div>
+          <div class="vue-skeleton-square-wrap">
+            <div class="vue-skeleton-square" style="background-color:#f1f1f1;width:50px;height:12px;margin:0 0 0 40px">
+            </div>
+          </div>
+          <div class="vue-skeleton-square-wrap">
+            <div class="vue-skeleton-square" style="background-color:#f1f1f1;width:50px;height:12px;margin:0 0 0 10px">
+            </div>
+          </div>
+        </div>
+        <div class="vue-skeleton-row" style="width:auto;padding:20px 10px;justify-content:flex-start">
+          <div class="vue-skeleton-circle"
+            style="background-color:#f1f1f1;width:50px;height:50px;border-radius:50%;margin:0"></div>
+          <div class="vue-skeleton-square-wrap">
+            <div class="vue-skeleton-square"
+              style="background-color:#f1f1f1;width:275px;height:12px;margin:5px 10px 5px 10px"></div>
+            <div class="vue-skeleton-square"
+              style="background-color:#f1f1f1;width:275px;height:12px;margin:5px 10px 5px 10px"></div>
+            <div class="vue-skeleton-square"
+              style="background-color:#f1f1f1;width:275px;height:12px;margin:5px 10px 5px 10px"></div>
+          </div>
+        </div>
+        <div class="vue-skeleton-row" style="width:auto;padding:0 10px 20px;justify-content:flex-start">
+          <div class="vue-skeleton-circle"
+            style="background-color:#f1f1f1;width:50px;height:50px;border-radius:50%;margin:0"></div>
+          <div class="vue-skeleton-column" style="padding:0;align-items:flex-start">
+            <div class="vue-skeleton-square-wrap">
+              <div class="vue-skeleton-square"
+                style="background-color:#f1f1f1;width:275px;height:12px;margin:5px 10px 5px 10px"></div>
+              <div class="vue-skeleton-square"
+                style="background-color:#f1f1f1;width:275px;height:12px;margin:5px 10px 5px 10px"></div>
+            </div>
+            <div class="vue-skeleton-square-wrap">
+              <div class="vue-skeleton-square"
+                style="background-color:#f1f1f1;width:100px;height:12px;margin:5px 10px 5px 10px"></div>
+            </div>
+          </div>
+        </div>
+        <div class="vue-skeleton-row" style="width:auto;padding:0 10px 20px;justify-content:flex-start">
+          <div class="vue-skeleton-square-wrap">
+            <div class="vue-skeleton-square" style="background-color:#f1f1f1;width:75px;height:75px;margin:0"></div>
+          </div>
+          <div class="vue-skeleton-column" style="padding:0 0 0 10px;align-items:flex-start">
+            <div class="vue-skeleton-square-wrap">
+              <div class="vue-skeleton-square"
+                style="background-color:#f1f1f1;width:275px;height:10px;margin:0 10px 5px 10px"></div>
+            </div>
+            <div class="vue-skeleton-square-wrap">
+              <div class="vue-skeleton-square"
+                style="background-color:#f1f1f1;width:100px;height:7.5px;margin:5px 10px 5px 10px"></div>
+            </div>
+            <div class="vue-skeleton-square-wrap">
+              <div class="vue-skeleton-square" style="background-color:#fff;width:275px;height:12px;margin:0"></div>
+              <div class="vue-skeleton-square" style="background-color:#fff;width:275px;height:12px;margin:0"></div>
+            </div>
+            <div class="vue-skeleton-square-wrap">
+              <div class="vue-skeleton-square"
+                style="background-color:#f1f1f1;width:50px;height:12px;margin:0 10px 5px 10px"></div>
+            </div>
+          </div>
+        </div>
+        <div class="vue-skeleton-row" style="width:auto;padding:0 10px 20px;justify-content:flex-start">
+          <div class="vue-skeleton-square-wrap">
+            <div class="vue-skeleton-square" style="background-color:#f1f1f1;width:30px;height:30px;margin:15px"></div>
+          </div>
+          <div class="vue-skeleton-square-wrap">
+            <div class="vue-skeleton-square" style="background-color:#f1f1f1;width:30px;height:30px;margin:15px"></div>
+          </div>
+          <div class="vue-skeleton-square-wrap">
+            <div class="vue-skeleton-square" style="background-color:#f1f1f1;width:30px;height:30px;margin:15px"></div>
+          </div>
+          <div class="vue-skeleton-square-wrap">
+            <div class="vue-skeleton-square" style="background-color:#f1f1f1;width:30px;height:30px;margin:15px"></div>
+          </div>
+          <div class="vue-skeleton-square-wrap">
+            <div class="vue-skeleton-square" style="background-color:#f1f1f1;width:30px;height:30px;margin:15px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 使用CDN加速的JS文件，配置在vue.config.js下 -->
+  <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
+  <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+  <% } %>
+  <!-- built files will be auto injected -->
 </body>
+
 </html>
