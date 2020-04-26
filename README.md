@@ -50,7 +50,7 @@
 
 - 支持 `PWA`
 
-- ~~引用 [vue-cli-plugin-dll](https://www.npmjs.com/package/@liwb/vue-cli-plugin-dll)，支持 `webpack` 的 `Dll`、`DllReference`，加快**编译**速度。~~目前使用了 `CDN` 来加速
+- ~~引用 [vue-cli-plugin-dll](https://www.npmjs.com/package/@liwb/vue-cli-plugin-dll)，支持 `webpack` 的 `Dll`、`DllReference`，加快**编译**速度。~~ 目前使用了 `CDN` 来加速
 
 - 生产环境移除 `console.log`(https://github.com/cklwblove/vue-cli3-template/issues/12)
 - `webp`图片优化技术项目中使用示例 (https://github.com/cklwblove/vue-cli3-template/issues/13)
