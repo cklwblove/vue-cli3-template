@@ -1,5 +1,187 @@
 [
   {
+    "timestamp": 1589121949965,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6697,
+        "size": 6870,
+        "diff": 173
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 7364,
+        "size": 7416,
+        "diff": 52
+      },
+      {
+        "filename": "config.local.js",
+        "previous": 129,
+        "size": 129,
+        "diff": 0
+      },
+      { "filename": "index.html", "previous": 3305, "size": 3305, "diff": 0 },
+      {
+        "filename": "service-worker.js",
+        "previous": 627,
+        "size": 630,
+        "diff": 3
+      },
+      {
+        "filename": "static/css/app.7b8c8014.css",
+        "previous": 5415,
+        "size": 0,
+        "diff": -5415
+      },
+      {
+        "filename": "static/css/chunk-2ebf1fc0.2d97809e.css",
+        "previous": 283,
+        "size": 0,
+        "diff": -283
+      },
+      {
+        "filename": "static/js/chunk-2ebf1fc0.********.js",
+        "previous": 3866,
+        "size": 3866,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-77bd2386.49034b84.css",
+        "previous": 372,
+        "size": 0,
+        "diff": -372
+      },
+      {
+        "filename": "static/js/chunk-77bd2386.********.js",
+        "previous": 4116,
+        "size": 0,
+        "diff": -4116
+      },
+      { "filename": "console.js", "previous": 827, "size": 827, "diff": 0 },
+      {
+        "filename": "vconsole.min.js",
+        "previous": 30996,
+        "size": 30996,
+        "diff": 0
+      },
+      {
+        "filename": "precache-manifest.ef20cf3c62cfb1afde8d46a2716711b9.js",
+        "previous": 599,
+        "size": 0,
+        "diff": -599
+      },
+      {
+        "filename": "static/css/app.47173578.css",
+        "previous": 0,
+        "size": 5415,
+        "diff": 5415
+      },
+      {
+        "filename": "static/css/chunk-2ebf1fc0.bdb70779.css",
+        "previous": 0,
+        "size": 283,
+        "diff": 283
+      },
+      {
+        "filename": "static/css/chunk-d18d3418.20c9e3b6.css",
+        "previous": 0,
+        "size": 372,
+        "diff": 372
+      },
+      {
+        "filename": "static/js/chunk-d18d3418.********.js",
+        "previous": 0,
+        "size": 4281,
+        "diff": 4281
+      },
+      {
+        "filename": "precache-manifest.01a14699712df96b056a899552685896.js",
+        "previous": 0,
+        "size": 600,
+        "diff": 600
+      }
+    ]
+  },
+  {
+    "timestamp": 1589121820573,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6697,
+        "size": 6697,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 7364,
+        "size": 7364,
+        "diff": 0
+      },
+      {
+        "filename": "config.local.js",
+        "previous": 84,
+        "size": 129,
+        "diff": 45
+      },
+      { "filename": "index.html", "previous": 3286, "size": 3305, "diff": 19 },
+      {
+        "filename": "service-worker.js",
+        "previous": 626,
+        "size": 627,
+        "diff": 1
+      },
+      {
+        "filename": "static/css/app.7b8c8014.css",
+        "previous": 5416,
+        "size": 5415,
+        "diff": -1
+      },
+      {
+        "filename": "static/css/chunk-2ebf1fc0.2d97809e.css",
+        "previous": 282,
+        "size": 283,
+        "diff": 1
+      },
+      {
+        "filename": "static/js/chunk-2ebf1fc0.********.js",
+        "previous": 3866,
+        "size": 3866,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-77bd2386.49034b84.css",
+        "previous": 372,
+        "size": 372,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-77bd2386.********.js",
+        "previous": 4116,
+        "size": 4116,
+        "diff": 0
+      },
+      {
+        "filename": "precache-manifest.31ac45caa6d8e2a0462dafa62c7bcdfb.js",
+        "previous": 543,
+        "size": 0,
+        "diff": -543
+      },
+      { "filename": "console.js", "previous": 0, "size": 827, "diff": 827 },
+      {
+        "filename": "vconsole.min.js",
+        "previous": 0,
+        "size": 30996,
+        "diff": 30996
+      },
+      {
+        "filename": "precache-manifest.ef20cf3c62cfb1afde8d46a2716711b9.js",
+        "previous": 0,
+        "size": 599,
+        "diff": 599
+      }
+    ]
+  },
+  {
     "timestamp": 1582085701142,
     "files": [
       {

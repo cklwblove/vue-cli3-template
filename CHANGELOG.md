@@ -1,16 +1,50 @@
-<a name="0.1.23"></a>
-## [0.1.23](https://github.com/cklwblove/vue-cli3-template/compare/v0.1.19...v0.1.23) (2019-05-05)
+<a name="0.1.28"></a>
+## [0.1.28](https://github.com/cklwblove/vue-cli3-template/compare/v0.1.27...v0.1.28) (2020-05-10)
+
+
+### Bug Fixes
+
+* **svg:** 打包构建时，src/icons 里的 .svg 文件不被识别的问题 ([3c2a657](https://github.com/cklwblove/vue-cli3-template/commit/3c2a657))
+
+
+### Features
+
+* 以一个文件的方式使用解析好的 webpack 配置 ([a7d2cc9](https://github.com/cklwblove/vue-cli3-template/commit/a7d2cc9))
+* **code:** 增加 vconsole 的配置开关 ([161b103](https://github.com/cklwblove/vue-cli3-template/commit/161b103))
+* **npm scripts:** 增加 fix-memory-limit scripts ([1bdf9a3](https://github.com/cklwblove/vue-cli3-template/commit/1bdf9a3))
+
+
+
+<a name="0.1.27"></a>
+## [0.1.27](https://github.com/cklwblove/vue-cli3-template/compare/v0.1.19...v0.1.27) (2019-11-06)
+
+
+### Bug Fixes
+
+* **eventBus:** 修复bug,及get请求增加时间戳，避免从缓存中拿数据。 ([ab249a9](https://github.com/cklwblove/vue-cli3-template/commit/ab249a9))
+* **webpack-bundle-analyzer-report:** 更改 npm scripts ([9a6daf5](https://github.com/cklwblove/vue-cli3-template/commit/9a6daf5))
+* vue-cli4 版本，解决终端控制台里的 warning ([1dcf7e1](https://github.com/cklwblove/vue-cli3-template/commit/1dcf7e1))
+* windows环境下，npm run zip 异常情况 ([1b4808f](https://github.com/cklwblove/vue-cli3-template/commit/1b4808f))
 
 
 ### Features
 
 * 增加 mixins(派发与广播—— dispatch 和 broadcast 方法) ([d5157c0](https://github.com/cklwblove/vue-cli3-template/commit/d5157c0))
+* 增加 nginx 部署示例 ([bd4e469](https://github.com/cklwblove/vue-cli3-template/commit/bd4e469))
 * 增加 pwa 的支持 ([6a182e4](https://github.com/cklwblove/vue-cli3-template/commit/6a182e4))
 * 增加 组件通信方法集锦 ([090ba15](https://github.com/cklwblove/vue-cli3-template/commit/090ba15))
 * 增加在 WebStorm 中，配置能够识别 Vue CLI 3 创建的项目的别名 alias @ ([821abf6](https://github.com/cklwblove/vue-cli3-template/commit/821abf6))
 * 支持开发模式下，终端打印入口页面地址及生成二维码 ([568b043](https://github.com/cklwblove/vue-cli3-template/commit/568b043))
 * 支持根据 views 文件格式自动生成 vue-router 的路由 ([f24e3ec](https://github.com/cklwblove/vue-cli3-template/commit/f24e3ec))
+* **plugin:** 引用 [vue-cli-plugin-dll](https://www.npmjs.com/package/[@liwb](https://github.com/liwb)/vue-cli-plugin-dll)，支持 `we ([bf4a9b4](https://github.com/cklwblove/vue-cli3-template/commit/bf4a9b4))
 * 替换自动生成view 或 component，脚本，引入 plop 依赖 ([7c79b39](https://github.com/cklwblove/vue-cli3-template/commit/7c79b39))
+* 生产环境去除 config.log ([d89d3c1](https://github.com/cklwblove/vue-cli3-template/commit/d89d3c1))
+* 生产环境移除 config.log 功能总结 ([7f71ff9](https://github.com/cklwblove/vue-cli3-template/commit/7f71ff9))
+
+
+### Performance Improvements
+
+* **eventBus:** eventBus封装,让其也有生命周期 ([a765a4f](https://github.com/cklwblove/vue-cli3-template/commit/a765a4f))
 
 
 

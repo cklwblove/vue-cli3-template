@@ -20,6 +20,7 @@ const {
 const VueRouterInvokeWebpackPlugin = require('@liwb/vue-router-invoke-webpack-plugin');
 const SizePlugin = require('size-plugin');
 // const TerserPlugin = require('terser-webpack-plugin');
+const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
 
 const resolve = (dir) => {
   return path.join(__dirname, './', dir);
@@ -112,6 +113,7 @@ const genPlugins = () => {
         'yyyy-MM-dd HH:mm:ss'
       )}`,
     }),
+    new DuplicatePackageCheckerPlugin(),
   ];
 
   if (isProd()) {
