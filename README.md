@@ -124,9 +124,6 @@ yarn run skeleton
 ## 其他
 ```
 
-# --analyz 基于 webpack-bundle-analyzer 插件分析打包的文件构成及大小(vue ui 界面上的分析不习惯)
-yarn run analyz
-
 # --report 生成静态报告文件
 yarn run report
 
