@@ -21,6 +21,7 @@ const VueRouterInvokeWebpackPlugin = require('@liwb/vue-router-invoke-webpack-pl
 const SizePlugin = require('size-plugin');
 // const TerserPlugin = require('terser-webpack-plugin');
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 const resolve = (dir) => {
   return path.join(__dirname, './', dir);
@@ -95,6 +96,7 @@ const genPlugins = () => {
         },
       ],
     }),
+    new MonacoWebpackPlugin(),
     // 为静态资源文件添加 hash，防止缓存
     new AddAssetHtmlPlugin([
       {

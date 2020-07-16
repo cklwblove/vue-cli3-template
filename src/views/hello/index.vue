@@ -77,6 +77,14 @@
           &lt;/style&gt;
         </pre>
       </div>
+      <MonacoEditor
+        width="100%"
+        height="800"
+        theme="Visual Studio"
+        language="javascript"
+        :options="options"
+        @change="onChange"
+      ></MonacoEditor>
     </div>
   </div>
 </template>
@@ -89,10 +97,12 @@
 import { formatDate } from 'utils';
 import { SendCode } from '@/components';
 import createApiFunc from '@/services/createApiFunc';
+import MonacoEditor from 'monaco-editor-vue';
 
 export default {
   components: {
     SendCode,
+    MonacoEditor
   },
 
   data() {
@@ -100,6 +110,19 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       start: false,
       message: '现在时间是：' + formatDate(Date.now()),
+      options: {
+        //Monaco Editor Options
+        copyWithSyntaxHighlighting: true,
+        folding: true,
+        foldingStrategy: 'indentation', // 代码可分小段折叠
+        automaticLayout: true, // 自适应布局
+        selectOnLineNumbers: true,
+        roundedSelection: false,
+        cursorStyle: 'line', // 光标样式
+        glyphMargin: true, // 字形边缘
+        useTabStops: false,
+        fontSize: 16 // 字体大小
+      }
     };
   },
 
@@ -142,6 +165,9 @@ export default {
         this.start = true;
       }, 1000);
     },
+    onChange(value) {
+      console.log(value);
+    }
   },
 };
 </script>
