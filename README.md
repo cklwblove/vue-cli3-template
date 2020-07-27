@@ -56,6 +56,7 @@
 
 - 生产环境移除 `console.log`(https://github.com/cklwblove/vue-cli3-template/issues/12)
 - `webp`图片优化技术项目中使用示例 (https://github.com/cklwblove/vue-cli3-template/issues/13)
+- 预渲染功能 (https://github.com/cklwblove/vue-cli3-template/tree/feature-prerender-spa)
 
 ## 目录介绍
 
