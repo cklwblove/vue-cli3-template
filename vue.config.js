@@ -21,6 +21,9 @@ const VueRouterInvokeWebpackPlugin = require('@liwb/vue-router-invoke-webpack-pl
 const SizePlugin = require('size-plugin');
 // const TerserPlugin = require('terser-webpack-plugin');
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
+const PrerenderSPAPlugin = require('prerender-spa-plugin');
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
+const routesConfig = require('./router-config');
 
 const resolve = (dir) => {
   return path.join(__dirname, './', dir);
@@ -127,7 +130,46 @@ const genPlugins = () => {
         cache: true,
       }),
       // 在每次执行打包命令后打印出本次构建的资源体积并和上次构建结果进行对比
-      new SizePlugin()
+      new SizePlugin(),
+      // 预加载
+      new PrerenderSPAPlugin({
+        staticDir: resolve('dist'),
+        routes: Object.keys(routesConfig),
+        postProcess(ctx) {
+          ctx.route = ctx.originalRoute;
+          ctx.html = ctx.html.split(/>[\s]+</gim).join('><');
+          ctx.html = ctx.html.replace(
+            /<title>(.*?)<\/title>/gi,
+            `<title>${
+              routesConfig[ctx.route].title
+            }</title><meta name="keywords" content="${
+              routesConfig[ctx.route].keywords
+            }" /><meta name="description" content="${
+              routesConfig[ctx.route].description
+            }" />`
+          );
+          if (ctx.route.endsWith('.html')) {
+            ctx.outputPath = path.join(__dirname, 'dist', ctx.route);
+          }
+          return ctx;
+        },
+        minify: {
+          collapseBooleanAttributes: true,
+          collapseWhitespace: true,
+          decodeEntities: true,
+          keepClosingSlash: true,
+          sortAttributes: true,
+        },
+        renderer: new Renderer({
+          // 需要注入一个值，这样就可以检测页面当前是否是预渲染的
+          inject: {
+            foo: 'bar',
+          },
+          headless: false,
+          // 视图组件是在API请求获取所有必要数据后呈现的，因此我们在dom中存在“data view”属性后创建页面快照
+          renderAfterDocumentEvent: 'render-event',
+        }),
+      })
     );
   }
 
@@ -191,15 +233,30 @@ module.exports = {
 
   // webpack-dev-server 相关配置
   devServer: {
-    open: process.platform === 'darwin',
+    open: process.platform === 'darwin', // 是否打开浏览器
     host: '0.0.0.0',
     port: 3000,
     https: false,
-    hotOnly: false,
+    hotOnly: false, // 热更新
     overlay: {
+      // 让浏览器 overlay 同时显示警告和错误
       warnings: false,
       errors: true,
     },
+    // 代理配置
+    // 假设mock接口为https://www.easy-mock.com/mock/5bc75b55dc36971c160cad1b/sheets/1
+    // proxy: {
+    //   '/api': {
+    //     target:
+    //       'https://www.easy-mock.com/mock/5bc75b55dc36971c160cad1b/sheets', // 目标代理接口地址
+    //     secure: false,
+    //     changeOrigin: true, // 开启代理，在本地创建一个虚拟服务端
+    //     // ws: true, // 是否启用 websocket
+    //     pathRewrite: {
+    //       '^/api': '/',
+    //     },
+    //   },
+    // },
   },
 
   // css相关配置

@@ -1,5 +1,266 @@
 [
   {
+    "timestamp": 1595819774897,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 7475,
+        "size": 7475,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 7537,
+        "size": 7538,
+        "diff": 1
+      },
+      {
+        "filename": "config.local.js",
+        "previous": 131,
+        "size": 132,
+        "diff": 1
+      },
+      { "filename": "index.html", "previous": 3302, "size": 3302, "diff": 0 },
+      {
+        "filename": "service-worker.js",
+        "previous": 628,
+        "size": 629,
+        "diff": 1
+      },
+      { "filename": "console.js", "previous": 831, "size": 831, "diff": 0 },
+      {
+        "filename": "vconsole.min.js",
+        "previous": 31164,
+        "size": 31164,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-d18d3418.********.js",
+        "previous": 4347,
+        "size": 4347,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/app.296b8636.css",
+        "previous": 5416,
+        "size": 5416,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-a816aefa.cda494ad.css",
+        "previous": 283,
+        "size": 283,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-a816aefa.********.js",
+        "previous": 3873,
+        "size": 3873,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-d18d3418.03fe4343.css",
+        "previous": 371,
+        "size": 372,
+        "diff": 1
+      },
+      {
+        "filename": "precache-manifest.f8be44f6815760d0c569de727d25b89d.js",
+        "previous": 598,
+        "size": 0,
+        "diff": -598
+      },
+      {
+        "filename": "precache-manifest.5f57841e63c379aa196344107646deb2.js",
+        "previous": 0,
+        "size": 599,
+        "diff": 599
+      }
+    ]
+  },
+  {
+    "timestamp": 1595819561490,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 7474,
+        "size": 7475,
+        "diff": 1
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 7537,
+        "size": 7537,
+        "diff": 0
+      },
+      {
+        "filename": "config.local.js",
+        "previous": 131,
+        "size": 131,
+        "diff": 0
+      },
+      { "filename": "index.html", "previous": 3304, "size": 3302, "diff": -2 },
+      {
+        "filename": "service-worker.js",
+        "previous": 629,
+        "size": 628,
+        "diff": -1
+      },
+      { "filename": "console.js", "previous": 831, "size": 831, "diff": 0 },
+      {
+        "filename": "vconsole.min.js",
+        "previous": 31164,
+        "size": 31164,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-d18d3418.********.js",
+        "previous": 4347,
+        "size": 4347,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/app.296b8636.css",
+        "previous": 5416,
+        "size": 5416,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/chunk-a816aefa.cda494ad.css",
+        "previous": 283,
+        "size": 283,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/chunk-a816aefa.********.js",
+        "previous": 3872,
+        "size": 3873,
+        "diff": 1
+      },
+      {
+        "filename": "static/css/chunk-d18d3418.03fe4343.css",
+        "previous": 372,
+        "size": 371,
+        "diff": -1
+      },
+      {
+        "filename": "precache-manifest.a9143f84253c56b7b34029bdb8f1ab5f.js",
+        "previous": 597,
+        "size": 0,
+        "diff": -597
+      },
+      {
+        "filename": "precache-manifest.f8be44f6815760d0c569de727d25b89d.js",
+        "previous": 0,
+        "size": 598,
+        "diff": 598
+      }
+    ]
+  },
+  {
+    "timestamp": 1595818552318,
+    "files": [
+      {
+        "filename": "static/js/app.********.js",
+        "previous": 6870,
+        "size": 7474,
+        "diff": 604
+      },
+      {
+        "filename": "static/js/chunk-vendors.********.js",
+        "previous": 7416,
+        "size": 7537,
+        "diff": 121
+      },
+      {
+        "filename": "config.local.js",
+        "previous": 129,
+        "size": 131,
+        "diff": 2
+      },
+      { "filename": "index.html", "previous": 3305, "size": 3304, "diff": -1 },
+      {
+        "filename": "service-worker.js",
+        "previous": 630,
+        "size": 629,
+        "diff": -1
+      },
+      {
+        "filename": "static/js/chunk-2ebf1fc0.********.js",
+        "previous": 3866,
+        "size": 0,
+        "diff": -3866
+      },
+      { "filename": "console.js", "previous": 827, "size": 831, "diff": 4 },
+      {
+        "filename": "vconsole.min.js",
+        "previous": 30996,
+        "size": 31164,
+        "diff": 168
+      },
+      {
+        "filename": "static/css/app.47173578.css",
+        "previous": 5415,
+        "size": 0,
+        "diff": -5415
+      },
+      {
+        "filename": "static/css/chunk-2ebf1fc0.bdb70779.css",
+        "previous": 283,
+        "size": 0,
+        "diff": -283
+      },
+      {
+        "filename": "static/css/chunk-d18d3418.20c9e3b6.css",
+        "previous": 372,
+        "size": 0,
+        "diff": -372
+      },
+      {
+        "filename": "static/js/chunk-d18d3418.********.js",
+        "previous": 4281,
+        "size": 4347,
+        "diff": 66
+      },
+      {
+        "filename": "precache-manifest.01a14699712df96b056a899552685896.js",
+        "previous": 600,
+        "size": 0,
+        "diff": -600
+      },
+      {
+        "filename": "static/css/app.296b8636.css",
+        "previous": 0,
+        "size": 5416,
+        "diff": 5416
+      },
+      {
+        "filename": "static/css/chunk-a816aefa.cda494ad.css",
+        "previous": 0,
+        "size": 283,
+        "diff": 283
+      },
+      {
+        "filename": "static/js/chunk-a816aefa.********.js",
+        "previous": 0,
+        "size": 3872,
+        "diff": 3872
+      },
+      {
+        "filename": "static/css/chunk-d18d3418.03fe4343.css",
+        "previous": 0,
+        "size": 372,
+        "diff": 372
+      },
+      {
+        "filename": "precache-manifest.a9143f84253c56b7b34029bdb8f1ab5f.js",
+        "previous": 0,
+        "size": 597,
+        "diff": 597
+      }
+    ]
+  },
+  {
     "timestamp": 1589121949965,
     "files": [
       {

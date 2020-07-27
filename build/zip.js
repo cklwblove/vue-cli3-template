@@ -44,7 +44,7 @@ const main = () => {
   const { name, version } = extractExtensionData();
   const zipFilename = `${name}-v${version}_${formatDate(
     new Date(),
-    'yyyy-MM-dd_HH-mm-ss'
+    'yyyy-MM-dd_HH:mm:ss'
   )}.zip`;
 
   makeDestZipDirIfNotExists();
