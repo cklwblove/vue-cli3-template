@@ -6,6 +6,7 @@
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/cklwblove/vue-cli3-template/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/cklwblove/vue-cli3-template.svg?branch=master)](https://travis-ci.org/cklwblove/vue-cli3-template)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcklwblove%2Fvue-cli3-template.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcklwblove%2Fvue-cli3-template?ref=badge_shield)
+![Alt](https://repobeats.axiom.co/api/embed/1558e9ced55af641ce5f50224e6b4486b8cf1c9d.svg "Repobeats analytics image")
 
 基于 vue-cli3 搭建的前端模板，fork 或 clone 本仓库(持续更新中...)
 
