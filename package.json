@@ -67,7 +67,7 @@
     "html-minifier": "^4.0.0",
     "husky": "^3.0.9",
     "imagemin": "^7.0.0",
-    "imagemin-webp": "^5.1.0",
+    "imagemin-webp": "^7.0.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "lint-staged": "^9.4.2",
