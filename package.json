@@ -69,7 +69,7 @@
     "imagemin": "^7.0.0",
     "imagemin-webp": "^7.0.0",
     "less": "^3.10.3",
-    "less-loader": "^5.0.0",
+    "less-loader": "^10.2.0",
     "lint-staged": "^9.4.2",
     "plop": "^2.5.3",
     "postcss-pxtorem": "^4.0.1",
