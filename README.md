@@ -14,6 +14,8 @@
 
 **🚀 结合 vue-cli3 的 preset 搭建基于 git repo 的前端项目模板，可以移步 [vue-preset](https://github.com/cklwblove/vue-preset)**
 
+**🔥 或者直接使用 `npm init @winner-fed/project@2 my-project` 来初始化项目，文档详见 [create-project](https://cloud-templates.github.io/create-project)** 
+
 ## 特性
 
 - CSS 预编译语言：[less](http://lesscss.org/)
