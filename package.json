@@ -45,7 +45,7 @@
   "devDependencies": {
     "@ascendancyy/vue-cli-plugin-stylelint": "^1.1.2",
     "@liwb/carefree-webpack-plugin": "^0.4.4",
-    "@liwb/vue-router-invoke-webpack-plugin": "^0.3.7",
+    "@liwb/vue-router-invoke-webpack-plugin": "^0.4.0",
     "@vue/cli-plugin-babel": "^4.0.5",
     "@vue/cli-plugin-eslint": "^4.0.5",
     "@vue/cli-plugin-pwa": "^4.0.5",
